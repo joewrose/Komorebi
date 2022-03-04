@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <title>CloseUp</title>
-    <p>This is the image template, images are being retrieved from {{ MEDIA_URL }}</p>
-    <img src="{{ MEDIA_URL }}cat.jpg" alt="Picture of a Cat."/>
+    <p>This is the image template, images are being retrieved from {{ settings.MEDIA_URL }}</p>
+    <img src="../{{ settings.MEDIA_URL }}cat.jpg" alt="Picture of a Cat."/>
 </head>
 <body>
 
