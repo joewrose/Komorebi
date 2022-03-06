@@ -31,8 +31,10 @@ def index(request):
 def closeup(request):
     return render(request, 'manageImages/imageCloseup.html')
 
+
 def dashboard(request):
     return addimage(request)
+
 
 def addimage(request):
     form = ImageForm(request.POST, request.FILES)

@@ -2,6 +2,7 @@ import uuid
 
 from django.db import models
 
+
 # Create your models here.
 from komorebi.settings import MEDIA_URL
 
@@ -13,6 +14,7 @@ class Picture(models.Model):
     likes = models.IntegerField(default=0)
     dislikes = models.IntegerField(default=0)
     time = models.DateTimeField(auto_now_add=True)
+
     # TODO - add 'Uploaded by' foreign key
 
     def __str__(self):
