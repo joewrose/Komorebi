@@ -18,7 +18,7 @@ def register_request(request):
             user = form.save()
             login(request, user)
             messages.success(request, "Registration successful.")
-            return redirect("/closeup/")
+            return redirect("index")
         messages.error(request, "Unsuccessful registration. Invalid information.")
     form = NewUserForm()
     return render(request, "addUser.html", context={"register_form": form})
@@ -31,6 +31,8 @@ def index(request):
 def closeup(request):
     return render(request, 'manageImages/imageCloseup.html')
 
+def dashboard(request):
+    return addimage(request)
 
 def addimage(request):
     form = ImageForm(request.POST, request.FILES)
@@ -40,6 +42,9 @@ def addimage(request):
         if form.is_valid():
             form.time = datetime.datetime.now()
             picture = form.save(commit=False)
+            print(picture)
+            picture.image.upload_to = "/manageImages/" + str(request.user.id) + "/" + str(picture.ID)
+            print(picture.image.upload_to)
             picture.save()
             return redirect("/closeup/")
         elif request.POST:
