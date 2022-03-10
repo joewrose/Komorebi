@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+
+<html lang="en"> 
+    <head>
+        <meta charset="UTF-8">
+        <style>
+            .title {
+                color: #a024ff;
+                font: Noto Sans;
+                top: 10px;
+                left: 20px;
+            }
+            .subtitle {
+                color: #a024ff;
+                font: Roboto Mono;
+                top: 2px;
+                bottom: 5px;
+                left: 20px;
+            }
+            .header {
+                position: fixed;
+                background: white;
+            }
+        </style>
+        <title>
+            komorebi -
+            {% block title_block %}
+                Picture Sharing!
+            {% endblock %}
+        </title>
+    </head>
+    <body>
+        <div class="header">
+            <h1 class="title"><strong>komorebi</strong></h1>
+            {% block page_subtitle_block %} 
+            {% endblock %}
+            <hr />
+        </div>
+        <div>
+            {% block body_block %} 
+            {% endblock %} 
+        </div>
+    </body>
+</html>
