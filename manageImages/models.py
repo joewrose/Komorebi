@@ -32,4 +32,9 @@ class Vote(models.Model):
         return "User with ID " + str(self.user_ID) + " voted " + self.vote_type + " for photo with ID " + str(self.picture_ID)
 
 
+class Total(models.Model):
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    likes = models.IntegerField(default=0)
+    dislikes = models.IntegerField(default=0)
+
 
