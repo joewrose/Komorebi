@@ -3,8 +3,8 @@ from django.db import models
 
 # Create your models here.
 class Follow(models.Model):
-    follower_ID = models.ForeignKey(User, on_delete=models.CASCADE, related_name='%(class)_follower')
-    followed_ID = models.ForeignKey(User, on_delete=models.CASCADE, related_name='%(class)_followed')
+    follower_ID = models.ForeignKey(User, on_delete=models.CASCADE, related_name='follower')
+    followed_ID = models.ForeignKey(User, on_delete=models.CASCADE, related_name='followed')
     ID = models.UniqueConstraint(fields=['follower_ID', 'followed_ID'], name='Composite_Key')
 
 
