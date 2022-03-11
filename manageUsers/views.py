@@ -14,6 +14,11 @@ from manageImages.forms import ImageForm, NewUserForm
 def index(request):
     return HttpResponse("Welcome to the manageUsers Index page!")
 
+def about(request):
+    return HttpResponse("Welcome to the manageUsers About page!")
+
+def myfeed(request):
+    return HttpResponse("Welcome to the manageUsers My Feed page!")
 
 def dashboard(request):
     return HttpResponse("Welcome to the manageUsers Dashboard page!")
@@ -23,8 +28,6 @@ def edit(request):
 
 def profile(request):
     return HttpResponse("Welcome to the manageUsers Profile page!")
-
-
 
 def create(request):
     if request.method == "POST":
