@@ -23,6 +23,9 @@ def myfeed(request):
 def dashboard(request):
     return HttpResponse("Welcome to the manageUsers Dashboard page!")
 
+def login(request):
+    return HttpResponse("Welcome to the manageUsers Log In page!")
+
 def edit(request):
     return HttpResponse("Welcome to the manageUsers Edit page!")
 
