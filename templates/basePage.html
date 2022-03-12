@@ -1,63 +1,118 @@
 <!DOCTYPE html>
-{% load static %}
+{% load staticfiles %}
 
-<html lang="en"> 
-    <head>
-        <meta charset="UTF-8">
-        <style>
+<html lang="en">
 
-            @font-face {
-                font-family: "HKLight";
-                src: url("{% static 'fonts/HKGrotesk-Light.woff2' %}") format('woff2');
-            }
+<head>
+    <meta charset="UTF-8">
+    <style>
+        @font-face {
+            font-family: "HKLight";
+            src: url("{% static 'fonts/HKGrotesk-Light.woff2' %}") format('woff2');
+        }
 
-            @font-face {
-                font-family: "HKMedium";
-                src: url("{% static 'fonts/HKGrotesk-Regular.woff2' %}") format('woff2');
-            }
+        @font-face {
+            font-family: "HKMedium";
+            src: url("{% static 'fonts/HKGrotesk-Regular.woff2' %}") format('woff2');
+        }
 
-            .title {
-                color: #a024ff;
-                font: "HKLight";
-                top: 10px;
-                left: 20px;
-            }
-            .subtitle {
-                color: #a024ff;
-                font: Roboto Mono;
-                top: 2px;
-                bottom: 5px;
-                left: 20px;
-            }
-            .header {
-                position: fixed;
-                background: white;
-            }
-        </style>
-        <title>
-            komorebi -
-            {% block title_block %}
-                Picture Sharing!
-            {% endblock %}
-        </title>
+        #title {
+            font-size: 50px;
+            color: #a024ff;
+            font: "HKLight";
+            line-height: 40px;
+        }
+
+        #subtitle {
+            font-size: 24px;
+            color: lightgray;
+            font: "HKLight";
+        }
+
+        .header {
+            position: fixed;
+            background: white;
+        }
+
+        .text {
+            font: 'HKLight';
+        }
+
+        .card {
+            border-radius: 20%;
+            cursor: pointer;
+        }
+
+        .navigation {
+            font-size: 20px;
+        }
+
+        .card-body {
+            background-color: #a024ff;
+            color: white;
+        }
+    </style>
+
+    <!-- Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
-          integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-    </head>
-    <body>
-        <div class="container">
-            Hello World
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+    <!-- LazyLoading -->
+    <script type="text/javascript" src="//cdn.jsdelivr.net/jquery.lazy/1.7.9/jquery.lazy.min.js">
+        $('.lazy').Lazy({
+            scrollDirection: 'vertical',
+            effect: 'fadeIn',
+            visibleOnly: true,
+            onLoad: function (element) {
+                console.log('element loaded');
+            },
+            onError: function (element) {
+                console.log('error loading ' + element.data('src'));
+            }
+        });
+    </script>
+
+    <script type="text/javascript" src="//cdn.jsdelivr.net/jquery.lazy/1.7.9/jquery.lazy.plugins.min.js"></script>
+
+    <title>
+        komorebi -
+        {% block title_block %}
+        Picture Sharing!
+        {% endblock %}
+    </title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+</head>
+
+<body>
+    <div class="container">
+        <div class="row justify-content-between pt-3">
+            <div title class="col-xs-12 col-md-4 p-3 ">
+                <div id="title" class="row">komorebi</div>
+                <div id="subtitle" class="row">
+                    {% block subtitle_block %}
+                    {% endblock %}
+                </div>
+            </div>
+            <div ng-view class="col-lg-3 p-3 col-xs-5">
+                <div class="row justify-content-center" style="font-size: 30px; color: #a024ff;">Quote of the Day</div>
+                <div class="row justify-content-center">
+                    <div class="col-6">
+                        <hr style="color: #a024ff; height:2px; margin-top:2px; margin-bottom:2px;">
+                    </div>
+                </div>
+                <div class="row text justify-content-center">Quote Here</div>
+            </div>
         </div>
-        <div class="header">
-            <h1 class="title"><strong>komorebi</strong></h1>
-            {% block page_subtitle_block %} 
-            {% endblock %}
-            <hr />
-        </div>
-        <div>
-            {% block body_block %} 
-            {% endblock %} 
-        </div>
+        <hr style="color: #a024ff; height:3px;">
+        {% block body_block %}
+        {% endblock %}
+    </div>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
-            integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
-    </body>
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
+</body>
+
 </html>
