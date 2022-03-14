@@ -16,13 +16,22 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
-from manageImages import views
+import manageImages
 from django.contrib import admin
 from django.urls import path
 from django.urls import include
+from django.conf import settings
+from django.conf.urls.static import static
+
+from komorebi import views
 
 urlpatterns = [
     path('', views.index, name='index'),
-    path('closeup/', include('manageImages.urls')),
+    path('home/', views.home, name='home'),
+    path('about/', views.about, name='about'),
     path('admin/', admin.site.urls),
-]
+    path('addimage/', views.addimage),
+    path('login/', include('manageUsers.urls')),
+    path('', include('manageImages.urls')),
+    path('', include('django.contrib.auth.urls')),
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
