@@ -4,12 +4,11 @@ from . import views
 app_name = "manageUsers"
 
 urlpatterns = [
-    path('', views.index, name='index'),
     path('about/', views.about, name='about'),
     path('myfeed/', views.myfeed, name='myfeed'),
     path('dashboard/', views.dashboard, name='dashboard'),
-    path('login/', views.login, name='login'),
-    path('create/', views.create, name='register'),
+    path('', views.login, name='login'),
+    path('create/', views.create, name='create'),
     path('dashboard/edit/', views.edit, name='edit'),
     path('profile/<ID>/', views.profile, name='profile'),
 ]
