@@ -9,12 +9,19 @@ https://docs.djangoproject.com/en/3.2/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.2/ref/settings/
 """
-
+import os
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
+TEMPLATE_DIR = os.path.join(BASE_DIR, 'templates/')
+STATIC_DIR = os.path.join(BASE_DIR, 'static/')
+MEDIA_DIR = os.path.join(BASE_DIR, 'media/')
+MEDIA_ROOT = MEDIA_DIR
 
+LOGIN_REDIRECT_URL = '/dashboard/'
+STATIC_URL = '/static/'
+MEDIA_URL = '/media/'
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
@@ -38,6 +45,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'manageImages',
+    'manageUsers',
 ]
 
 MIDDLEWARE = [
@@ -55,7 +63,9 @@ ROOT_URLCONF = 'komorebi.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [
+            TEMPLATE_DIR,
+        ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -73,6 +83,10 @@ WSGI_APPLICATION = 'komorebi.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
+
+STATICFILES_DIRS = [
+    STATIC_DIR,
+]
 
 DATABASES = {
     'default': {
@@ -117,8 +131,6 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
-
-STATIC_URL = '/static/'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
