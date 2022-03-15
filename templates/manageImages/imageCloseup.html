@@ -1,12 +1,47 @@
 <!DOCTYPE html>
+{% extends 'basepage.html' %}
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>CloseUp</title>
-    <img src="{{ picture.image.url }}" alt="A Picture"/>
-    <p>{{ message }}</p>
+    <style>
+        .card-img-top {
+
+        }
+    </style>
 </head>
 <body>
-
+    <meta charset="UTF-8">
+    <title>CloseUp</title>
+    {% block body_block %}
+        <div class="row justify-content-center">
+                <div class="col-4 col-lg-2" style="border-right: 2px solid #a024ff;"><div class="navigation row lightText-Gray justify-content-center"><a style="text-align: center; text-decoration: none;
+                color: inherit;" href="../login/myfeed/" onMouseOver="this.style.color='#a024ff'"
+   onMouseOut="this.style.color='black'" >My Feed</a></div></div>
+                <div class="col-4 col-lg-2" style="border-right: 2px solid #a024ff;"><div class="navigation row lightText-Gray justify-content-center"><a style="text-align: center; text-decoration: none;
+                color: inherit;" href="../login/dashboard/" onMouseOver="this.style.color='#a024ff'"
+   onMouseOut="this.style.color='black'" >Dashboard</a></div></div>
+                <div class="col-4 col-lg-2"><div class="navigation row lightText-Gray justify-content-center"><a style="text-align: center; text-decoration: none;
+                color: inherit;" href="../about/" onMouseOver="this.style.color='#a024ff'"
+   onMouseOut="this.style.color='black'" >About</a></div></div>
+            </div>
+        <div class="container">
+        <div class="row justify-content-center">
+        <div style="width : 60%;" class="card mt-3">
+            <img src="{{ picture.image.url }}" class="card-img-top" style="width: 100%;
+            height: 45vw;
+            object-fit: cover;" alt="...">
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-7">
+                        <h5 class="card-title">{{ picture.name }}</h5>
+                    </div>
+                    <div class="col-5">
+                        <h5>Stats</h5>
+                    </div>
+                </div>
+            </div>
+          </div>
+        </div>
+        </div>
+    {% endblock %}
 </body>
 </html>

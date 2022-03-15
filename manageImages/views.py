@@ -16,6 +16,8 @@ from manageImages.forms import ImageForm, NewUserForm
 def closeup(request, ID):
 
     context_dict = {}
+    content = open("static/quote.txt", 'r').read()
+    context_dict["quote"] = content
 
     try:
         picture = Picture.objects.get(ID=uuid.UUID(ID))
