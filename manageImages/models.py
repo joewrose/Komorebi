@@ -31,7 +31,3 @@ class Vote(models.Model):
             self.picture_ID)
 
 
-class Total(models.Model):
-    user = models.OneToOneField(User, on_delete=models.CASCADE)
-    likes = models.IntegerField(default=0)
-    dislikes = models.IntegerField(default=0)
