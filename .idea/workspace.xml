@@ -1,15 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="92635139-2b0c-468d-a396-7cc843e4f390" name="Changes" comment="populate.py working for adding images">
-      <change afterPath="$PROJECT_DIR$/manageImages/migrations/0003_merge_0002_alter_picture_id_0002_auto_20220306_2111.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/manageImages/migrations/0004_auto_20220316_0052.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/manageUsers/migrations/0002_userextension.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/populateFirstNames.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/populateUsernames.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/manageUsers/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/manageUsers/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/cat.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/populate.py" beforeDir="false" afterPath="$PROJECT_DIR$/populate.py" afterDir="false" />
+    <list default="true" id="92635139-2b0c-468d-a396-7cc843e4f390" name="Changes" comment="Populate.py for images and users">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/home.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -80,7 +74,7 @@
       <recent name="C:\Users\joewr\komorebi\static\fonts" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.Populate">
+  <component name="RunManager" selected="Django Server.Komorebi">
     <configuration name="Populate" type="PythonConfigurationType" factoryName="Python">
       <module name="Komorebi" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -155,7 +149,8 @@
       <workItem from="1647044540642" duration="1081000" />
       <workItem from="1647086770675" duration="8221000" />
       <workItem from="1647282409191" duration="22966000" />
-      <workItem from="1647388427897" duration="4129000" />
+      <workItem from="1647388427897" duration="4433000" />
+      <workItem from="1647396699588" duration="961000" />
     </task>
     <task id="LOCAL-00001" summary="Added manageImages app">
       <created>1646339740358</created>
@@ -297,7 +292,14 @@
       <option name="project" value="LOCAL" />
       <updated>1647389445275</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="Populate.py for images and users">
+      <created>1647393730899</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1647393730899</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -337,9 +339,10 @@
     <MESSAGE value="Added image closeup Pages + general fixes" />
     <MESSAGE value="More styling in closeup page" />
     <MESSAGE value="populate.py working for adding images" />
-    <option name="LAST_COMMIT_MESSAGE" value="populate.py working for adding images" />
+    <MESSAGE value="Populate.py for images and users" />
+    <option name="LAST_COMMIT_MESSAGE" value="Populate.py for images and users" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/komorebi$Populate.coverage" NAME="Populate Coverage Results" MODIFIED="1647393410842" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/komorebi$Populate.coverage" NAME="Populate Coverage Results" MODIFIED="1647393622356" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>

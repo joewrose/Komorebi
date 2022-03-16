@@ -148,97 +148,19 @@
    onMouseOut="this.style.color='black'" >About</a></div></div>
             </div>
 
-            <div class="lazy loading row justify-content-center pt-3 g-0">
-                <div class="col-sm-12 col-md-10">
-                <div class="row g-0">
-                    <div class="col-xs-12 col-lg-4 pt-1 pt-lg-0">
-                        <div class="card mx-lg-1 mx-xs-auto">
-                            <img src="https://picsum.photos/500" class="card-img-top" alt="...">
-                            <div class="card-body">
-                                <div class="row">
-                                    <div class="col-7">
-                                        <h5 class="card-title">Card title</h5>
-                                    </div>
-                                    <div class="col-5">
-                                        <h5>Stats</h5>
-                                    </div>
-                                </div>
-                            </div>
-                          </div>
-                    </div>
-                    <div class="col-xs-12 col-lg-4 pt-1 pt-lg-0">
-                        <div class="card mx-lg-1 mx-xs-auto">
-                            <img src="https://picsum.photos/500" class="card-img-top" alt="...">
-                            <div class="card-body">
-                                <div class="row">
-                                    <div class="col-7">
-                                        <h5 class="card-title">Card title</h5>
-                                    </div>
-                                    <div class="col-5">
-                                        <h5>Stats</h5>
-                                    </div>
-                                </div>
-                            </div>
-                          </div>
-                    </div>
-                    <div class="col-xs-12 col-lg-4 pt-1 pt-lg-0">
-                        <div class="card mx-lg-1 mx-xs-auto">
-                            <img src="https://picsum.photos/500" class="card-img-top" alt="...">
-                            <div class="card-body">
-                                <div class="row">
-                                    <div class="col-7">
-                                        <h5 class="card-title">Card title</h5>
-                                    </div>
-                                    <div class="col-5">
-                                        <h5>Stats</h5>
-                                    </div>
-                                </div>
-                            </div>
-                          </div>
-                    </div>
-                </div>
-            </div>
-            </div>
+
+
             <div class="lazy loading row justify-content-center pt-lg-1 g-0">
+                {% for picture in pictures %}
                 <div class="col-sm-12 col-md-10">
                 <div class="row g-0">
                     <div class="col-xs-12 col-lg-4 pt-1 pt-lg-0">
                         <div class="card mx-lg-1 mx-xs-auto">
-                            <img src="https://picsum.photos/500" class="card-img-top" alt="...">
+                            <img src={{ picture.image.url }} class="card-img-top" alt="...">
                             <div class="card-body">
                                 <div class="row">
                                     <div class="col-7">
-                                        <h5 class="card-title">Card title</h5>
-                                    </div>
-                                    <div class="col-5">
-                                        <h5>Stats</h5>
-                                    </div>
-                                </div>
-                            </div>
-                          </div>
-                    </div>
-                    <div class="col-xs-12 col-lg-4 pt-1 pt-lg-0">
-                        <div class="card mx-lg-1 mx-xs-auto">
-                            <img src="https://picsum.photos/500" class="card-img-top" alt="...">
-                            <div class="card-body">
-                                <div class="row">
-                                    <div class="col-7">
-                                        <h5 class="card-title">Card title</h5>
-                                    </div>
-                                    <div class="col-5">
-                                        <h5>Stats</h5>
-                                    </div>
-                                </div>
-                            </div>
-                          </div>
-                    </div>
-                    <div class="col-xs-12 col-lg-4 pt-1 pt-lg-0">
-                        <div class="card mx-lg-1 mx-xs-auto">
-                            <img src="https://picsum.photos/500" class="card-img-top" alt="...">
-                            <div class="card-body">
-                                <div class="row">
-                                    <div class="col-7">
-                                        <h5 class="card-title">Card title</h5>
+                                        <h5 class="card-title">{{ picture.name }}</h5>
                                     </div>
                                     <div class="col-5">
                                         <h5>Stats</h5>
@@ -249,7 +171,9 @@
                     </div>
                 </div>
             </div>
+                {% endfor %}
             </div>
+
             <div class="lazy loading row justify-content-center pt-lg-1 g-0">
                 <div class="col-sm-12 col-md-10">
                 <div class="row g-0">
