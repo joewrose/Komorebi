@@ -10,3 +10,7 @@ class Follow(models.Model):
 
     def __str__(self):
         return "User with ID " + str(self.follower_ID) + " followed user with ID" + str(self.followed_ID)
+
+class UserExtension(models.Model):
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    profileImage = models.ImageField(upload_to='userImages/profileImages', null=False, blank=False)

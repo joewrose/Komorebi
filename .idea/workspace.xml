@@ -1,0 +1,345 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="92635139-2b0c-468d-a396-7cc843e4f390" name="Changes" comment="populate.py working for adding images">
+      <change afterPath="$PROJECT_DIR$/manageImages/migrations/0003_merge_0002_alter_picture_id_0002_auto_20220306_2111.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/manageImages/migrations/0004_auto_20220316_0052.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/manageUsers/migrations/0002_userextension.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/populateFirstNames.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/populateUsernames.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/manageUsers/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/manageUsers/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/cat.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/populate.py" beforeDir="false" afterPath="$PROJECT_DIR$/populate.py" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DjangoConsoleOptions" custom-start-script="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)">
+    <option name="myCustomStartScript" value="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+        <option value="CSS File" />
+        <option value="JavaScript File" />
+        <option value="HTML File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/manageImages/models.py" root0="FORCE_HIGHLIGHTING" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="25tFdWwNhNmAu09Ifa5I9nl5zqh" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/populate.py" />
+    <property name="list.type.of.created.stylesheet" value="CSS" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\joewr\komorebi\templates\registration" />
+      <recent name="C:\Users\joewr\komorebi\manageUsers" />
+      <recent name="C:\Users\joewr\komorebi" />
+      <recent name="C:\Users\joewr\komorebi\komorebi" />
+      <recent name="C:\Users\joewr\komorebi\media" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\joewr\komorebi\media\userImages" />
+      <recent name="C:\Users\joewr\komorebi\media" />
+      <recent name="C:\Users\joewr\komorebi\populateImages" />
+      <recent name="C:\Users\joewr\komorebi\templates" />
+      <recent name="C:\Users\joewr\komorebi\static\fonts" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Python.Populate">
+    <configuration name="Populate" type="PythonConfigurationType" factoryName="Python">
+      <module name="Komorebi" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="C:\Users\joewr\anaconda3\python.exe" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/populate.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Komorebi" type="Python.DjangoServer" factoryName="Django server">
+      <module name="Komorebi" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+        <env name="DJANGO_SETTINGS_MODULE" value="komorebi.settings" />
+      </envs>
+      <option name="SDK_HOME" value="C:\Users\joewr\anaconda3\python.exe" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="launchJavascriptDebuger" value="false" />
+      <option name="port" value="8000" />
+      <option name="host" value="" />
+      <option name="additionalOptions" value="" />
+      <option name="browserUrl" value="" />
+      <option name="runTestServer" value="false" />
+      <option name="runNoReload" value="false" />
+      <option name="useCustomRunCommand" value="false" />
+      <option name="customRunCommand" value="" />
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="Django Server.Komorebi" />
+      <item itemvalue="Python.Populate" />
+    </list>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="92635139-2b0c-468d-a396-7cc843e4f390" name="Changes" comment="" />
+      <created>1646338583878</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1646338583878</updated>
+      <workItem from="1646338589386" duration="1834000" />
+      <workItem from="1646340675033" duration="3534000" />
+      <workItem from="1646347395758" duration="671000" />
+      <workItem from="1646397070023" duration="1848000" />
+      <workItem from="1646405556063" duration="4325000" />
+      <workItem from="1646433092301" duration="3951000" />
+      <workItem from="1646500877730" duration="8043000" />
+      <workItem from="1646647170477" duration="173000" />
+      <workItem from="1646843350474" duration="2266000" />
+      <workItem from="1646854802065" duration="7358000" />
+      <workItem from="1646928763099" duration="3876000" />
+      <workItem from="1646951175002" duration="3922000" />
+      <workItem from="1647044540642" duration="1081000" />
+      <workItem from="1647086770675" duration="8221000" />
+      <workItem from="1647282409191" duration="22966000" />
+      <workItem from="1647388427897" duration="4129000" />
+    </task>
+    <task id="LOCAL-00001" summary="Added manageImages app">
+      <created>1646339740358</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1646339740359</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Created templates directory and imageCloseup.html">
+      <created>1646341484084</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1646341484084</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Created image model">
+      <created>1646342684611</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1646342684611</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Added URL mapping">
+      <created>1646344249709</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1646344249709</updated>
+    </task>
+    <task id="LOCAL-00005" summary="TODO - Get media files working">
+      <created>1646407082964</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1646407082964</updated>
+    </task>
+    <task id="LOCAL-00006" summary="TODO - Fix UUID">
+      <created>1646438234953</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1646438234953</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Added adduser functionality (courtesy of ordinarycoders.com)">
+      <created>1646501698336</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1646501698336</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Added Login functionality via Auth package TODO-fix uploaded file naming">
+      <created>1646525241407</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1646525241408</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Added Follow entity and created composite key in Vote entity">
+      <created>1646846891356</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1646846891356</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Added manageUsers app and fixed earlier mistake with composite key">
+      <created>1646856522464</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1646856522465</updated>
+    </task>
+    <task id="LOCAL-00011" summary="fixed earlier mistake with composite key">
+      <created>1646863523507</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1646863523507</updated>
+    </task>
+    <task id="LOCAL-00012" summary="Finished off URLs">
+      <created>1646869743146</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1646869743146</updated>
+    </task>
+    <task id="LOCAL-00013" summary="Added some bootstrap">
+      <created>1647011552629</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1647011552630</updated>
+    </task>
+    <task id="LOCAL-00014" summary="Bootstrap refinement">
+      <created>1647045614447</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1647045614447</updated>
+    </task>
+    <task id="LOCAL-00015" summary="Added windows size responsiveness">
+      <created>1647103229942</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1647103229943</updated>
+    </task>
+    <task id="LOCAL-00016" summary="Fixed Fonts + formatting">
+      <created>1647107656713</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1647107656714</updated>
+    </task>
+    <task id="LOCAL-00017" summary="Added anchors to home page">
+      <created>1647297164487</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1647297164488</updated>
+    </task>
+    <task id="LOCAL-00018" summary="Added image closeup Pages + general fixes">
+      <created>1647361273470</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1647361273472</updated>
+    </task>
+    <task id="LOCAL-00019" summary="More styling in closeup page">
+      <created>1647365892025</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1647365892027</updated>
+    </task>
+    <task id="LOCAL-00020" summary="populate.py working for adding images">
+      <created>1647389445275</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1647389445275</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="Added website base" />
+    <MESSAGE value="Added manageImages app" />
+    <MESSAGE value="Created templates directory and imageCloseup.html" />
+    <MESSAGE value="Created image model" />
+    <MESSAGE value="Added URL mapping" />
+    <MESSAGE value="TODO - Get media files working" />
+    <MESSAGE value="TODO - Fix UUID" />
+    <MESSAGE value="Added adduser functionality (courtesy of ordinarycoders.com)" />
+    <MESSAGE value="Added Login functionality via Auth package TODO-fix uploaded file naming" />
+    <MESSAGE value="Added Follow entity and created composite key in Vote entity" />
+    <MESSAGE value="Added manageUsers app and fixed earlier mistake with composite key" />
+    <MESSAGE value="fixed earlier mistake with composite key" />
+    <MESSAGE value="Finished off URLs" />
+    <MESSAGE value="Added some bootstrap" />
+    <MESSAGE value="Bootstrap refinement" />
+    <MESSAGE value="Added windows size responsiveness" />
+    <MESSAGE value="Fixed Fonts + formatting" />
+    <MESSAGE value="Added anchors to home page" />
+    <MESSAGE value="Added image closeup Pages + general fixes" />
+    <MESSAGE value="More styling in closeup page" />
+    <MESSAGE value="populate.py working for adding images" />
+    <option name="LAST_COMMIT_MESSAGE" value="populate.py working for adding images" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/komorebi$Populate.coverage" NAME="Populate Coverage Results" MODIFIED="1647393410842" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+  </component>
+</project>

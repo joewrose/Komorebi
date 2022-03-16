@@ -1,0 +1,19 @@
+Index: manageImages/models.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>import uuid\r\n\r\nfrom django.db import models\r\n\r\n# Create your models here.\r\nfrom komorebi.settings import MEDIA_URL\r\n\r\nclass Picture(models.Model):\r\n    ID = models.BigAutoField(primary_key=True)\r\n    image = models.ImageField(upload_to='userImages/', null=False, blank=False)\r\n    name = models.CharField(max_length=100)\r\n    url = models.URLField()\r\n    likes = models.IntegerField(default=0)\r\n    dislikes = models.IntegerField(default=0)\r\n    time = models.DateTimeField(auto_now_add=True)\r\n    # TODO - add 'Uploaded by' foreign key\r\n\r\n    def __str__(self):\r\n        return \"ID: \" + str(self.ID) + \" name: \" + self.name
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/manageImages/models.py b/manageImages/models.py
+--- a/manageImages/models.py	(revision da3fa9b683f1e823ba246883af7d071c3597719d)
++++ b/manageImages/models.py	(date 1646647322540)
+@@ -6,7 +6,7 @@
+ from komorebi.settings import MEDIA_URL
+ 
+ class Picture(models.Model):
+-    ID = models.BigAutoField(primary_key=True)
++    ID = models.UUIDField(primary_key=True, default=uuid.uuid4())
+     image = models.ImageField(upload_to='userImages/', null=False, blank=False)
+     name = models.CharField(max_length=100)
+     url = models.URLField()
