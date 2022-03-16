@@ -31,7 +31,7 @@ urlpatterns = [
     path('about/', views.about, name='about'),
     path('admin/', admin.site.urls),
     path('addimage/', views.addimage),
-    path('login/', include('manageUsers.urls')),
+    path('', include('manageUsers.urls')),
     path('', include('manageImages.urls')),
     path('', include('django.contrib.auth.urls')),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
