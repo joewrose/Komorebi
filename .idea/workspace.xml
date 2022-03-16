@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="92635139-2b0c-468d-a396-7cc843e4f390" name="Changes" comment="Images on homepage now linking to closeups">
+    <list default="true" id="92635139-2b0c-468d-a396-7cc843e4f390" name="Changes" comment="Fixed stretched links">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/manageUsers/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/manageUsers/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/home.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -151,7 +152,7 @@
       <workItem from="1647282409191" duration="22966000" />
       <workItem from="1647388427897" duration="4433000" />
       <workItem from="1647396699588" duration="1195000" />
-      <workItem from="1647429079207" duration="7071000" />
+      <workItem from="1647429079207" duration="8181000" />
     </task>
     <task id="LOCAL-00001" summary="Added manageImages app">
       <created>1646339740358</created>
@@ -321,7 +322,14 @@
       <option name="project" value="LOCAL" />
       <updated>1647450868197</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="Fixed stretched links">
+      <created>1647451099582</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1647451099583</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -340,7 +348,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Added website base" />
     <MESSAGE value="Added manageImages app" />
     <MESSAGE value="Created templates directory and imageCloseup.html" />
     <MESSAGE value="Created image model" />
@@ -365,7 +372,8 @@
     <MESSAGE value="Pictures from database on homepage" />
     <MESSAGE value="Fixed styling on homepage and added stretched link" />
     <MESSAGE value="Images on homepage now linking to closeups" />
-    <option name="LAST_COMMIT_MESSAGE" value="Images on homepage now linking to closeups" />
+    <MESSAGE value="Fixed stretched links" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed stretched links" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/komorebi$Populate.coverage" NAME="Populate Coverage Results" MODIFIED="1647446430489" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
