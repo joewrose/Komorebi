@@ -136,7 +136,7 @@
                 </div>
             </div>
             <hr style="color: #a024ff; height:3px;">
-            <div class="row justify-content-center">
+            <div class="row justify-content-center pb-3">
                 <div class="col-4 col-lg-2" style="border-right: 2px solid #a024ff;"><div class="navigation row lightText-Gray justify-content-center"><a style="text-align: center; text-decoration: none;
                 color: inherit;" href="../login/myfeed/" onMouseOver="this.style.color='#a024ff'"
    onMouseOut="this.style.color='black'" >My Feed</a></div></div>
@@ -151,12 +151,12 @@
 
 
             <div class="lazy loading row justify-content-center pt-lg-1 g-0">
-                {% for picture in pictures %}
                 <div class="col-sm-12 col-md-10">
                 <div class="row g-0">
-                    <div class="col-xs-12 col-lg-4 pt-1 pt-lg-0">
-                        <div class="card mx-lg-1 mx-xs-auto">
-                            <img src={{ picture.image.url }} class="card-img-top" alt="...">
+                    {% for picture in pictures %}
+                    <div class="col-xs-12 col-lg-4 pt-1 pt-lg-0 ">
+                        <div class="card mx-lg-1 mx-xs-auto mt-2">
+                            <img src={{ picture.image.url }} class="card-img-top" alt="..." style="width: 100%;height: 22vw; object-fit: cover;">
                             <div class="card-body">
                                 <div class="row">
                                     <div class="col-7">
@@ -168,60 +168,9 @@
                                 </div>
                             </div>
                           </div>
+                    <a href="../closeup/{{ picture.ID }}" class="stretched-link"></a>
                     </div>
-                </div>
-            </div>
-                {% endfor %}
-            </div>
-
-            <div class="lazy loading row justify-content-center pt-lg-1 g-0">
-                <div class="col-sm-12 col-md-10">
-                <div class="row g-0">
-                    <div class="col-xs-12 col-lg-4 pt-1 pt-lg-0">
-                        <div class="card mx-lg-1 mx-xs-auto">
-                            <img src="https://picsum.photos/500" class="card-img-top" alt="...">
-                            <div class="card-body">
-                                <div class="row">
-                                    <div class="col-7">
-                                        <h5 class="card-title">Card title</h5>
-                                    </div>
-                                    <div class="col-5">
-                                        <h5>Stats</h5>
-                                    </div>
-                                </div>
-                            </div>
-                          </div>
-                    </div>
-                    <div class="col-xs-12 col-lg-4 pt-1 pt-lg-0">
-                        <div class="card mx-lg-1 mx-xs-auto">
-                            <img src="https://picsum.photos/500" class="card-img-top" alt="...">
-                            <div class="card-body">
-                                <div class="row">
-                                    <div class="col-7">
-                                        <h5 class="card-title">Card title</h5>
-                                    </div>
-                                    <div class="col-5">
-                                        <h5>Stats</h5>
-                                    </div>
-                                </div>
-                            </div>
-                          </div>
-                    </div>
-                    <div class="col-xs-12 col-lg-4 pt-1 pt-lg-0">
-                        <div class="card mx-lg-1 mx-xs-auto">
-                            <img src="https://picsum.photos/500" class="card-img-top" alt="...">
-                            <div class="card-body">
-                                <div class="row">
-                                    <div class="col-7">
-                                        <h5 class="card-title">Card title</h5>
-                                    </div>
-                                    <div class="col-5">
-                                        <h5>Stats</h5>
-                                    </div>
-                                </div>
-                            </div>
-                          </div>
-                    </div>
+                    {% endfor %}
                 </div>
             </div>
             </div>
