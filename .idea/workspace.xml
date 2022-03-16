@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="92635139-2b0c-468d-a396-7cc843e4f390" name="Changes" comment="Fixed styling on homepage and added stretched link">
+    <list default="true" id="92635139-2b0c-468d-a396-7cc843e4f390" name="Changes" comment="Images on homepage now linking to closeups">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/home.html" afterDir="false" />
     </list>
@@ -151,7 +151,7 @@
       <workItem from="1647282409191" duration="22966000" />
       <workItem from="1647388427897" duration="4433000" />
       <workItem from="1647396699588" duration="1195000" />
-      <workItem from="1647429079207" duration="6828000" />
+      <workItem from="1647429079207" duration="7071000" />
     </task>
     <task id="LOCAL-00001" summary="Added manageImages app">
       <created>1646339740358</created>
@@ -314,7 +314,14 @@
       <option name="project" value="LOCAL" />
       <updated>1647449172215</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="Images on homepage now linking to closeups">
+      <created>1647450868196</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1647450868197</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -357,7 +364,8 @@
     <MESSAGE value="Populate.py for images and users" />
     <MESSAGE value="Pictures from database on homepage" />
     <MESSAGE value="Fixed styling on homepage and added stretched link" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed styling on homepage and added stretched link" />
+    <MESSAGE value="Images on homepage now linking to closeups" />
+    <option name="LAST_COMMIT_MESSAGE" value="Images on homepage now linking to closeups" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/komorebi$Populate.coverage" NAME="Populate Coverage Results" MODIFIED="1647446430489" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
