@@ -45,7 +45,7 @@
 
     <div class="buttons">
         <p>
-            <a href="{% url 'manageUsers:index' %}">Home</a> | 
+            <a href="{% url 'manageUsers:home' %}">Home</a> |
             {% if user.is_authenticated %}
                 <a href="{% url 'manageUsers:myfeed' %}">My Feed</a> | 
                 <a href="{% url 'manageUsers:dashboard' %}">Dashboard</a>  
