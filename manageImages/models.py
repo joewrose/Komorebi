@@ -3,6 +3,9 @@ import uuid
 from django.contrib.auth.models import User
 from django.db import models
 
+from imagekit.models import ImageSpecField
+from imagekit.processors import ResizeToFill
+
 # Create your models here.
 from komorebi.settings import MEDIA_URL
 
@@ -10,6 +13,10 @@ from komorebi.settings import MEDIA_URL
 class Picture(models.Model):
     ID = models.UUIDField(primary_key=True, default=uuid.uuid4())
     image = models.ImageField(upload_to='userImages/', null=False, blank=False)
+    thumbnail = ImageSpecField(source='image',
+                               processors=[ResizeToFill(500,500)],
+                               format='JPEG',
+                               options={'quality':60})
     name = models.CharField(max_length=100)
     time = models.DateTimeField(auto_now_add=True)
     uploadedBy = models.ForeignKey(User, default=None, on_delete=models.CASCADE)
