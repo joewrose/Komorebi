@@ -1,18 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="92635139-2b0c-468d-a396-7cc843e4f390" name="Changes" comment="Pictures from database on homepage">
-      <change afterPath="$PROJECT_DIR$/static/3Length.txt" afterDir="false" />
+    <list default="true" id="92635139-2b0c-468d-a396-7cc843e4f390" name="Changes" comment="Fixed styling on homepage and added stretched link">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/manageImages/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/manageImages/admin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/manageImages/migrations/0001_initial.py" beforeDir="false" afterPath="$PROJECT_DIR$/manageImages/migrations/0001_initial.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/manageImages/migrations/0002_alter_picture_id.py" beforeDir="false" afterPath="$PROJECT_DIR$/manageImages/migrations/0002_alter_picture_id.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/manageImages/migrations/0002_auto_20220306_2111.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/manageImages/migrations/0003_merge_0002_alter_picture_id_0002_auto_20220306_2111.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/manageImages/migrations/0004_auto_20220316_0052.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/manageUsers/migrations/0001_initial.py" beforeDir="false" afterPath="$PROJECT_DIR$/manageUsers/migrations/0001_initial.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/manageUsers/migrations/0002_userextension.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/home.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -161,7 +151,7 @@
       <workItem from="1647282409191" duration="22966000" />
       <workItem from="1647388427897" duration="4433000" />
       <workItem from="1647396699588" duration="1195000" />
-      <workItem from="1647429079207" duration="5487000" />
+      <workItem from="1647429079207" duration="6828000" />
     </task>
     <task id="LOCAL-00001" summary="Added manageImages app">
       <created>1646339740358</created>
@@ -317,7 +307,14 @@
       <option name="project" value="LOCAL" />
       <updated>1647397877594</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="Fixed styling on homepage and added stretched link">
+      <created>1647449172215</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1647449172215</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -359,7 +356,8 @@
     <MESSAGE value="populate.py working for adding images" />
     <MESSAGE value="Populate.py for images and users" />
     <MESSAGE value="Pictures from database on homepage" />
-    <option name="LAST_COMMIT_MESSAGE" value="Pictures from database on homepage" />
+    <MESSAGE value="Fixed styling on homepage and added stretched link" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed styling on homepage and added stretched link" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/komorebi$Populate.coverage" NAME="Populate Coverage Results" MODIFIED="1647446430489" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />

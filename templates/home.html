@@ -168,7 +168,7 @@
                                 </div>
                             </div>
                           </div>
-                    <a href="../closeup/{{ picture.ID }}" class="stretched-link"></a>
+                    <a href="{% url 'manageImages:closeup' picture.ID %}" class="stretched-link"></a>
                     </div>
                     {% endfor %}
                 </div>
