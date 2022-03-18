@@ -6,8 +6,9 @@ import django
 
 django.setup()
 from django.contrib.auth.models import User
-from manageImages.models import Picture, Vote
+from manageImages.models import Picture, Like, Dislike
 from manageUsers.models import Follow
+from random import randint
 import os
 import datetime
 
@@ -45,7 +46,17 @@ def addUser(username, firstname, lastname):
 
 def addPicture(name, image):
     user = User.objects.get(first_name='Holden')
-    p = Picture.objects.get_or_create(ID=uuid.uuid4(),image=image,name=name,uploadedBy=user,time=datetime.datetime.now())[0]
+    picture_ID = uuid.uuid4()
+    p = Picture.objects.get_or_create(ID=picture_ID,image=image,name=name,uploadedBy=user,time=datetime.datetime.now())[0]
+    amountLikes = randint(0,30)
+    amountDislikes = randint(0, 30)
+
+    for i in range(amountLikes):
+        l = Like.objects.get_or_create(user_ID=User.objects.get(username = usernames[i]), picture_ID=Picture.objects.get(ID=picture_ID))
+
+    for i in range(amountDislikes):
+        d = Dislike.objects.get_or_create(user_ID=User.objects.get(username = usernames[i]), picture_ID=Picture.objects.get(ID=picture_ID))
+
     p.save()
 
 

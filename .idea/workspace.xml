@@ -1,30 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="92635139-2b0c-468d-a396-7cc843e4f390" name="Changes" comment="Added thumbnail image generation (needs the install of pillow django-imagekit">
-      <change afterPath="$PROJECT_DIR$/manageImages/migrations/0003_auto_20220318_0012.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/CACHE/images/userImages/-tgTipG2t_g/ac188c9f2cde28f8c51be99e0fa3bf1f.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/CACHE/images/userImages/AHLz7x6SwGs/c29ee5f3c3ad38d54f8f3c7f61cea801.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/CACHE/images/userImages/G9tpRhcdeco/c88cf23ae3e24c8117b94af21a05bce4.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/CACHE/images/userImages/I6Zi8qThgyU/ddd95366190ba2d38e53c63b26dc447a.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/CACHE/images/userImages/Jo4eAb2RWHM/f11eb8fdf5f253ddd0b9a4855faa2777.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/CACHE/images/userImages/Jrvh_F5kEfI/4c9002a0a5e813005145ce69d36eac09.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/CACHE/images/userImages/KtW_wR5kkI4/25c37f1ae9fcde3eb1cac9aeb322d5e4.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/CACHE/images/userImages/Oq-uiNQSlYM/c6b2097b0958b23d42f7fc48a829d098.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/CACHE/images/userImages/PNWQqed8J0s/64678eb79826a695248800451dbef105.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/CACHE/images/userImages/aM9zGJ91hHM/4c927acb96ddc8bee2a7b5d9077862b8.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/CACHE/images/userImages/dSc2aoQmaZk/23f01e8f60e4c83ab8ec856de9a189c5.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/CACHE/images/userImages/db_51OUU-m8/c0c74ab6ecc9c1c4a0077bc50b277d37.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/CACHE/images/userImages/fT79ub9HGLg/2d69856cb87822d3bf2a8152a4a1a6e0.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/CACHE/images/userImages/fyaGpCzYxPE/3468ecde56a4cfaa3640c1034ab002fc.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/CACHE/images/userImages/gXCAsW2AjOI/4e6c4437514600ccc69393f6db5da27c.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/CACHE/images/userImages/jyGzqSCfNeA/1bab5abad9c87ee586feecb10a401b16.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/CACHE/images/userImages/l_Zboz5Y7Es/5298e4510fe21c66d16d7bea8d079c1c.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/CACHE/images/userImages/mtS87Mz_xpc/c2cd433e021f2b4977dd5cc8f212e79a.jpg" afterDir="false" />
+    <list default="true" id="92635139-2b0c-468d-a396-7cc843e4f390" name="Changes" comment="Updated models.py to have separate likes and dislikes objects. Added like and dislike count to home page">
+      <change afterPath="$PROJECT_DIR$/manageImages/migrations/0004_auto_20220318_0027.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/manageImages/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/manageImages/admin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/manageImages/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/manageImages/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/home.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/populate.py" beforeDir="false" afterPath="$PROJECT_DIR$/populate.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -95,7 +75,7 @@
       <recent name="C:\Users\joewr\komorebi\static\fonts" />
     </key>
   </component>
-  <component name="RunManager" selected="Django Server.Komorebi">
+  <component name="RunManager" selected="Python.Populate">
     <configuration name="Populate" type="PythonConfigurationType" factoryName="Python">
       <module name="Komorebi" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -174,7 +154,7 @@
       <workItem from="1647396699588" duration="1195000" />
       <workItem from="1647429079207" duration="8825000" />
       <workItem from="1647467219235" duration="2437000" />
-      <workItem from="1647561808190" duration="1478000" />
+      <workItem from="1647561808190" duration="2350000" />
     </task>
     <task id="LOCAL-00001" summary="Added manageImages app">
       <created>1646339740358</created>
@@ -358,7 +338,14 @@
       <option name="project" value="LOCAL" />
       <updated>1647452320231</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="Updated models.py to have separate likes and dislikes objects. Added like and dislike count to home page">
+      <created>1647563401209</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1647563401211</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -377,7 +364,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Created templates directory and imageCloseup.html" />
     <MESSAGE value="Created image model" />
     <MESSAGE value="Added URL mapping" />
     <MESSAGE value="TODO - Get media files working" />
@@ -402,9 +388,10 @@
     <MESSAGE value="Images on homepage now linking to closeups" />
     <MESSAGE value="Fixed stretched links" />
     <MESSAGE value="Fixed responsive image sizing" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed responsive image sizing" />
+    <MESSAGE value="Updated models.py to have separate likes and dislikes objects. Added like and dislike count to home page" />
+    <option name="LAST_COMMIT_MESSAGE" value="Updated models.py to have separate likes and dislikes objects. Added like and dislike count to home page" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/komorebi$Populate.coverage" NAME="Populate Coverage Results" MODIFIED="1647562397272" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/komorebi$Populate.coverage" NAME="Populate Coverage Results" MODIFIED="1647564154728" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>
