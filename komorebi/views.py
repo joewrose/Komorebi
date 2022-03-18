@@ -1,5 +1,5 @@
 import datetime
-
+from django.db.models import Count
 from django.contrib import messages
 from django.contrib.auth import login
 from django.shortcuts import render, redirect
@@ -9,6 +9,7 @@ from django.shortcuts import render, redirect
 from django.http import HttpResponse
 
 from manageImages.forms import ImageForm, NewUserForm
+from manageImages.models import Picture
 
 
 def about(request):
@@ -18,7 +19,15 @@ def index(request):
     return redirect("/home/")
 
 def home(request):
-    return render(request, "home.html")
+    context_dict = {}
+
+    pictures = Picture.objects.annotate(num_likes=Count('likes')).order_by('-num_likes')[:9]
+
+    for image in pictures:
+        print(image)
+
+    context_dict["pictures"] = pictures
+    return render(request, "home.html", context_dict)
 
 def addimage(request):
     form = ImageForm(request.POST, request.FILES)
