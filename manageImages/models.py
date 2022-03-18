@@ -27,14 +27,20 @@ class Picture(models.Model):
 
 # Model for voting pictures, uses a composite primary key made from the userID and pictureID, this works as the
 # user cannot both like and dislike an image.
-class Vote(models.Model):
-    user_ID = models.ForeignKey(User, on_delete=models.CASCADE)
-    picture_ID = models.ForeignKey(Picture, on_delete=models.CASCADE)
+class Like(models.Model):
+    user_ID = models.ForeignKey(User, on_delete=models.CASCADE, related_name='likes')
+    picture_ID = models.ForeignKey(Picture, on_delete=models.CASCADE, related_name='likes')
     ID = models.UniqueConstraint(fields=['user_ID', 'picture_ID'], name='Composite_Key')
-    like = models.BooleanField(default=True)
 
     def __str__(self):
-        return "User with ID " + str(self.user_ID) + " voted " + self.vote_type + " for photo with ID " + str(
-            self.picture_ID)
+        return "User with ID " + str(self.user_ID) + " liked photo with ID " + str(self.picture_ID)
+
+class Dislike(models.Model):
+    user_ID = models.ForeignKey(User, on_delete=models.CASCADE, related_name='dislikes')
+    picture_ID = models.ForeignKey(Picture, on_delete=models.CASCADE, related_name='dislikes')
+    ID = models.UniqueConstraint(fields=['user_ID', 'picture_ID'], name='Composite_Key')
+
+    def __str__(self):
+        return "User with ID " + str(self.user_ID) + " liked photo with ID " + str(self.picture_ID)
 
 

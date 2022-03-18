@@ -167,12 +167,12 @@
                             </a>
                                 <div class="card-body">
                                 <div class="row">
-                                    <div class="col-7">
+                                    <div class="col-6">
                                         <h5 class="card-title">{{ picture.name }}</h5>
                                     </div>
-                                    <div class="col-5">
-                                        <button type="button" class="btn btn-primary btn-sm likeButton">Like</button>
-                                        <button type="button" class="btn btn-primary btn-sm dislikeButton">Dislike</button>
+                                    <div class="col-6">
+                                        <button type="button" class="btn btn-primary btn-sm likeButton">Likes {{ picture.likes.count }}</button>
+                                        <button type="button" class="btn btn-primary btn-sm dislikeButton">Dislike {{ picture.dislikes.count }}</button>
                                     </div>
                                 </div>
                             </div>
