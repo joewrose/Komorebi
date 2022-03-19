@@ -2,11 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="92635139-2b0c-468d-a396-7cc843e4f390" name="Changes" comment="population script includes adding likes and dislikes, it can be considered finished now">
-      <change afterPath="$PROJECT_DIR$/media/CACHE/images/userImages/ZgM1zGiJUtc/e608781f181431974be2977ace72a61a.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/CACHE/images/userImages/_QS_amcZCZc/2dfa6c3d72ad96428b30f0b0d7ba0710.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/CACHE/images/userImages/_b81pK8Ap9Y/5a9d7516afa8dbb93f82e565564b43cf.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/CACHE/images/userImages/tu5AofU6z_E/a84556063f503cd3320da2ca008009c5.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/manageImages/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/manageImages/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/manageImages/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/manageImages/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/js/manageImage-AJAX.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/manageImage-AJAX.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/home.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -156,7 +156,11 @@
       <workItem from="1647396699588" duration="1195000" />
       <workItem from="1647429079207" duration="8825000" />
       <workItem from="1647467219235" duration="2437000" />
-      <workItem from="1647561808190" duration="3122000" />
+      <workItem from="1647561808190" duration="6428000" />
+      <workItem from="1647645521297" duration="357000" />
+      <workItem from="1647647622687" duration="309000" />
+      <workItem from="1647648309831" duration="1108000" />
+      <workItem from="1647689075981" duration="3142000" />
     </task>
     <task id="LOCAL-00001" summary="Added manageImages app">
       <created>1646339740358</created>
