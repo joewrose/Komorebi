@@ -177,8 +177,10 @@
                                                 data-pictureID="{{ picture.ID }}"
                                                 class="btn btn-primary btn-sm likeButton">
                                             <div id="like-count{{ picture.ID }}">Likes {{ picture.likes.count }}</div></button>
-                                        <button type="button" class="btn btn-primary btn-sm dislikeButton">
-                                            Dislikes {{ picture.dislikes.count }}</button>
+                                        <button type="button"
+                                                data-pictureID="{{ picture.ID }}"
+                                                class="btn btn-primary btn-sm dislikeButton">
+                                            <div id="dislike-count{{ picture.ID }}">Dislikes {{ picture.dislikes.count }}</div></button>
                                     </div>
                                 </div>
                             </div>

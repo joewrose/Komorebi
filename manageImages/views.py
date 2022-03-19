@@ -10,7 +10,7 @@ from manageImages.models import Picture
 from django.views import View
 from django.http import HttpResponse, Http404
 from manageImages.forms import ImageForm, NewUserForm
-from manageImages.models import Like
+from manageImages.models import Like, Dislike
 
 
 def closeup(request, ID):
@@ -73,15 +73,47 @@ class LikePictureView(View):
         except:
             return HttpResponse(-1)
 
-        try:
-            picture.likes.get(user_ID=request.user.id)
-            print("User has already liked this image")
-            return HttpResponse("Likes " + (picture.likes.count()))
-        except:
-            try:
+        if picture.likes.filter(user_ID=request.user.id).exists():
+            print("DELETING LIKE")
+            like = picture.likes.get(user_ID=request.user.id)
+            like.delete()
+        else:
+            print("ADDING LIKE")
+            if picture.dislikes.filter(user_ID=request.user.id).exists():
+                print("DELETING DISLIKE")
                 dislike = picture.dislikes.get(user_ID=request.user.id)
                 dislike.delete()
-            except:
-                like = Like.objects.get_or_create(user_ID=request.user, picture_ID=Picture.objects.get(ID=picture_ID))
+            like = Like.objects.get_or_create(user_ID=request.user, picture_ID=Picture.objects.get(ID=picture_ID))
 
-        return HttpResponse("Likes " + str(picture.likes.count()))
+        votes = "Dislikes " + str(picture.dislikes.count()) + ":Likes " + str(picture.likes.count())
+
+        return HttpResponse(votes)
+
+class DislikePictureView(View):
+    @method_decorator(login_required)
+    def get(self, request):
+        picture_ID = request.GET['picture_id']
+
+        if not request.is_ajax:
+            raise Http404
+
+        try:
+            picture = Picture.objects.get(ID=picture_ID)
+        except:
+            return HttpResponse(-1)
+
+        if picture.dislikes.filter(user_ID=request.user.id).exists():
+            print("DELETING DISLIKE")
+            dislike = picture.dislikes.get(user_ID=request.user.id)
+            dislike.delete()
+        else:
+            print("ADDING DISLIKE")
+            if picture.likes.filter(user_ID=request.user.id).exists():
+                print("DELETING LIKE")
+                like = picture.likes.get(user_ID=request.user.id)
+                like.delete()
+            dislike = Dislike.objects.get_or_create(user_ID=request.user, picture_ID=Picture.objects.get(ID=picture_ID))
+
+        votes = "Dislikes " + str(picture.dislikes.count()) + ":Likes " + str(picture.likes.count())
+
+        return HttpResponse(votes)
