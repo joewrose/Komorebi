@@ -3,6 +3,8 @@ import datetime
 from django.contrib import messages
 from django.contrib.auth import login
 from django.shortcuts import render, redirect
+from manageImages.models import Picture
+from django.db.models import Count
 
 # Create your views here.
 
@@ -14,11 +16,16 @@ from manageImages.forms import ImageForm, NewUserForm
 def index(request):
     return HttpResponse("Welcome to the manageUsers Index page!")
 
-def about(request):
-    return HttpResponse("Welcome to the manageUsers About page!")
-
 def myfeed(request):
-    return HttpResponse("Welcome to the manageUsers My Feed page!")
+    context_dict = {}
+
+    pictures = Picture.objects.annotate(num_likes=Count('likes')).order_by('-num_likes')[:9]
+
+    for image in pictures:
+        print(image)
+
+    context_dict["pictures"] = pictures
+    return render(request, "myfeed.html", context_dict)
 
 def dashboard(request):
     return HttpResponse("Welcome to the manageUsers Dashboard page!")

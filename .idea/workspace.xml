@@ -1,12 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="92635139-2b0c-468d-a396-7cc843e4f390" name="Changes" comment="AJAX With Like count now working">
+    <list default="true" id="92635139-2b0c-468d-a396-7cc843e4f390" name="Changes" comment="AJAX with likes and dislikes.">
+      <change afterPath="$PROJECT_DIR$/static/icons/purpleDislike.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/icons/purpleLike.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/icons/share.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/icons/whiteDislike.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/icons/whiteLike.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/myFeed.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/manageImages/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/manageImages/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/manageImages/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/manageImages/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/js/manageImage-AJAX.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/manageImage-AJAX.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/manageUsers/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/manageUsers/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/manageUsers/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/manageUsers/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/js/main.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/basePage.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/basePage.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/home.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/manageImages/imageCloseup.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/manageImages/imageCloseup.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,8 +30,8 @@
       <list>
         <option value="Python Script" />
         <option value="CSS File" />
-        <option value="HTML File" />
         <option value="JavaScript File" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -160,7 +169,10 @@
       <workItem from="1647645521297" duration="357000" />
       <workItem from="1647647622687" duration="309000" />
       <workItem from="1647648309831" duration="1108000" />
-      <workItem from="1647689075981" duration="9014000" />
+      <workItem from="1647689075981" duration="9625000" />
+      <workItem from="1647716436972" duration="78000" />
+      <workItem from="1647723552348" duration="1221000" />
+      <workItem from="1647737711737" duration="3513000" />
     </task>
     <task id="LOCAL-00001" summary="Added manageImages app">
       <created>1646339740358</created>
@@ -365,7 +377,14 @@
       <option name="project" value="LOCAL" />
       <updated>1647692333267</updated>
     </task>
-    <option name="localTasksCounter" value="30" />
+    <task id="LOCAL-00030" summary="AJAX with likes and dislikes.">
+      <created>1647698301838</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1647698301838</updated>
+    </task>
+    <option name="localTasksCounter" value="31" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -384,7 +403,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="TODO - Get media files working" />
     <MESSAGE value="TODO - Fix UUID" />
     <MESSAGE value="Added adduser functionality (courtesy of ordinarycoders.com)" />
     <MESSAGE value="Added Login functionality via Auth package TODO-fix uploaded file naming" />
@@ -409,7 +427,8 @@
     <MESSAGE value="Updated models.py to have separate likes and dislikes objects. Added like and dislike count to home page" />
     <MESSAGE value="population script includes adding likes and dislikes, it can be considered finished now" />
     <MESSAGE value="AJAX With Like count now working" />
-    <option name="LAST_COMMIT_MESSAGE" value="AJAX With Like count now working" />
+    <MESSAGE value="AJAX with likes and dislikes." />
+    <option name="LAST_COMMIT_MESSAGE" value="AJAX with likes and dislikes." />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/komorebi$Populate.coverage" NAME="Populate Coverage Results" MODIFIED="1647564204684" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />

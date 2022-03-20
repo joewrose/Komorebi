@@ -85,7 +85,7 @@ class LikePictureView(View):
                 dislike.delete()
             like = Like.objects.get_or_create(user_ID=request.user, picture_ID=Picture.objects.get(ID=picture_ID))
 
-        votes = "Dislikes " + str(picture.dislikes.count()) + ":Likes " + str(picture.likes.count())
+        votes = str(picture.dislikes.count()) + ":" + str(picture.likes.count())
 
         return HttpResponse(votes)
 
@@ -114,6 +114,6 @@ class DislikePictureView(View):
                 like.delete()
             dislike = Dislike.objects.get_or_create(user_ID=request.user, picture_ID=Picture.objects.get(ID=picture_ID))
 
-        votes = "Dislikes " + str(picture.dislikes.count()) + ":Likes " + str(picture.likes.count())
+        votes = str(picture.dislikes.count()) + ":" + str(picture.likes.count())
 
         return HttpResponse(votes)
