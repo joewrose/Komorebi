@@ -1,15 +1,83 @@
 <!DOCTYPE html>
+{% extends 'basepage.html' %}
+{% load static %}
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Log In</title>
+    <style>
+        {% block styleblock %}
+            #formDiv {
+                background-color: #a024ff;
+                border-radius: 20px;
+                color: white;
+                font-size: 20px;
+            }
+
+            .submitButton {
+                margin-left: 30px;
+                margin-bottom: 30px;
+                width:150px;
+                display:block
+            }
+
+        {% endblock %}
+
+    </style>
+    <title>
+        komorebi -
+        {% block title_block %}
+            Picture Sharing!
+        {% endblock %}
+    </title>
+
 </head>
 <body>
-<h2>Log In</h2>
-<form method="post">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <button type="submit">Log In</button>
-</form>
+{% block body_block %}
+
+    <div class="container">
+            <div class="row justify-content-center pb-3">
+        <div class="col-4 col-lg-2" style="border-right: 2px solid #a024ff;">
+            <div class="navigation row lightText-Gray justify-content-center"><a style="text-align: center; text-decoration: none;
+                color: inherit;" href="../login/myfeed/" onMouseOver="this.style.color='#a024ff'"
+                                                                                 onMouseOut="this.style.color='black'">My
+                Feed</a></div>
+        </div>
+        <div class="col-4 col-lg-2" style="border-right: 2px solid #a024ff;">
+            <div class="navigation row lightText-Gray justify-content-center"><a style="text-align: center; text-decoration: none;
+                color: inherit;" href="../login/dashboard/" onMouseOver="this.style.color='#a024ff'"
+                                                                                 onMouseOut="this.style.color='black'">Dashboard</a>
+            </div>
+        </div>
+        <div class="col-4 col-lg-2">
+            <div class="navigation row lightText-Gray justify-content-center"><a style="text-align: center; text-decoration: none;
+                color: inherit;" href="../about/" onMouseOver="this.style.color='#a024ff'"
+                                                                                 onMouseOut="this.style.color='black'">About</a>
+            </div>
+        </div>
+        <div class="row justify-content-center lightText-White pt-3">
+            <div class="col-lg-6" id="formDiv">
+                <h1 class="lightText-White pt-4" align="center">Login</h1>
+                <form action="" method=POST>
+                    {% csrf_token %}
+                    <div class="form-group px-4 pt-3 pb-4">
+                        <label for="username">Username</label>
+                        <input type="username" class="form-control" name="username"
+                               placeholder="Enter your email address...">
+                    </div>
+
+                    <div class="form-group px-4 pt-2">
+                        <label for="password">Password</label>
+                        <input type="password" class="form-control" name="password"
+                               placeholder="Enter your password...">
+                    </div>
+                    <button type="submit" value="submit" class="btn btn-default submitButton mt-5" style="background-color: white; colour: #a024ff; ">Submit</button>
+                </form>
+
+
+            </div>
+        </div>
+    </div>
+{% endblock %}
 </body>
 </html>

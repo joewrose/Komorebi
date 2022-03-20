@@ -1,13 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="92635139-2b0c-468d-a396-7cc843e4f390" name="Changes" comment="Worked on createuser form">
-      <change afterPath="$PROJECT_DIR$/media/CACHE/images/userImages/VEiguiZnh-o/8c606239a41938fc69a2c21602f07ae6.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/CACHE/images/userImages/pzQaLSGAYe4/b962603e38ad7b13fac4b9ce5817bee4.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/CACHE/images/userImages/td1tRKLPyuM/87d9e24d7e3e6da8d88803b676b43310.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/icons/upload.png" afterDir="false" />
+    <list default="true" id="92635139-2b0c-468d-a396-7cc843e4f390" name="Changes" comment="More work on createuser form">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/manageUsers/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/manageUsers/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/manageUsers/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/manageUsers/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/addUser.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/addUser.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/basePage.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/basePage.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/home.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/myFeed.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/myFeed.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -164,7 +166,9 @@
       <workItem from="1647689075981" duration="9625000" />
       <workItem from="1647716436972" duration="78000" />
       <workItem from="1647723552348" duration="1221000" />
-      <workItem from="1647737711737" duration="14528000" />
+      <workItem from="1647737711737" duration="14587000" />
+      <workItem from="1647805319419" duration="27000" />
+      <workItem from="1647805453447" duration="3469000" />
     </task>
     <task id="LOCAL-00001" summary="Added manageImages app">
       <created>1646339740358</created>
@@ -397,7 +401,14 @@
       <option name="project" value="LOCAL" />
       <updated>1647792332056</updated>
     </task>
-    <option name="localTasksCounter" value="34" />
+    <task id="LOCAL-00034" summary="More work on createuser form">
+      <created>1647793108890</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1647793108891</updated>
+    </task>
+    <option name="localTasksCounter" value="35" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -416,7 +427,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Added Follow entity and created composite key in Vote entity" />
     <MESSAGE value="Added manageUsers app and fixed earlier mistake with composite key" />
     <MESSAGE value="fixed earlier mistake with composite key" />
     <MESSAGE value="Finished off URLs" />
@@ -441,7 +451,8 @@
     <MESSAGE value="Added Icons to Home + CloseUp pages" />
     <MESSAGE value="Added share button (Use CTRL-F5 to refresh page caching)" />
     <MESSAGE value="Worked on createuser form" />
-    <option name="LAST_COMMIT_MESSAGE" value="Worked on createuser form" />
+    <MESSAGE value="More work on createuser form" />
+    <option name="LAST_COMMIT_MESSAGE" value="More work on createuser form" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/komorebi$Populate.coverage" NAME="Populate Coverage Results" MODIFIED="1647564204684" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
