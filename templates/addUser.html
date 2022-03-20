@@ -14,8 +14,11 @@
                 font-size: 20px;
             }
 
-            h2 {
-                margin: 50px 0
+            .submitButton {
+                margin-left: 30px;
+                margin-bottom: 30px;
+                width:150px;
+                display:block
             }
 
         {% endblock %}
@@ -48,10 +51,7 @@
             <div class="col-lg-6" id="formDiv">
                 <h1 class="lightText-White pt-4" align="center">Create Account</h1>
                 <form>
-                    <div class="form-group px-4 pt-3">
-                        <label for="exampleFormControlTextarea1">Description (Max. 250 Characters)</label>
-                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="5"></textarea>
-                    </div>
+
 
                     <div class="form-group px-4 pt-3">
                         <label for="username">Username</label>
@@ -59,7 +59,7 @@
                                placeholder="Enter your username...">
                     </div>
 
-                    <div class="form-group px-4 pt-3">
+                    <div class="form-group px-4 pt-3 pb-4">
                         <label for="email">Email</label>
                         <input type="email" class="form-control" id="exampleFormControlInput1"
                                placeholder="Enter your email address...">
@@ -82,7 +82,10 @@
 
                 </form>
 
-                <div class="col-11 mx-auto pb-5">
+                <button type="submit" class="btn btn-default submitButton" style="background-color: white; colour: #a024ff; ">Create Account</button>
+
+
+                <div class="col-11 mx-auto ">
                 {% for picture in pictures %}
 
                     <div class="pt-2 pt-lg-2" style="width: 32%; display: inline-block">
@@ -115,7 +118,12 @@
 
                 {% endfor %}
                 </div>
+                <div class="form-group px-4 pt-3 pb-4">
+                        <label for="exampleFormControlTextarea1">Description (Max. 250 Characters)</label>
+                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="5"></textarea>
+                    </div>
 
+            <button type="submit" class="btn btn-default submitButton" style="background-color: white; colour: #a024ff; ">Submit</button>
 
             </div>
         </div>
