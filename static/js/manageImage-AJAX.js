@@ -1,5 +1,4 @@
 $(document).ready(function() {
-
     $('.likeButton').click(function() {
         console.log("LIKE CLICKED");
         var catecategoryIdVar;
@@ -15,7 +14,7 @@ $(document).ready(function() {
             })
     });
 
-    $('.dislikeButton').click(function() {
+    $('.shareButton').click(function() {
         console.log("DISLIKE CLICKED");
         var catecategoryIdVar;
         pictureIdVar = $(this).attr('data-pictureID');
@@ -29,4 +28,13 @@ $(document).ready(function() {
                 $('#dislike-count' + pictureIdVar).html(splitData[0]);
             })
     });
+
+    $('.shareButton').click(function(){
+        pageLink = $(location).attr("href");
+        navigator.clipboard.writeText(pageLink).then(function () {
+            alert('Link copied to clipboard')
+        }, function () {
+            alert("Your browser doesn't support the clipboard API")
+        });
+    })
 });

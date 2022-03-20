@@ -32,7 +32,7 @@ def closeup(request, ID):
         context_dict["Picture"] = None
         context_dict["message"] = "failure"
 
-    return render(request, 'manageImages/imageCloseup.html', context=context_dict)
+    return render(request, 'imageCloseup.html', context=context_dict)
 
 
 def dashboard(request):
