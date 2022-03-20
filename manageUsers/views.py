@@ -11,7 +11,7 @@ from django.db.models import Count
 from django.http import HttpResponse
 
 from manageImages.forms import ImageForm, NewUserForm
-
+from manageImages.models import Picture
 
 def index(request):
     return HttpResponse("Welcome to the manageUsers Index page!")
@@ -20,9 +20,6 @@ def myfeed(request):
     context_dict = {}
 
     pictures = Picture.objects.annotate(num_likes=Count('likes')).order_by('-num_likes')[:9]
-
-    for image in pictures:
-        print(image)
 
     context_dict["pictures"] = pictures
     return render(request, "myfeed.html", context_dict)
@@ -49,6 +46,13 @@ def profile(request):
     return HttpResponse("Welcome to the manageUsers Profile page!")
 
 def create(request):
+
+    context_dict = {}
+
+    pictures = Picture.objects.annotate(num_likes=Count('likes'))[:6]
+
+    context_dict["pictures"] = pictures
+
     if request.method == "POST":
         form = NewUserForm(request.POST)
         if form.is_valid():
@@ -58,4 +62,7 @@ def create(request):
             return redirect("index")
         messages.error(request, "Unsuccessful registration. Invalid information.")
     form = NewUserForm()
-    return render(request, "addUser.html", context={"register_form": form})
+
+    context_dict["register_form"] = form
+
+    return render(request, "addUser.html", context=context_dict)

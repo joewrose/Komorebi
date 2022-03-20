@@ -137,7 +137,9 @@
     <div class="row justify-content-center pb-3">
         <div class="col-4 col-lg-2" style="border-right: 2px solid #a024ff;">
             <div class="navigation row lightText-Gray justify-content-center"><a style="text-align: center; text-decoration: none;
-                color: inherit;" href="../../home/" onMouseOver="this.style.color='#a024ff'"onMouseOut="this.style.color='black'">Home</a></div>
+                color: inherit;" href="../../home/" onMouseOver="this.style.color='#a024ff'"
+                                                                                 onMouseOut="this.style.color='black'">Home</a>
+            </div>
         </div>
         <div class="col-4 col-lg-2" style="border-right: 2px solid #a024ff;">
             <div class="navigation row lightText-Gray justify-content-center"><a style="text-align: center; text-decoration: none;
@@ -174,11 +176,14 @@
                                         <button type="button"
                                                 data-pictureID="{{ picture.ID }}"
                                                 class="btn btn-primary btn-sm likeButton">
-                                            <div id="like-count{{ picture.ID }}">Likes {{ picture.likes.count }}</div></button>
+                                            <div id="like-count{{ picture.ID }}">Likes {{ picture.likes.count }}</div>
+                                        </button>
                                         <button type="button"
                                                 data-pictureID="{{ picture.ID }}"
                                                 class="btn btn-primary btn-sm dislikeButton">
-                                            <div id="dislike-count{{ picture.ID }}">Dislikes {{ picture.dislikes.count }}</div></button>
+                                            <div id="dislike-count{{ picture.ID }}">
+                                                Dislikes {{ picture.dislikes.count }}</div>
+                                        </button>
                                     </div>
                                 </div>
                             </div>

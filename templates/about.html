@@ -1,15 +1,15 @@
 {% extends 'basePage.html' %}
 {% load static %}
 
-{% block title_block %} 
-    About komorebi 
-{% endblock %} 
+{% block title_block %}
+    About komorebi
+{% endblock %}
 
-{% block subtitle_block %} 
-    <h3 style="color: #a024ff">About</h3> 
-{% endblock %} 
+{% block subtitle_block %}
+    <h3 style="color: #a024ff">About</h3>
+{% endblock %}
 
-{% block body_block %} 
+{% block body_block %}
     <style>
         #backing {
             width: 70%;
@@ -18,16 +18,19 @@
             padding: 20px;
             margin: 0 auto;
         }
+
         .text {
-            color: white;    
+            color: white;
         }
+
         .buttons {
             top: 1px;
-            bottom: 25px; 
-            text-align: center;  
+            bottom: 25px;
+            text-align: center;
             font-size: larger;
-            color:#a024ff;
+            color: #a024ff;
         }
+
         .image_grid {
             width: 90%;
             display: inline-grid;
@@ -35,6 +38,7 @@
             grid-template-columns: auto auto auto;
             margin: 0 auto;
         }
+
         .grid_item {
             position: relative;
             display: flex;
@@ -47,19 +51,20 @@
         <p>
             <a href="{% url 'manageUsers:home' %}">Home</a> |
             {% if user.is_authenticated %}
-                <a href="{% url 'manageUsers:myfeed' %}">My Feed</a> | 
-                <a href="{% url 'manageUsers:dashboard' %}">Dashboard</a>  
+                <a href="{% url 'manageUsers:myfeed' %}">My Feed</a> |
+                <a href="{% url 'manageUsers:dashboard' %}">Dashboard</a>
             {% else %}
-                <a href="{% url 'manageUsers:login' %}">Login</a> | 
+                <a href="{% url 'manageUsers:login' %}">Login</a> |
                 <a href="{% url 'manageUsers:create' %}">Create Account</a>
             {% endif %}
-        </p> 
+        </p>
     </div>
 
     <div id="backing">
         <h1 class="text">About Us</h1>
         <p class="text" align="justify">
-            The world internet, and thus the world, is becoming a crowded and ever more connected place. At Komorebi, we want to make it easier to stay quiet in a world that can't stop talking.
+            The world internet, and thus the world, is becoming a crowded and ever more connected place. At Komorebi, we
+            want to make it easier to stay quiet in a world that can't stop talking.
         </p>
         <h2 class="text">Meet the Team</h2>
         <div class="image_grid">

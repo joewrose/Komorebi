@@ -181,11 +181,17 @@
                                         <button type="button"
                                                 data-pictureID="{{ picture.ID }}"
                                                 class="btn btn-default btn-sm likeButton">
-                                            <img src="/static/icons/whiteLike.png" width="35"><div style="display:inline;color: white;font-size: 18px;" class="p-1" id="like-count{{ picture.ID }}">{{ picture.likes.count }}</div ></button>
+                                            <img src="/static/icons/whiteLike.png" width="35">
+                                            <div style="display:inline;color: white;font-size: 18px;" class="p-1"
+                                                 id="like-count{{ picture.ID }}">{{ picture.likes.count }}</div>
+                                        </button>
                                         <button type="button"
                                                 data-pictureID="{{ picture.ID }}"
                                                 class="btn btn-default btn-sm dislikeButton">
-                                            <img src="/static/icons/whiteDislike.png" width="35"><div style="display:inline;color: white;font-size: 18px;" class="p-1" id="dislike-count{{ picture.ID }}">{{ picture.dislikes.count }}</div ></button>
+                                            <img src="/static/icons/whiteDislike.png" width="35">
+                                            <div style="display:inline;color: white;font-size: 18px;" class="p-1"
+                                                 id="dislike-count{{ picture.ID }}">{{ picture.dislikes.count }}</div>
+                                        </button>
                                     </div>
                                 </div>
                             </div>

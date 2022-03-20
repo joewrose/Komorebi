@@ -1,312 +1,125 @@
-
 <!DOCTYPE html>
+{% extends 'basepage.html' %}
 {% load static %}
 
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <style>
-
-            @font-face {
-                font-family: 'hk_grotesklight';
-                src: url("{% static 'fonts/hkgrotesk-light-webfont.woff2' %}") format('woff2'),
-                     url("{% static 'fonts/hkgrotesk-light-webfont.woff' %}") format('woff');
-                font-weight: normal;
-                font-style: normal;
-
-            }
-
-            @font-face {
-                font-family: 'hk_groteskmedium';
-                src: url("{% static 'fonts/hkgrotesk-medium-webfont.woff2' %}") format('woff2'),
-                     url("{% static 'fonts/hkgrotesk-medium-webfont.woff' %}") format('woff');
-                font-weight: normal;
-                font-style: normal;
-
-            }
-
-            #title{
-                font-size: 50px;
-                color: #a024ff;
-                font-family : 'hk_groteskmedium';
-                line-height: 40px;
-            }
-
-            #subtitle{
-                font-size: 24px;
-                colour: light-grey;
-                font-family : 'hk_grotesklight';
-            }
-
-            .header {
-                position: fixed;
-                background: white;
-            }
-
-            .lightText-Gray{
-                font-family  : 'hk_grotesklight';
-                colour: Gainsboro;
-            }
-
-            .mediumText-Gray{
-                font-family  : 'hk_groteskmedium';
-                colour: Gainsboro;
-            }
-
-            .lightText-Purple{
-                font-family  : 'hk_grotesklight';
-                color: #a024ff;
-            }
-
-            .mediumText-Purple{
-                font-family  : 'hk_groteskmedium';
-                color: #a024ff;
-            }
-
-            .card{
-                border-radius: 20%;
-                cursor: pointer;
-            }
-
-            .navigation{
-                font-size:25px;
-            }
-
-            .card-body{
-                background-color : #a024ff;
-                font-family  : 'hk_grotesklight';
+<head>
+    <meta charset="UTF-8">
+    <style>
+        {% block styleblock %}
+            #formDiv {
+                background-color: #a024ff;
+                border-radius: 20px;
                 color: white;
+                font-size: 20px;
             }
 
-
-
-        </style>
-        <title>
-            komorebi -
-            {% block title_block %}
-                Picture Sharing!
-            {% endblock %}
-        </title>
-    <!-- Bootstrap -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
-          integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-    <link rel="stylesheet" href="mystyle.css">
-
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-        <!-- LazyLoading -->
-    <script type="text/javascript" src="//cdn.jsdelivr.net/jquery.lazy/1.7.9/jquery.lazy.min.js">
-        $('.lazy').Lazy({
-            scrollDirection: 'vertical',
-            effect: 'fadeIn',
-            visibleOnly: true,
-            onLoad: function(element){
-                console.log('element loaded');
-            },
-            onError: function(element) {
-                console.log('error loading ' + element.data('src'));
+            h2 {
+                margin: 50px 0
             }
-        });
-        </script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
-            integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
-    <script type="text/javascript" src="//cdn.jsdelivr.net/jquery.lazy/1.7.9/jquery.lazy.plugins.min.js"></script>
-    </head>
-    <body>
 
-        <div class="container">
-            <div class="row justify-content-between pt-3">
-                <div title class="col-xs-12 col-md-4 p-3 ">
-                    <div id="title" class="row">komorebi</div>
-                    <div id="subtitle" class="row">Create Account</div>
-                </div>
-                <div ng-view class="col-lg-3 p-3 col-xs-5">
-                    <div class="row justify-content-center" style="font-size: 30px; color: #a024ff;">Quote of the Day</div>
-                    <div class="row justify-content-center"><div class="col-6"><hr style="color: #a024ff; height:2px; margin-top:2px; margin-bottom:2px;"></div></div>
-                    <div class="row text justify-content-center">Create Account</div>
-                </div>
+        {% endblock %}
+
+    </style>
+    <title>
+        komorebi -
+        {% block title_block %}
+            Picture Sharing!
+        {% endblock %}
+    </title>
+
+</head>
+<body>
+{% block body_block %}
+
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-4 col-lg-2" style="border-right: 2px solid #a024ff;">
+                <div class="navigation row lightText-Gray justify-content-center">Home</div>
             </div>
-            <hr style="color: #a024ff; height:3px;">
-            <div class="row justify-content-center">
-                <div class="col-4 col-lg-2" style="border-right: 2px solid #a024ff;"><div class="navigation row lightText-Gray justify-content-center">Home</div></div>
-                <div class="col-4 col-lg-2" style="border-right: 2px solid #a024ff;"><div class="navigation row lightText-Gray justify-content-center">My Feed</div></div>
-                <div class="col-4 col-lg-2"><div class="navigation row lightText-Gray justify-content-center">Dashboard</div></div>
+            <div class="col-4 col-lg-2" style="border-right: 2px solid #a024ff;">
+                <div class="navigation row lightText-Gray justify-content-center">My Feed</div>
             </div>
-
-            <div class="lazy loading row justify-content-center pt-3 g-0">
-                <div class="col-sm-12 col-md-10">
-                <div class="row g-0">
-                    <div class="col-xs-12 col-lg-4 pt-1 pt-lg-0">
-                        <div class="card mx-lg-1 mx-xs-auto">
-                            <img src="https://picsum.photos/500" class="card-img-top" alt="...">
-                            <div class="card-body">
-                                <div class="row">
-                                    <div class="col-7">
-                                        <h5 class="card-title">Card title</h5>
-                                    </div>
-                                    <div class="col-5">
-                                        <h5>Stats</h5>
-                                    </div>
-                                </div>
-                            </div>
-                          </div>
-                    </div>
-                    <div class="col-xs-12 col-lg-4 pt-1 pt-lg-0">
-                        <div class="card mx-lg-1 mx-xs-auto">
-                            <img src="https://picsum.photos/500" class="card-img-top" alt="...">
-                            <div class="card-body">
-                                <div class="row">
-                                    <div class="col-7">
-                                        <h5 class="card-title">Card title</h5>
-                                    </div>
-                                    <div class="col-5">
-                                        <h5>Stats</h5>
-                                    </div>
-                                </div>
-                            </div>
-                          </div>
-                    </div>
-                    <div class="col-xs-12 col-lg-4 pt-1 pt-lg-0">
-                        <div class="card mx-lg-1 mx-xs-auto">
-                            <img src="https://picsum.photos/500" class="card-img-top" alt="...">
-                            <div class="card-body">
-                                <div class="row">
-                                    <div class="col-7">
-                                        <h5 class="card-title">Card title</h5>
-                                    </div>
-                                    <div class="col-5">
-                                        <h5>Stats</h5>
-                                    </div>
-                                </div>
-                            </div>
-                          </div>
-                    </div>
-                </div>
+            <div class="col-4 col-lg-2">
+                <div class="navigation row lightText-Gray justify-content-center">Dashboard</div>
             </div>
-            </div>
-            <div class="lazy loading row justify-content-center pt-lg-1 g-0">
-                <div class="col-sm-12 col-md-10">
-                <div class="row g-0">
-                    <div class="col-xs-12 col-lg-4 pt-1 pt-lg-0">
-                        <div class="card mx-lg-1 mx-xs-auto">
-                            <img src="https://picsum.photos/500" class="card-img-top" alt="...">
-                            <div class="card-body">
-                                <div class="row">
-                                    <div class="col-7">
-                                        <h5 class="card-title">Card title</h5>
-                                    </div>
-                                    <div class="col-5">
-                                        <h5>Stats</h5>
-                                    </div>
-                                </div>
-                            </div>
-                          </div>
-                    </div>
-                    <div class="col-xs-12 col-lg-4 pt-1 pt-lg-0">
-                        <div class="card mx-lg-1 mx-xs-auto">
-                            <img src="https://picsum.photos/500" class="card-img-top" alt="...">
-                            <div class="card-body">
-                                <div class="row">
-                                    <div class="col-7">
-                                        <h5 class="card-title">Card title</h5>
-                                    </div>
-                                    <div class="col-5">
-                                        <h5>Stats</h5>
-                                    </div>
-                                </div>
-                            </div>
-                          </div>
-                    </div>
-                    <div class="col-xs-12 col-lg-4 pt-1 pt-lg-0">
-                        <div class="card mx-lg-1 mx-xs-auto">
-                            <img src="https://picsum.photos/500" class="card-img-top" alt="...">
-                            <div class="card-body">
-                                <div class="row">
-                                    <div class="col-7">
-                                        <h5 class="card-title">Card title</h5>
-                                    </div>
-                                    <div class="col-5">
-                                        <h5>Stats</h5>
-                                    </div>
-                                </div>
-                            </div>
-                          </div>
-                    </div>
-                </div>
-            </div>
-            </div>
-            <div class="lazy loading row justify-content-center pt-lg-1 g-0">
-                <div class="col-sm-12 col-md-10">
-                <div class="row g-0">
-                    <div class="col-xs-12 col-lg-4 pt-1 pt-lg-0">
-                        <div class="card mx-lg-1 mx-xs-auto">
-                            <img src="https://picsum.photos/500" class="card-img-top" alt="...">
-                            <div class="card-body">
-                                <div class="row">
-                                    <div class="col-7">
-                                        <h5 class="card-title">Card title</h5>
-                                    </div>
-                                    <div class="col-5">
-                                        <h5>Stats</h5>
-                                    </div>
-                                </div>
-                            </div>
-                          </div>
-                    </div>
-                    <div class="col-xs-12 col-lg-4 pt-1 pt-lg-0">
-                        <div class="card mx-lg-1 mx-xs-auto">
-                            <img src="https://picsum.photos/500" class="card-img-top" alt="...">
-                            <div class="card-body">
-                                <div class="row">
-                                    <div class="col-7">
-                                        <h5 class="card-title">Card title</h5>
-                                    </div>
-                                    <div class="col-5">
-                                        <h5>Stats</h5>
-                                    </div>
-                                </div>
-                            </div>
-                          </div>
-                    </div>
-                    <div class="col-xs-12 col-lg-4 pt-1 pt-lg-0">
-                        <div class="card mx-lg-1 mx-xs-auto">
-                            <img src="https://picsum.photos/500" class="card-img-top" alt="...">
-                            <div class="card-body">
-                                <div class="row">
-                                    <div class="col-7">
-                                        <h5 class="card-title">Card title</h5>
-                                    </div>
-                                    <div class="col-5">
-                                        <h5>Stats</h5>
-                                    </div>
-                                </div>
-                            </div>
-                          </div>
-                    </div>
-
-                    <div style="padding: 100px 100px 50px;">
-                        <label for="name">Discription(MAX 250)</label>
-	                        <form class="bs-example bs-example-form" role="form">
-		                        <div class="input-group">
-
-			                        <input type="text" class="form-control" placeholder="Discription">
-		                        </div>
-                                </form>
-                    </div>
-
-                    <div clas="container" style="padding: 100px 50px 10px;" >
-	                    <button type="button" class="btn btn-danger btn-link ">
-		                        Log in with Google
-	                    </button>
-                    </div>
-
-                </div>
-
-
-            </div>
-
         </div>
+        <div class="row justify-content-center lightText-White pt-3">
+            <div class="col-lg-6" id="formDiv">
+                <h1 class="lightText-White pt-4" align="center">Create Account</h1>
+                <form>
+                    <div class="form-group px-4 pt-3">
+                        <label for="exampleFormControlTextarea1">Description (Max. 250 Characters)</label>
+                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="5"></textarea>
+                    </div>
 
+                    <div class="form-group px-4 pt-3">
+                        <label for="username">Username</label>
+                        <input class="form-control" id="exampleFormControlInput1"
+                               placeholder="Enter your username...">
+                    </div>
+
+                    <div class="form-group px-4 pt-3">
+                        <label for="email">Email</label>
+                        <input type="email" class="form-control" id="exampleFormControlInput1"
+                               placeholder="Enter your email address...">
+                    </div>
+
+                    <div class="file-drop-area p-4">
+                        <input class="file-input" type="file" single>
+                    </div>
+                    <div class="form-group px-4 pt-3">
+                        <label for="password">Password</label>
+                        <input type="password" class="form-control" id="exampleFormControlInput1"
+                               placeholder="Enter your password...">
+                    </div>
+
+                    <div class="form-group px-4 pt-3 pb-5">
+                        <label for="password">Re-enter Password</label>
+                        <input type="password" class="form-control" id="exampleFormControlInput1"
+                               placeholder="Re-enter your password...">
+                    </div>
+
+                </form>
+
+                <div class="col-11 mx-auto pb-5">
+                {% for picture in pictures %}
+
+                    <div class="pt-2 pt-lg-2" style="width: 32%; display: inline-block">
+                        <div class="card mt-2">
+                            <img src={{ picture.thumbnail.url }} class="card-img-top" alt="..."
+                                 style="width: 100%; height:200px; object-fit: cover;">
+                            </a>
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-12">
+                                        <button type="button"
+                                                data-pictureID="{{ picture.ID }}"
+                                                class="btn btn-default btn-sm likeButton">
+                                            <img src="/static/icons/purpleLike.png" width="35">
+                                            <div style="display:inline;color: #a024ff;font-size: 12px;"
+                                                 id="like-count{{ picture.ID }}">{{ picture.likes.count }}</div>
+                                        </button>
+                                        <button type="button"
+                                                data-pictureID="{{ picture.ID }}"
+                                                class="btn btn-default btn-sm dislikeButton">
+                                            <img src="/static/icons/purpleDislike.png" width="35">
+                                            <div style="display:inline;color: #a024ff;font-size: 12px;"
+                                                 id="dislike-count{{ picture.ID }}">{{ picture.dislikes.count }}</div>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                {% endfor %}
+                </div>
+
+
+            </div>
+        </div>
     </div>
-
-    </body>
+{% endblock %}
+</body>
 </html>
