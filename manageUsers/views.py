@@ -30,6 +30,15 @@ def myfeed(request):
 def dashboard(request):
     return HttpResponse("Welcome to the manageUsers Dashboard page!")
 
+def home(request):
+    pictures = Picture.objects.orderby('time')
+    current_user = request.user.id
+    login_pictures = Picture.objects.filter(picture.uploaded_by != current_user).orderby('time')
+
+    context = {'pictures': pictures, 'login_pictures': login_pictures}
+    
+    return render(request, 'home.html', context)
+
 def login(request):
     if request.method == "POST":
         username = request.POST['username']
