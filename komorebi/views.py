@@ -18,17 +18,6 @@ def about(request):
 def index(request):
     return redirect("/home/")
 
-def home(request):
-    context_dict = {}
-
-    pictures = Picture.objects.annotate(num_likes=Count('likes')).order_by('-num_likes')[:9]
-
-    for image in pictures:
-        print(image)
-
-    context_dict["pictures"] = pictures
-    return render(request, "home.html", context_dict)
-
 def addimage(request):
     form = ImageForm(request.POST, request.FILES)
     print(form.is_bound)
