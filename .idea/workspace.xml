@@ -4,16 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="92635139-2b0c-468d-a396-7cc843e4f390" name="Changes" comment="More work on createuser form">
-      <change afterPath="$PROJECT_DIR$/templates/default.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+    <list default="true" id="92635139-2b0c-468d-a396-7cc843e4f390" name="Changes" comment="Moved CSS out of all the templates and into an external file">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/addImage.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/addImage.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/addUser.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/addUser.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/basePage.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/basePage.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/imageCloseup.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/imageCloseup.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/myFeed.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/myFeed.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -173,7 +165,8 @@
       <workItem from="1647737711737" duration="14587000" />
       <workItem from="1647805319419" duration="27000" />
       <workItem from="1647805453447" duration="3469000" />
-      <workItem from="1647865058632" duration="1151000" />
+      <workItem from="1647865058632" duration="1941000" />
+      <workItem from="1647962479274" duration="318000" />
     </task>
     <task id="LOCAL-00001" summary="Added manageImages app">
       <created>1646339740358</created>
@@ -413,7 +406,14 @@
       <option name="project" value="LOCAL" />
       <updated>1647793108891</updated>
     </task>
-    <option name="localTasksCounter" value="35" />
+    <task id="LOCAL-00035" summary="Moved CSS out of all the templates and into an external file">
+      <created>1647956219137</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1647956219137</updated>
+    </task>
+    <option name="localTasksCounter" value="36" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -432,7 +432,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Added manageUsers app and fixed earlier mistake with composite key" />
     <MESSAGE value="fixed earlier mistake with composite key" />
     <MESSAGE value="Finished off URLs" />
     <MESSAGE value="Added some bootstrap" />
@@ -457,6 +456,7 @@
     <MESSAGE value="Added share button (Use CTRL-F5 to refresh page caching)" />
     <MESSAGE value="Worked on createuser form" />
     <MESSAGE value="More work on createuser form" />
-    <option name="LAST_COMMIT_MESSAGE" value="More work on createuser form" />
+    <MESSAGE value="Moved CSS out of all the templates and into an external file" />
+    <option name="LAST_COMMIT_MESSAGE" value="Moved CSS out of all the templates and into an external file" />
   </component>
 </project>
