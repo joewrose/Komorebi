@@ -4,79 +4,8 @@
 
 <html lang="en">
 <head>
+    <link href="default.css" rel="stylesheet" type="text/css">
     <meta charset="UTF-8">
-    <style>
-        {% block styleblock %}
-
-        #title {
-            font-size: 50px;
-            color: #a024ff;
-            font-family: 'hk_groteskmedium';
-            line-height: 40px;
-        }
-
-        #subtitle {
-            font-size: 24px;
-            colour: light-grey;
-            font-family: 'hk_grotesklight';
-        }
-
-        .header {
-            position: fixed;
-            background: white;
-        }
-
-        .lightText-Gray {
-            font-family: 'hk_grotesklight';
-            colour: Gainsboro;
-        }
-
-        .lightText-White {
-            font-family: 'hk_grotesklight';
-            colour: white;
-        }
-
-        .mediumText-Gray {
-            font-family: 'hk_groteskmedium';
-            colour: Gainsboro;
-        }
-
-        .lightText-Purple {
-            font-family: 'hk_grotesklight';
-            color: #a024ff;
-        }
-
-        .mediumText-Purple {
-            font-family: 'hk_groteskmedium';
-            color: #a024ff;
-        }
-
-        .card {
-            border-radius: 20%;
-            cursor: pointer;
-        }
-
-        .navigation {
-            font-size: 25px;
-        }
-
-        .card-body {
-            background-color: #a024ff;
-            font-family: 'hk_grotesklight';
-            color: white;
-        }
-
-        #quote {
-            text-align: center;
-        }
-
-        .card .btn {
-            z-index: 2;
-            position: relative;
-        }
-        {% endblock %}
-
-    </style>
     <title>
         komorebi -
         {% block title_block %}
