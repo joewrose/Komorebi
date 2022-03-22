@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+{% extends 'basePage.html' %}
+{% load static %}
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <style>
+        {% block styleblock %}
+
+        #title {
+            font-size: 50px;
+            color: #a024ff;
+            font-family: 'hk_groteskmedium';
+            line-height: 40px;
+        }
+
+        #subtitle {
+            font-size: 24px;
+            colour: light-grey;
+            font-family: 'hk_grotesklight';
+        }
+
+        .header {
+            position: fixed;
+            background: white;
+        }
+
+        .lightText-Gray {
+            font-family: 'hk_grotesklight';
+            colour: Gainsboro;
+        }
+
+        .lightText-White {
+            font-family: 'hk_grotesklight';
+            colour: white;
+        }
+
+        .mediumText-Gray {
+            font-family: 'hk_groteskmedium';
+            colour: Gainsboro;
+        }
+
+        .lightText-Purple {
+            font-family: 'hk_grotesklight';
+            color: #a024ff;
+        }
+
+        .mediumText-Purple {
+            font-family: 'hk_groteskmedium';
+            color: #a024ff;
+        }
+
+        .card {
+            border-radius: 20%;
+            cursor: pointer;
+        }
+
+        .navigation {
+            font-size: 25px;
+        }
+
+        .card-body {
+            background-color: #a024ff;
+            font-family: 'hk_grotesklight';
+            color: white;
+        }
+
+        #quote {
+            text-align: center;
+        }
+
+        .card .btn {
+            z-index: 2;
+            position: relative;
+        }
+        {% endblock %}
+
+    </style>
+    <title>
+        komorebi -
+        {% block title_block %}
+            Picture Sharing!
+        {% endblock %}
+    </title>
+
+</head>
+
+
+<body>
+<div class="container">
+{% block body_block %}
+    <div class="row justify-content-center pb-3">
+        <div class="col-4 col-lg-2" style="border-right: 2px solid #a024ff;">
+            <div class="navigation row lightText-Gray justify-content-center"><a style="text-align: center; text-decoration: none;
+                color: inherit;" href="../login/home/" onMouseOver="this.style.color='#a024ff'"
+                                                                                 onMouseOut="this.style.color='black'">Home
+               </a></div>
+        </div>
+        <div class="col-4 col-lg-2" style="border-right: 2px solid #a024ff;">
+            <div class="navigation row lightText-Gray justify-content-center"><a style="text-align: center; text-decoration: none;
+                color: inherit;" href="../login/myfeed/" onMouseOver="this.style.color='#a024ff'"
+                                                                                 onMouseOut="this.style.color='black'">MyFeed</a>
+            </div>
+        </div>
+        <div class="col-4 col-lg-2">
+            <div class="navigation row lightText-Gray justify-content-center"><a style="text-align: center; text-decoration: none;
+                color: inherit;" href="../about/" onMouseOver="this.style.color='#a024ff'"
+                                                                                 onMouseOut="this.style.color='black'">About</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="container mt-3">
+        <div class="row">
+            <div class="col p-3 bg-white text-white">.<img src="https://static.runoob.com/images/mix/cinqueterre.jpg" class="rounded-circle" alt="Cinque Terre"> </div>
+            <div class="col p-3 bg-white text-#a024ff"><h1>name</h1>
+		    <h2>city</h2>
+	        <h4>discription</h4>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <div class="row justify-content-center pt-lg-1 g-0">
+        <h2 class="my-account-title"> Your Images </h2>
+        <div class="col-sm-12 col-md-10">
+            <div class="row g-0">
+                {% for picture in pictures %}
+
+                    <div class="col-xs-12 col-lg-4 pt-1 pt-lg-0 ">
+                        <div class="card mx-lg-1 mx-xs-auto mt-2">
+                            <a href="{% url 'manageImages:closeup' picture.ID %}" class="stretched-link">
+                                <img src={{ picture.thumbnail.url }} class="card-img-top" alt="..."
+                                     style="width: 100%; height:330px; object-fit: cover;">
+                            </a>
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-5">
+                                        <h5 class="card-title p-2">{{ picture.name }}</h5>
+                                    </div>
+                                    <div class="col-7">
+                                        <button type="button"
+                                                data-pictureID="{{ picture.ID }}"
+                                                class="btn btn-default btn-sm likeButton">
+                                            <img src="/static/icons/whiteLike.png" width="35">
+                                            <div style="display:inline;color: white;font-size: 18px;" class="p-1"
+                                                 id="like-count{{ picture.ID }}">{{ picture.likes.count }}</div>
+                                        </button>
+                                        <button type="button"
+                                                data-pictureID="{{ picture.ID }}"
+                                                class="btn btn-default btn-sm dislikeButton">
+                                            <img src="/static/icons/whiteDislike.png" width="35">
+                                            <div style="display:inline;color: white;font-size: 18px;" class="p-1"
+                                                 id="dislike-count{{ picture.ID }}">{{ picture.dislikes.count }}</div>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+{% endblock %}
+</html>
