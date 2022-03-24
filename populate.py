@@ -12,6 +12,9 @@ from random import randint
 import os
 import datetime
 
+
+from django.contrib.auth import get_user_model
+User = get_user_model()
 directory = os.fsencode('media/userImages/')
 
 paths = []
@@ -42,10 +45,12 @@ def populate():
 
 
 def addUser(username, firstname, lastname):
-    u = User.objects.get_or_create(username=username,first_name=firstname,last_name=lastname,password=uuid.uuid4())
+
+
+    u = User.objects.get_or_create(username=username,email="testEmail@test.com",password=uuid.uuid4())
 
 def addPicture(name, image):
-    user = User.objects.get(first_name='Holden')
+    user = User.objects.get(username=usernames[2])
     picture_ID = uuid.uuid4()
     p = Picture.objects.get_or_create(ID=picture_ID,image=image,name=name,uploadedBy=user,time=datetime.datetime.now())[0]
     amountLikes = randint(0,30)

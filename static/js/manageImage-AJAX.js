@@ -14,7 +14,7 @@ $(document).ready(function() {
             })
     });
 
-    $('.shareButton').click(function() {
+    $('.dislikeButton').click(function() {
         console.log("DISLIKE CLICKED");
         var catecategoryIdVar;
         pictureIdVar = $(this).attr('data-pictureID');

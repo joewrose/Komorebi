@@ -40,6 +40,7 @@ def dashboard(request):
 
 
 def addimage(request):
+
     form = ImageForm(request.POST, request.FILES)
     if form.is_valid():
         picture = form.save(commit=False)
@@ -55,7 +56,8 @@ def addimage(request):
         print("ERROR IN FORM")
         print(form.errors)
     context = {
-        'form': form
+        'form': form,
+        'title':'Add Image'
     }
     return render(request, 'manageImages/addImage.html', context)
 
