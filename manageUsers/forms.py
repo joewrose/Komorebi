@@ -30,3 +30,5 @@ class PostForm(forms.ModelForm):
     class Meta:
         model = CustomUser
         fields = ('username','email','password')
+
+

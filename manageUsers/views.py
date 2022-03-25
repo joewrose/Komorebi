@@ -10,7 +10,7 @@ from django.shortcuts import render, redirect
 from manageImages.models import Picture
 from django.db.models import Count
 from manageUsers.forms import PostForm
-
+from django.contrib.auth.hashers import check_password
 
 # Create your views here.
 
@@ -19,8 +19,10 @@ from django.http import HttpResponse
 from manageImages.forms import ImageForm, NewUserForm
 from manageImages.models import Picture
 
+
 def index(request):
     return HttpResponse("Welcome to the manageUsers Index page!")
+
 
 def myfeed(request):
     if not request.user.is_authenticated:
@@ -34,6 +36,7 @@ def myfeed(request):
     context_dict["title"] = "My Feed"
     return render(request, "myfeed.html", context_dict)
 
+
 def dashboard(request):
     if not request.user.is_authenticated:
         redirect('/home/')
@@ -46,16 +49,16 @@ def dashboard(request):
     else:
         print("NO PICTURES")
 
-
     context_dict['pictures'] = None
     context_dict["title"] = "Dashboard"
     return render(request, "dashboard.html", context=context_dict)
+
 
 def login(request):
     if request.method == "POST":
         username = request.POST['username']
         password = request.POST['password']
-        user = authenticate(request, username=username, password=password)
+        user = authenticate(username=username, password=password)
         if user is not None:
             auth_login(request, user)
             return redirect("myfeed/")
@@ -63,25 +66,36 @@ def login(request):
             messages.success(request, "There was an error logging you in, try again")
             return redirect("login")
 
+
     context_dict = {}
     context_dict["title"] = "My Feed"
     return render(request, "login.html", context=context_dict)
 
-def edit(request):
 
+def edit(request):
     context_dict = {}
     context_dict["title"] = "Edit Profile"
     return HttpResponse("Welcome to the manageUsers Edit page!")
+
 
 def profile(request):
     context_dict = {}
     context_dict["title"] = "Profile"
     return HttpResponse("Welcome to the manageUsers Profile page!")
 
+
 class create(CreateView):
     model = CustomUser
     form_class = PostForm
     template_name = 'addUser.html'
+
+    def form_valid(self, form):
+        user = form.save(commit=False)
+        form.instance.set_password(form.cleaned_data['password'])
+        user.is_active = True
+        user.save()
+        return redirect(self.get_success_url())
+
     def get_success_url(self):
         return reverse('login')
 
