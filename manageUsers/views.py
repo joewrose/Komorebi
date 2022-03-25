@@ -35,15 +35,16 @@ def myfeed(request):
     return render(request, "myfeed.html", context_dict)
 
 def dashboard(request):
+    if not request.user.is_authenticated:
+        redirect('/home/')
     context_dict = {}
 
-    if request.user.is_authenticated:
-        pictures = Picture.objects.filter(uploadedBy=request.user)
-        if pictures:
-            pictures = pictures[:9]
-            context_dict["pictures"] = pictures
-        else:
-            print("NO PICTURES")
+    pictures = Picture.objects.filter(uploadedBy=request.user)
+    if pictures:
+        pictures = pictures[:9]
+        context_dict["pictures"] = pictures
+    else:
+        print("NO PICTURES")
 
 
     context_dict['pictures'] = None

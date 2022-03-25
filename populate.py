@@ -45,8 +45,6 @@ def populate():
 
 
 def addUser(username, firstname, lastname):
-
-
     u = User.objects.get_or_create(username=username,email="testEmail@test.com",password=uuid.uuid4())
 
 def addPicture(name, image):

@@ -7,14 +7,14 @@
     <meta charset="UTF-8">
     <style>
         {% block styleblock %}
-            #profileImage{
+            #profileImage {
                 object-fit: cover;
-                width:230px;
-                height:230px;
+                width: 230px;
+                height: 230px;
                 outline: #a024ff solid 10px;
             }
 
-            .file-drop-area{
+            .file-drop-area {
                 background-color: #a024ff;
                 border-radius: 20px;
                 color: white;
@@ -37,96 +37,107 @@
 
 <body>
 <div class="container">
-{% block body_block %}
-    <div class="row justify-content-center pb-3">
-        <div class="col-4 col-lg-2" style="border-right: 2px solid #a024ff;">
-            <div class="navigation row lightText-Gray justify-content-center"><a style="text-align: center; text-decoration: none;
+    {% block body_block %}
+        <div class="row justify-content-center pb-3">
+            <div class="col-4 col-lg-2" style="border-right: 2px solid #a024ff;">
+                <div class="navigation row lightText-Gray justify-content-center"><a style="text-align: center; text-decoration: none;
                 color: inherit;" href="{% url 'manageUsers:myfeed' %}" onMouseOver="this.style.color='#a024ff'"
-                                                                                 onMouseOut="this.style.color='black'">My
-                Feed</a></div>
-        </div>
-        <div class="col-4 col-lg-2" style="border-right: 2px solid #a024ff;">
-            <div class="navigation row lightText-Gray justify-content-center"><a style="text-align: center; text-decoration: none;
+                                                                                     onMouseOut="this.style.color='black'">My
+                    Feed</a></div>
+            </div>
+            <div class="col-4 col-lg-2" style="border-right: 2px solid #a024ff;">
+                <div class="navigation row lightText-Gray justify-content-center"><a style="text-align: center; text-decoration: none;
                 color: inherit;" href="{% url 'manageUsers:dashboard' %}" onMouseOver="this.style.color='#a024ff'"
-                                                                                 onMouseOut="this.style.color='black'">Dashboard</a>
+                                                                                     onMouseOut="this.style.color='black'">Dashboard</a>
+                </div>
             </div>
-        </div>
-        <div class="col-4 col-lg-2">
-            <div class="navigation row lightText-Gray justify-content-center"><a style="text-align: center; text-decoration: none;
+            <div class="col-4 col-lg-2">
+                <div class="navigation row lightText-Gray justify-content-center"><a style="text-align: center; text-decoration: none;
                 color: inherit;" href="{% url 'about' %}" onMouseOver="this.style.color='#a024ff'"
-                                                                                 onMouseOut="this.style.color='black'">About</a>
+                                                                                     onMouseOut="this.style.color='black'">About</a>
+                </div>
             </div>
         </div>
-    </div>
 
-    <div class="row justify-content-center pt-lg-1 g-0">
-        <div class="col-sm-12 col-md-8">
-            <div class="container mt-3">
-                <div class="row">
-                    <div class="col-4 p-3 bg-white text-white">.<img id=profileImage src="https://static.runoob.com/images/mix/cinqueterre.jpg" class="rounded-circle" alt="Cinque Terre"> </div>
+        <div class="row justify-content-center pt-lg-1 g-0">
+            <div class="col-sm-12 col-md-8">
+                    <div class="row">
+                        <div class="col-xl-4 p-3 bg-white text-white">
+                            <img id=profileImage src="{{ user.profileImage }}" class="rounded-circle">
+                        </div>
+                        <div class="col-xl-8 p-3 bg-white text-#a024ff">
+                            <div class="mediumText-Purple" style="font-size: 45px;display:inline;line-height: 70px;">
+                                {{ user.get_username }}
+                            </div>
+                            <div style="display: inline">
+                                <a href="{% url 'manageUsers:edit' %}" class="stretched-link">
+                                    <img class="pb-3 ml-1" src="{% static 'icons/spanner.png' %}" width="40">
+                                </a>
+                            </div>
+                            <div class="MediumText-Gray">
+                                {{ user.city }}
+                            </div>
+                            <div class="lightText-Gray">
+                                {{ user.description }}
+                            </div>
+                        </div>
 
-                    <div class="col-8 p-3 bg-white text-#a024ff"><div class="mediumText-Purple" style="font-size: 45px;display:inline">{{ user.get_username }}</div>
-                    <div style="display: inline" class="mb-1 ml-1"><img src="{% static 'icons/spanner.png' %}" width="50"></div>
-                        <h2>city</h2>
-                    <h4>discription</h4>
+
+                    </div>
+
+                <div class="file-drop-area mt-5 p-4">
+                    <img class="py-3  mx-3" src="{% static 'icons/upload.png' %}" width="90">
+                    <input class="file-input" type="file" single>
+                </div>
+
+
+                <div class="row justify-content-center pt-lg-1 g-0">
+                    <h2 class="my-account-title"> Your Images </h2>
+                    <div class="col-sm-12 col-md-10">
+                        <div class="row g-0">
+
+                                {% for picture in pictures %}
+
+                                    <div class="col-xs-12 col-lg-4 pt-1 pt-lg-0 ">
+                                        <div class="card mx-lg-1 mx-xs-auto mt-2">
+                                            <a href="{% url 'manageImages:closeup' picture.ID %}"
+                                               class="stretched-link">
+                                                <img src={{ picture.thumbnail.url }} class="card-img-top" alt="..."
+                                                     style="width: 100%; height:330px; object-fit: cover;">
+                                            </a>
+                                            <div class="card-body">
+                                                <div class="row">
+                                                    <div class="col-5">
+                                                        <h5 class="card-title p-2">{{ picture.name }}</h5>
+                                                    </div>
+                                                    <div class="col-7">
+                                                        <button type="button"
+                                                                data-pictureID="{{ picture.ID }}"
+                                                                class="btn btn-default btn-sm likeButton">
+                                                            <img src="/static/icons/whiteLike.png" width="35">
+                                                            <div style="display:inline;color: white;font-size: 18px;"
+                                                                 class="p-1"
+                                                                 id="like-count{{ picture.ID }}">{{ picture.likes.count }}</div>
+                                                        </button>
+                                                        <button type="button"
+                                                                data-pictureID="{{ picture.ID }}"
+                                                                class="btn btn-default btn-sm dislikeButton">
+                                                            <img src="/static/icons/whiteDislike.png" width="35">
+                                                            <div style="display:inline;color: white;font-size: 18px;"
+                                                                 class="p-1"
+                                                                 id="dislike-count{{ picture.ID }}">{{ picture.dislikes.count }}</div>
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                {% endfor %}
+                        </div>
                     </div>
                 </div>
             </div>
 
-            <div class="file-drop-area p-4">
-                <input class="file-input" type="file" single>
-            </div>
-
-
-
-    <div class="row justify-content-center pt-lg-1 g-0">
-        <h2 class="my-account-title"> Your Images </h2>
-        <div class="col-sm-12 col-md-10">
-            <div class="row g-0">
-
-            {% if pictures %}
-                <p>...zzz... you haven't posted any photos yet</p>
-            {% else %}
-                {% for picture in pictures %}
-
-                    <div class="col-xs-12 col-lg-4 pt-1 pt-lg-0 ">
-                        <div class="card mx-lg-1 mx-xs-auto mt-2">
-                            <a href="{% url 'manageImages:closeup' picture.ID %}" class="stretched-link">
-                                <img src={{ picture.thumbnail.url }} class="card-img-top" alt="..."
-                                     style="width: 100%; height:330px; object-fit: cover;">
-                            </a>
-                            <div class="card-body">
-                                <div class="row">
-                                    <div class="col-5">
-                                        <h5 class="card-title p-2">{{ picture.name }}</h5>
-                                    </div>
-                                    <div class="col-7">
-                                        <button type="button"
-                                                data-pictureID="{{ picture.ID }}"
-                                                class="btn btn-default btn-sm likeButton">
-                                            <img src="/static/icons/whiteLike.png" width="35">
-                                            <div style="display:inline;color: white;font-size: 18px;" class="p-1"
-                                                 id="like-count{{ picture.ID }}">{{ picture.likes.count }}</div>
-                                        </button>
-                                        <button type="button"
-                                                data-pictureID="{{ picture.ID }}"
-                                                class="btn btn-default btn-sm dislikeButton">
-                                            <img src="/static/icons/whiteDislike.png" width="35">
-                                            <div style="display:inline;color: white;font-size: 18px;" class="p-1"
-                                                 id="dislike-count{{ picture.ID }}">{{ picture.dislikes.count }}</div>
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                {% endfor %}
-            {% endif %}
-            </div>
-        </div>
-    </div>
-</div>
-
-</body>
-{% endblock %}
+        </body>
+    {% endblock %}
 </html>
