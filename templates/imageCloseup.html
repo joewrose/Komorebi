@@ -5,15 +5,15 @@
 <html lang="en">
 <head>
     <style>
-        .lightText-Purple {
+        {% block styleblock %}
+        .card-body {
+            background-color: white;
             font-family: 'hk_grotesklight';
             color: #a024ff;
         }
 
-        .lightText-Gray {
-            font-family: 'hk_grotesklight';
-            colour: Gainsboro;
-        }
+
+        {% endblock %}
     </style>
 </head>
 <body>
@@ -76,9 +76,9 @@
                             </button>
 
                         </div>
-                        <div class="d-inline-flex lightText-Gray" style="font-size: 25px;colour: Gainsboro;">
-                            Posted By: {{ picture.uploadedBy }}
-                        </div>
+                        <a href="{% url 'manageUsers:profile' picture.uploadedBy.username %}" class="d-inline-flex lightText-Gray" style="font-size: 25px;colour: Gainsboro;text-decoration: inherit;">
+                            Posted By: {{ picture.uploadedBy.username }}
+                        </a>
                     </div>
                 </div>
             </div>

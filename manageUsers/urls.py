@@ -12,5 +12,5 @@ urlpatterns = [
     path('', views.login, name='login'),
     path('create/', views.create.as_view(), name='create'),
     path('dashboard/edit/', views.edit, name='edit'),
-    path('profile/<ID>/', views.profile, name='profile'),
+    path('profile/<username>/', views.profile, name='profile'),
 ]

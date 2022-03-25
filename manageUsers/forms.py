@@ -15,6 +15,16 @@ class PostForm(forms.ModelForm):
         widget=forms.TextInput(attrs={'class': 'form-group mt-3 mb-4','type':'email', 'placeholder':'enter your email...'}),
     )
 
+    city = forms.CharField(
+        label="City",
+        widget=forms.TextInput(attrs={'class': 'form-group mt-3 mb-4', 'placeholder':'enter your username...'}),
+    )
+
+    description = forms.CharField(
+        label="Description",
+        widget=forms.TextInput(attrs={'class': 'form-group mt-3 mb-4', 'placeholder':'enter your username...'}),
+    )
+
     password = forms.CharField(
         label="Password",
         widget=forms.PasswordInput(attrs={'class': 'form-group mt-3 mb-4', 'type':'password','placeholder':'enter your password...'}),
@@ -29,6 +39,6 @@ class PostForm(forms.ModelForm):
 
     class Meta:
         model = CustomUser
-        fields = ('username','email','password')
+        fields = ('username', 'email', 'city', 'description','password')
 
 

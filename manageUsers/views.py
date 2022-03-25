@@ -16,7 +16,7 @@ from django.contrib.auth.hashers import check_password
 
 from django.http import HttpResponse
 
-from manageImages.forms import ImageForm, NewUserForm
+from manageImages.forms import ImageForm
 from manageImages.models import Picture
 
 
@@ -78,10 +78,17 @@ def edit(request):
     return HttpResponse("Welcome to the manageUsers Edit page!")
 
 
-def profile(request):
+def profile(request, username):
     context_dict = {}
+
+    user = CustomUser.objects.get(username=username)
+
+    pictures = Picture.objects.filter(uploadedBy=user)
+
+    context_dict["profileUser"] = user
+    context_dict['pictures'] = pictures
     context_dict["title"] = "Profile"
-    return HttpResponse("Welcome to the manageUsers Profile page!")
+    return render(request, "profile.html", context=context_dict)
 
 
 class create(CreateView):

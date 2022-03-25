@@ -1,6 +1,7 @@
 import datetime
 import uuid
 
+from django.views.generic import CreateView
 from django.contrib.auth.decorators import login_required
 from django.utils.decorators import method_decorator
 from django.contrib import messages
@@ -9,7 +10,7 @@ from django.shortcuts import render, redirect
 from manageImages.models import Picture
 from django.views import View
 from django.http import HttpResponse, Http404
-from manageImages.forms import ImageForm, NewUserForm
+from manageImages.forms import ImageForm
 from manageImages.models import Like, Dislike
 
 
@@ -39,11 +40,22 @@ def dashboard(request):
     return addimage(request)
 
 
-def addimage(request):
+class addImage(CreateView):
+    model = Picture
+    form_class = ImageForm
+    template_name = 'addImage.html'
 
-    form = ImageForm(request.POST, request.FILES)
-    if form.is_valid():
+    def post(self, request, *args, **kwargs):
+        form = self.form_class(request.POST, request.FILES)
+        print(form)
+        if 'picture' in request.FILES:
+            picture.image = request.FILES['image']
+
+        return render(request, self.template_name, {'form': form})
+
+    def form_valid(self, form):
         picture = form.save(commit=False)
+
         print(picture)
         picture.time = datetime.datetime.now()
         picture.id = uuid.uuid4()
@@ -51,16 +63,15 @@ def addimage(request):
         picture.image.upload_to = "/manageImages/" + str(request.user.id) + "/" + str(picture.ID)
         print(picture.image.upload_to)
         picture.save()
-        return redirect("/closeup/")
-    elif request.POST:
-        print("ERROR IN FORM")
-        print(form.errors)
-    context = {
-        'form': form,
-        'title':'Add Image'
-    }
-    return render(request, 'manageImages/addImage.html', context)
+        return redirect(self.get_success_url())
 
+    def get_success_url(self):
+        return reverse(picture.url)
+
+    def get_context_data(self, form=None):
+        context = super().get_context_data()
+        context['title'] = 'Add Image'
+        return context
 
 class LikePictureView(View):
     @method_decorator(login_required)

@@ -1,25 +1,11 @@
 import uuid
-
+from crispy_forms.helper import FormHelper
+from crispy_forms.layout import Submit
 from django import forms
 from django.contrib.auth.forms import UserCreationForm
 
 from manageImages.models import Picture
 from django.contrib.auth.models import User
-
-
-class NewUserForm(UserCreationForm):
-    email = forms.EmailField(required=True)
-
-    class Meta:
-        model = User
-        fields = ("username", "email", "password1", "password2")
-
-    def save(self, commit=True):
-        user = super(NewUserForm, self).save(commit=False)
-        user.email = self.cleaned_data['email']
-        if commit:
-            user.save()
-        return user
 
 
 class ImageForm(forms.ModelForm):
@@ -34,3 +20,43 @@ class ImageForm(forms.ModelForm):
     class Meta:
         model = Picture
         fields = ('name', 'image')
+
+    def __init__(self, *args, **kwargs):
+        super(ImageForm, self).__init__(*args, **kwargs)
+        self.helper = FormHelper()
+        self.helper.add_input(Submit('submit', 'Submit', css_class='btn-primary'))
+        self.helper.form_method = 'POST'
+
+
+class ImageForm(forms.ModelForm):
+
+    name = forms.CharField(
+        label="Name",
+        widget=forms.TextInput(attrs={'class': 'form-group mt-3 mb-4', 'placeholder':'enter your email...'}),
+    )
+
+    image = forms.ImageField(
+        label="Image",
+        widget=forms.ClearableFileInput(attrs={'class': 'form-group mt-3 mb-4','type':'file'}),
+    )
+
+    ID = forms.UUIDField(
+        widget=forms.HiddenInput(attrs={'class': 'form-group mt-3 mb-4', 'placeholder':'enter your username...'}),
+    )
+
+    url = forms.URLField(
+        widget=forms.HiddenInput(attrs={'class': 'form-group mt-3 mb-4', 'placeholder':'enter your username...'}),
+    )
+
+    def __init__(self, *args, **kwargs):
+        super(ImageForm, self).__init__(*args, **kwargs)
+        self.helper = FormHelper()
+        self.helper.add_input(Submit('submit', 'Submit', css_class='btn-primary'))
+        self.helper.form_method = 'POST'
+
+    class Meta:
+        model = Picture
+        fields = ('name', 'image', 'ID', 'url')
+
+
+
