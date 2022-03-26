@@ -1,20 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5d6f2cf7-7719-45fc-bbfb-34ac580da5ed" name="Changes" comment="Added user profile pages TODO: Fix HTTP404 for AJAX and AddImage submission">
-      <change afterPath="$PROJECT_DIR$/media/CACHE/images/userImages/1-HaCaT_cells/47ffd823552e47921aacbb2d3a7290a8.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/CACHE/images/userImages/ATLAS-OF-PLACES-MICHAEL-WOLF-ARCHITECTURE-OF-DENSITY-IMG-3_Np1KemQ_wW80kLN/2c240ead91aa3e1117b3ca46a3381277.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/CACHE/images/userImages/UilhjGO8BiQ/cb16e54ad7fdd18bedc9e47deb328f6b.jpg" afterDir="false" />
+    <list default="true" id="5d6f2cf7-7719-45fc-bbfb-34ac580da5ed" name="Changes" comment="Combined profile and dashboard pages and completed">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/manageImages/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/manageImages/forms.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/manageImages/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/manageImages/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/manageImages/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/manageImages/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/manageUsers/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/manageUsers/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/manageUsers/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/manageUsers/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/addImage.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/addImage.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/dashboard.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/home.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/manageImages/addImage.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/myFeed.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/myFeed.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/manageUsers/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/manageUsers/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/js/manageImage-AJAX.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/manageImage-AJAX.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/profile.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/profile.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -186,7 +178,7 @@
       <workItem from="1648150434477" duration="13928000" />
       <workItem from="1648223357204" duration="23000" />
       <workItem from="1648231547716" duration="12597000" />
-      <workItem from="1648314182835" duration="5640000" />
+      <workItem from="1648314182835" duration="11208000" />
     </task>
     <task id="LOCAL-00001" summary="Added manageImages app">
       <created>1646339740358</created>
@@ -475,7 +467,14 @@
       <option name="project" value="LOCAL" />
       <updated>1648246882200</updated>
     </task>
-    <option name="localTasksCounter" value="42" />
+    <task id="LOCAL-00042" summary="Combined profile and dashboard pages and completed">
+      <created>1648320819781</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1648320819781</updated>
+    </task>
+    <option name="localTasksCounter" value="43" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -511,7 +510,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Bootstrap refinement" />
     <MESSAGE value="Added windows size responsiveness" />
     <MESSAGE value="Fixed Fonts + formatting" />
     <MESSAGE value="Added anchors to home page" />
@@ -536,7 +534,8 @@
     <MESSAGE value="work on the default image and dashboard.html" />
     <MESSAGE value="Custom User Model Working" />
     <MESSAGE value="Added user profile pages TODO: Fix HTTP404 for AJAX and AddImage submission" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added user profile pages TODO: Fix HTTP404 for AJAX and AddImage submission" />
+    <MESSAGE value="Combined profile and dashboard pages and completed" />
+    <option name="LAST_COMMIT_MESSAGE" value="Combined profile and dashboard pages and completed" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/komorebi$Populate.coverage" NAME="Populate Coverage Results" MODIFIED="1648163468333" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />

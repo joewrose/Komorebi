@@ -1,7 +1,6 @@
 $(document).ready(function() {
     $('.likeButton').click(function() {
         console.log("LIKE CLICKED");
-        var catecategoryIdVar;
         pictureIdVar = $(this).attr('data-pictureID');
 
         $.get('/like_picture/',
@@ -16,7 +15,6 @@ $(document).ready(function() {
 
     $('.dislikeButton').click(function() {
         console.log("DISLIKE CLICKED");
-        var catecategoryIdVar;
         pictureIdVar = $(this).attr('data-pictureID');
 
         $.get('/dislike_picture/',
@@ -37,4 +35,17 @@ $(document).ready(function() {
             alert("Your browser doesn't support the clipboard API")
         });
     })
+
+    $('.followButton').click(function() {
+        console.log("FOLLOW CLICKED");
+        userVar = $(this).attr('data-user');
+
+        $.get('/login/follow/',
+            {'user': userVar},
+            function(data) {
+                console.log(data);
+                $('#buttontext').html(data);
+            })
+    });
+
 });

@@ -78,6 +78,9 @@
                                             <img class="pb-3 ml-1" src="{% static 'icons/spanner.png' %}" width="40">
                                         </a>
                                     </div>
+                                {% else %}
+                                    <button type="button" data-user="{{ profileUser.id }}" class="btn btn-primary followButton"><div id="buttontext">
+                                        {{ buttontext }}</div></button>
                                 {% endif %}
                                 <div style="display: inline">
                                 </div>

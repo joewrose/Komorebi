@@ -25,10 +25,3 @@ class Follow(models.Model):
 
     def __str__(self):
         return "User with ID " + str(self.follower_ID) + " followed user with ID" + str(self.followed_ID)
-
-
-# class UserExtension(models.Model):
-#     user = models.OneToOneField(User, on_delete=models.CASCADE)
-#     profileImage = models.ImageField(default='userImages/profileImages/default.jpg', upload_to='userImages/profileImages', null=False, blank=False)
-#     city = models.CharField(max_length=100)
-#     description = models.CharField(max_length=1000)

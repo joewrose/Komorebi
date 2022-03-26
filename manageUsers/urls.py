@@ -12,4 +12,5 @@ urlpatterns = [
     path('create/', views.create.as_view(), name='create'),
     path('dashboard/edit/', views.edit, name='edit'),
     path('profile/<username>/', views.profile, name='profile'),
+    path('follow/', views.follow.as_view(), name='follow'),
 ]

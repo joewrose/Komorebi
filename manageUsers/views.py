@@ -3,7 +3,7 @@ from .models import CustomUser
 from django.urls import reverse
 from django.views.generic import CreateView
 from django.contrib import messages
-from manageUsers.models import User
+from manageUsers.models import CustomUser, Follow
 from django.contrib.auth import authenticate, logout
 from django.contrib.auth import login as auth_login
 from django.shortcuts import render, redirect
@@ -11,7 +11,10 @@ from manageImages.models import Picture
 from django.db.models import Count
 from manageUsers.forms import PostForm
 from django.contrib.auth.hashers import check_password
-
+from django.views import View
+from django.utils.decorators import method_decorator
+from django.contrib.auth.decorators import login_required
+from django.core.exceptions import ObjectDoesNotExist
 # Create your views here.
 
 from django.http import HttpResponse
@@ -81,13 +84,24 @@ def edit(request):
 def profile(request, username):
     context_dict = {}
 
+
+
+
     user = CustomUser.objects.get(username=username)
+
+    try:
+        follow = Follow.objects.get(followed_ID=user, follower_ID=request.user)
+        buttonText = "Following"
+    except ObjectDoesNotExist:
+        buttonText = "Follow"
+
 
     pictures = Picture.objects.filter(uploadedBy=user)
 
     context_dict["profileUser"] = user
     context_dict['pictures'] = pictures
     context_dict["title"] = "Profile"
+    context_dict["buttontext"] = buttonText
     return render(request, "profile.html", context=context_dict)
 
 
@@ -110,3 +124,24 @@ class create(CreateView):
         context = super().get_context_data()
         context['title'] = 'Create Account'
         return context
+
+class follow(View):
+    @method_decorator(login_required)
+    def get(self, request):
+        print("GET")
+        user = CustomUser.objects.get(id=request.GET['user'])
+
+        if not request.is_ajax:
+            raise Http404
+
+        try:
+            follow = Follow.objects.get(followed_ID=user, follower_ID=request.user)
+            print("DELETING FOLLOW")
+            follow.delete()
+            buttonText = "Follow"
+        except ObjectDoesNotExist:
+            print("FOLLOWING")
+            follow = Follow.objects.get_or_create(follower_ID=request.user, followed_ID=user)
+            buttonText = "Following"
+
+        return HttpResponse(buttonText)
