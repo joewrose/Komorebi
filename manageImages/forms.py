@@ -32,7 +32,7 @@ class ImageForm(forms.ModelForm):
 
     name = forms.CharField(
         label="Name",
-        widget=forms.TextInput(attrs={'class': 'form-group mt-3 mb-4', 'placeholder':'enter your email...'}),
+        widget=forms.TextInput(attrs={'class': 'form-group mt-3 mb-4', 'placeholder':'Enter name of image...'}),
     )
 
     image = forms.ImageField(
@@ -41,11 +41,13 @@ class ImageForm(forms.ModelForm):
     )
 
     ID = forms.UUIDField(
-        widget=forms.HiddenInput(attrs={'class': 'form-group mt-3 mb-4', 'placeholder':'enter your username...'}),
+        required=False,
+        widget=forms.HiddenInput(attrs={'class': 'form-group mt-3 mb-4'}),
     )
 
     url = forms.URLField(
-        widget=forms.HiddenInput(attrs={'class': 'form-group mt-3 mb-4', 'placeholder':'enter your username...'}),
+        required=False,
+        widget=forms.HiddenInput(attrs={'class': 'form-group mt-3 mb-4'}),
     )
 
     def __init__(self, *args, **kwargs):
@@ -56,7 +58,7 @@ class ImageForm(forms.ModelForm):
 
     class Meta:
         model = Picture
-        fields = ('name', 'image', 'ID', 'url')
+        fields = ('name', 'image', 'ID', 'url',)
 
 
 

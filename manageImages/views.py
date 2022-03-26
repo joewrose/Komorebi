@@ -1,6 +1,7 @@
 import datetime
 import uuid
-
+from django.urls import reverse
+from django.contrib.auth.mixins import LoginRequiredMixin
 from django.views.generic import CreateView
 from django.contrib.auth.decorators import login_required
 from django.utils.decorators import method_decorator
@@ -40,38 +41,32 @@ def dashboard(request):
     return addimage(request)
 
 
-class addImage(CreateView):
+class addImage(CreateView, LoginRequiredMixin):
     model = Picture
     form_class = ImageForm
     template_name = 'addImage.html'
 
-    def post(self, request, *args, **kwargs):
-        form = self.form_class(request.POST, request.FILES)
-        print(form)
-        if 'picture' in request.FILES:
-            picture.image = request.FILES['image']
-
-        return render(request, self.template_name, {'form': form})
-
     def form_valid(self, form):
+        print("VALID FORM")
         picture = form.save(commit=False)
 
-        print(picture)
         picture.time = datetime.datetime.now()
-        picture.id = uuid.uuid4()
-        picture.uploadedBy = request.user
-        picture.image.upload_to = "/manageImages/" + str(request.user.id) + "/" + str(picture.ID)
+        picture.ID = uuid.uuid4()
+        print(picture.ID)
+        picture.uploadedBy = self.request.user
+        picture.image.upload_to = "/manageImages/" + str(self.request.user.id) + "/" + str(picture.ID)
         print(picture.image.upload_to)
         picture.save()
         return redirect(self.get_success_url())
 
     def get_success_url(self):
-        return reverse(picture.url)
+        return reverse('manageUsers:dashboard')
 
     def get_context_data(self, form=None):
         context = super().get_context_data()
         context['title'] = 'Add Image'
         return context
+
 
 class LikePictureView(View):
     @method_decorator(login_required)
@@ -101,6 +96,7 @@ class LikePictureView(View):
         votes = str(picture.dislikes.count()) + ":" + str(picture.likes.count())
 
         return HttpResponse(votes)
+
 
 class DislikePictureView(View):
     @method_decorator(login_required)

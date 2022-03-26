@@ -23,7 +23,7 @@ class Picture(models.Model):
     uploadedBy = models.ForeignKey(CustomUser, default=None, on_delete=models.CASCADE)
 
     def __str__(self):
-        return "ID: " + str(self.ID) + " name: " + self.name
+        return "name: " + self.name + " ID: " + str(self.ID)
 
 
 # Model for voting pictures, uses a composite primary key made from the userID and pictureID, this works as the
