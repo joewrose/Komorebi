@@ -69,14 +69,12 @@ def login(request):
             messages.success(request, "There was an error logging you in, try again")
             return redirect("login")
 
-
     context_dict = {}
     context_dict["title"] = "My Feed"
     return render(request, "login.html", context=context_dict)
 
 
 class edit(CreateView):
-
     model = CustomUser
     form_class = EditForm
     template_name = 'editUser.html'
@@ -101,7 +99,6 @@ class edit(CreateView):
         return context
 
 
-
 def profile(request, username):
     context_dict = {}
 
@@ -112,7 +109,6 @@ def profile(request, username):
         buttonText = "Following"
     except ObjectDoesNotExist:
         buttonText = "Follow"
-
 
     pictures = Picture.objects.filter(uploadedBy=user)
 
@@ -143,6 +139,7 @@ class create(CreateView):
         context['title'] = 'Create Account'
         return context
 
+
 class follow(View):
     @method_decorator(login_required)
     def get(self, request):
@@ -163,3 +160,11 @@ class follow(View):
             buttonText = "Following"
 
         return HttpResponse(buttonText)
+
+
+@login_required
+def userdelete(request):
+    u = CustomUser.objects.get(username=request.user.username)
+    u.delete()
+    messages.success(request, "The user is deleted")
+    return redirect('/home/')

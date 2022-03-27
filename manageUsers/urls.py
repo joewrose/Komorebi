@@ -1,6 +1,7 @@
-from django.urls import path, include
+from django.urls import path, include,re_path
 from . import views
 from django.contrib.auth.views import LogoutView
+from django.contrib import admin
 
 app_name = "manageUsers"
 
@@ -13,4 +14,5 @@ urlpatterns = [
     path('edit/', views.edit.as_view(), name='edit'),
     path('profile/<username>/', views.profile, name='profile'),
     path('follow/', views.follow.as_view(), name='follow'),
+    path('deleteuser/', views.userdelete, name='userdelete'),
 ]
