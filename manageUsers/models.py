@@ -7,7 +7,7 @@ from django.db import models
 
 class CustomUser(AbstractUser):
     email = models.EmailField()
-    profileImage = models.ImageField(default='/media/userImages/profileImages/default.jpg', upload_to='userImages/profileImages', null=False, blank=False)
+    profileImage = models.ImageField(default='userImages/profileImages/default.jpg', upload_to='userImages/profileImages', null=False, blank=False)
     city = models.CharField(max_length=100)
     description = models.CharField(max_length=1000)
 

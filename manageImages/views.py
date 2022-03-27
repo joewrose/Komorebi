@@ -52,10 +52,8 @@ class addImage(CreateView, LoginRequiredMixin):
 
         picture.time = datetime.datetime.now()
         picture.ID = uuid.uuid4()
-        print(picture.ID)
         picture.uploadedBy = self.request.user
         picture.image.upload_to = "/manageImages/" + str(self.request.user.id) + "/" + str(picture.ID)
-        print(picture.image.upload_to)
         picture.save()
         return redirect(self.get_success_url())
 

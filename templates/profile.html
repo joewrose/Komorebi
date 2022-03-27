@@ -65,7 +65,7 @@
                     <div class="col-md-10">
                         <div class="row pt-5 pb-5">
                             <div class="col-xl-4 p-3 bg-white text-white">
-                                <img id=profileImage src="{{ profileUser.profileImage }}" class="rounded-circle">
+                                <img id=profileImage src="/media/{{ profileUser.profileImage }}" class="rounded-circle">
                             </div>
                             <div class="col-xl-8 p-3 bg-white text-#a024ff">
                                 <div class="mediumText-Purple"
@@ -92,7 +92,7 @@
                                 </div>
                             </div>
                                 {% if profileUser.get_username == user.get_username %}
-                                    <a href="{% url 'manageImages:addimage' %}" class="stretched-link">
+                                    <a href="{% url 'manageImages:addimage' %}">
                                         <div class="file-drop-area mt-5 p-4">
                                             <div class="lightText-White" style="font-size: 40px;text-decoration: inherit;">Add a new post</div>
                                         </div>

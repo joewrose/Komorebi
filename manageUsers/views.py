@@ -9,7 +9,7 @@ from django.contrib.auth import login as auth_login
 from django.shortcuts import render, redirect
 from manageImages.models import Picture
 from django.db.models import Count
-from manageUsers.forms import PostForm
+from manageUsers.forms import PostForm, EditForm
 from django.contrib.auth.hashers import check_password
 from django.views import View
 from django.utils.decorators import method_decorator
@@ -75,17 +75,35 @@ def login(request):
     return render(request, "login.html", context=context_dict)
 
 
-def edit(request):
-    context_dict = {}
-    context_dict["title"] = "Edit Profile"
-    return HttpResponse("Welcome to the manageUsers Edit page!")
+class edit(CreateView):
+
+    model = CustomUser
+    form_class = EditForm
+    template_name = 'editUser.html'
+
+    def form_valid(self, form):
+        formUser = form.save(commit=False)
+        user = CustomUser.objects.get(username=self.request.user.username)
+        user.email = formUser.email
+        user.profileImage = formUser.profileImage
+        user.city = formUser.city
+        user.description = formUser.description
+        form.instance.set_password(form.cleaned_data['password'])
+        user.save()
+        return redirect(self.get_success_url())
+
+    def get_success_url(self):
+        return reverse('login')
+
+    def get_context_data(self, form=None):
+        context = super().get_context_data()
+        context["title"] = "Edit Profile"
+        return context
+
 
 
 def profile(request, username):
     context_dict = {}
-
-
-
 
     user = CustomUser.objects.get(username=username)
 
