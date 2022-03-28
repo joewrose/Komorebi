@@ -8,7 +8,7 @@ from django.shortcuts import render, redirect
 
 from django.http import HttpResponse
 
-from manageImages.forms import ImageForm, NewUserForm
+from manageImages.forms import ImageForm
 from manageImages.models import Picture
 
 

@@ -1,15 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5d6f2cf7-7719-45fc-bbfb-34ac580da5ed" name="Changes" comment="Edit Profile Functionality implemented">
+    <list default="true" id="5d6f2cf7-7719-45fc-bbfb-34ac580da5ed" name="Changes" comment="Delete Account implemented">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/manageUsers/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/manageUsers/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/manageUsers/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/manageUsers/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/addUser.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/addUser.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/editUser.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/editUser.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/home.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/myFeed.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/myFeed.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -181,7 +174,8 @@
       <workItem from="1648223357204" duration="23000" />
       <workItem from="1648231547716" duration="12597000" />
       <workItem from="1648314182835" duration="12702000" />
-      <workItem from="1648410256764" duration="6893000" />
+      <workItem from="1648410256764" duration="6992000" />
+      <workItem from="1648504046428" duration="1106000" />
     </task>
     <task id="LOCAL-00001" summary="Added manageImages app">
       <created>1646339740358</created>
@@ -491,7 +485,14 @@
       <option name="project" value="LOCAL" />
       <updated>1648415896070</updated>
     </task>
-    <option name="localTasksCounter" value="45" />
+    <task id="LOCAL-00045" summary="Delete Account implemented">
+      <created>1648418072742</created>
+      <option name="number" value="00045" />
+      <option name="presentableId" value="LOCAL-00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1648418072743</updated>
+    </task>
+    <option name="localTasksCounter" value="46" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -527,7 +528,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Added anchors to home page" />
     <MESSAGE value="Added image closeup Pages + general fixes" />
     <MESSAGE value="More styling in closeup page" />
     <MESSAGE value="populate.py working for adding images" />
@@ -552,7 +552,8 @@
     <MESSAGE value="Combined profile and dashboard pages and completed" />
     <MESSAGE value="Following functionality implemented" />
     <MESSAGE value="Edit Profile Functionality implemented" />
-    <option name="LAST_COMMIT_MESSAGE" value="Edit Profile Functionality implemented" />
+    <MESSAGE value="Delete Account implemented" />
+    <option name="LAST_COMMIT_MESSAGE" value="Delete Account implemented" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/komorebi$Populate.coverage" NAME="Populate Coverage Results" MODIFIED="1648163468333" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />

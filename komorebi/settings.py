@@ -19,7 +19,10 @@ STATIC_DIR = os.path.join(BASE_DIR, 'static/')
 MEDIA_DIR = os.path.join(BASE_DIR, 'media/')
 MEDIA_ROOT = MEDIA_DIR
 
+LOGIN_URL = 'login'
+
 LOGIN_REDIRECT_URL = '/dashboard/'
+LOGOUT_REDIRECT_URL = '/home/'
 STATIC_URL = '/static/'
 MEDIA_URL = '/media/'
 
@@ -33,6 +36,7 @@ SECRET_KEY = 'django-insecure-9h94=rs1zm%6*hn=7a8je=wik@(i%b6_bv((x_hyj0bm7t_@)v
 DEBUG = True
 
 ALLOWED_HOSTS = []
+AUTH_USER_MODEL = 'manageUsers.CustomUser'
 
 
 # Application definition
@@ -46,7 +50,10 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'manageImages',
     'manageUsers',
+    'crispy_forms',
 ]
+
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
