@@ -58,7 +58,7 @@ class addImage(CreateView, LoginRequiredMixin):
         return redirect(self.get_success_url())
 
     def get_success_url(self):
-        return reverse('manageUsers:dashboard')
+        return reverse('home')
 
     def get_context_data(self, form=None):
         context = super().get_context_data()

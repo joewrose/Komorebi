@@ -52,7 +52,7 @@
             <a href="{% url 'manageUsers:home' %}">Home</a> |
             {% if user.is_authenticated %}
                 <a href="{% url 'manageUsers:myfeed' %}">My Feed</a> |
-                <a href="{% url 'manageUsers:dashboard' %}">Dashboard</a>
+                <a href="{% url 'manageUsers:profile' request.user.get_username %}">Dashboard</a>
             {% else %}
                 <a href="{% url 'manageUsers:login' %}">Login</a> |
                 <a href="{% url 'manageUsers:create' %}">Create Account</a>
