@@ -7,7 +7,7 @@ from manageUsers.models import CustomUser, Follow
 from django.contrib.auth import authenticate, logout
 from django.contrib.auth import login as auth_login
 from django.shortcuts import render, redirect
-from manageImages.models import Picture
+from manageImages.models import Picture, Like, Dislike
 from django.db.models import Count
 from manageUsers.forms import PostForm, EditForm
 from django.contrib.auth.hashers import check_password
@@ -27,17 +27,84 @@ def index(request):
     return HttpResponse("Welcome to the manageUsers Index page!")
 
 
+# def myfeed(request):
+#     if not request.user.is_authenticated:
+#         redirect('/home/')
+#
+#     context_dict = {}
+#
+#     pictures = Picture.objects.annotate(num_likes=Count('likes')).order_by('-num_likes')[:9]
+#
+#     context_dict["pictures"] = pictures
+#     context_dict["title"] = "My Feed"
+#     return render(request, "myfeed.html", context_dict)
+
+
 def myfeed(request):
+    to_recommend = []
+
     if not request.user.is_authenticated:
-        redirect('/home/')
+        redirect('/home')
 
-    context_dict = {}
+    else:
+        current_user = request.user
+        current_user_liked = Like.objects.values('picture_ID').filter(user_ID=current_user)
+        current_user_disliked = Dislike.objects.values('picture_ID').filter(user_ID=current_user)
 
-    pictures = Picture.objects.annotate(num_likes=Count('likes')).order_by('-num_likes')[:9]
+        # if the current user has liked less than 5 pictures, return None value
+        if len(current_user_liked) < 5:
+            context_dict = {'myfeed_pictures': None}
 
-    context_dict["pictures"] = pictures
-    context_dict["title"] = "My Feed"
-    return render(request, "myfeed.html", context_dict)
+        else:
+            # create list for the recommended pictures
+
+            # get list of users
+            users = CustomUser.objects.all()
+            users_checked = 0
+
+            for us in users:
+                # stop after pictures from 30 users has been added
+                if users_checked <= 30:
+                    if us != current_user:
+                        user_likes = Like.objects.values('picture_ID').filter(user_ID=us)
+                        if len(user_likes) > 5:
+                            similar = 0
+                            # get the amount of pictures that have been liked by both
+                            for pic in user_likes:
+                                if pic in current_user_liked:
+                                    similar += 1
+                            print(len(user_likes))
+
+
+
+                            # if the amount of pictures liked by both is a least a third of the current user's liked pictures
+                            # add to 'to_recommend' list as long as the picture is not:
+                            # already in 'to_recommend', already been liked by the current user, already been disliked by the current user
+
+
+
+                            for picture in user_likes:
+                                print("IMAGES")
+                                pict = Picture.objects.filter(ID=picture['picture_ID'])
+                                print(pict)
+                                if (pict not in to_recommend) and (pict not in current_user_liked) and (pict not in current_user_disliked):
+                                    to_recommend.append(pict)
+                                    print(pict)
+                                    users_checked += 1
+                    else:
+                        continue
+                else:
+                    break
+
+
+        print(to_recommend)
+        # check if list contains pictures
+        if to_recommend == []:
+            context_dict = {'pictures': "empty"}
+        else:
+            context_dict = {'pictures': to_recommend}
+
+        return render(request, 'myfeed.html', context=context_dict)
 
 
 def dashboard(request):
