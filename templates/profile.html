@@ -60,7 +60,7 @@ Profile
             <h2 class="my-account-title mediumText-Gray">{{ profileUser.get_username }}'s Images</h2>
             <div class="col-sm-12">
                 <div class="row g-0">
-                    {% for picture in profile_pictures %}
+                    {% for picture in pictures %}
                     <div class="col-xs-12 col-lg-4 pt-1 pt-lg-0 ">
                         <div class="card mx-lg-1 mx-xs-auto mt-2">
                             <a href="{% url 'manageImages:closeup' picture.ID %}" class="stretched-link">
