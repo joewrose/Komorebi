@@ -1,4 +1,5 @@
 {% extends 'basePage.html' %}
+{% load static %}
 {% load staticfiles %}
 
 {% block title_block %}
@@ -10,41 +11,6 @@ Home
 {% endblock %}
 
 {% block body_block %}
-{% if user.is_authenticated %}
-<div class="row justify-content-center pt-lg-1 g-0">
-    <div class="col-sm-12 col-md-10">
-        <div class="row g-0">
-            {% for picture in login_pictures %}
-            <div class="col-xs-12 col-lg-4 pt-1 pt-lg-0 ">
-                <div class="card mx-lg-1 mx-xs-auto mt-2">
-                    <a href="{% url 'manageImages:closeup' picture.ID %}" class="stretched-link">
-                        <img src={{ picture.thumbnail.url }} class="card-img-top" alt="..."
-                            style="width: 100%; height:330px; object-fit: cover;">
-                    </a>
-                    <div class="card-body">
-                        <div class="row">
-                            <div class="col-6">
-                                <h5 class="card-title">{{ picture.name }}</h5>
-                            </div>
-                            <div class="col-6">
-                                <button type="button" data-pictureID="{{ picture.ID }}"
-                                    class="btn btn-primary btn-sm likeButton">
-                                    <div id="like-count{{ picture.ID }}">Likes {{ picture.likes.count }}</div>
-                                </button>
-                                <button type="button" data-pictureID="{{ picture.ID }}"
-                                    class="btn btn-primary btn-sm dislikeButton">
-                                    <div id="dislike-count{{ picture.ID }}">Dislikes {{ picture.dislikes.count }}</div>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            {% endfor %}
-        </div>
-    </div>
-</div>
-{% else %}
 <div class="row justify-content-center pt-lg-1 g-0">
     <div class="col-sm-12 col-md-10">
         <div class="row g-0">
@@ -52,7 +18,7 @@ Home
             <div class="col-xs-12 col-lg-4 pt-1 pt-lg-0 ">
                 <div class="card mx-lg-1 mx-xs-auto mt-2">
                     <a href="{% url 'manageImages:closeup' picture.ID %}" class="stretched-link">
-                        <img src={{ picture.thumbnail.url }} class="card-img-top" alt="..."
+                        <img src="{{ picture.thumbnail.url }}" class="card-img-top" alt="..."
                             style="width: 100%; height:330px; object-fit: cover;">
                     </a>
                     <div class="card-body">
@@ -78,5 +44,4 @@ Home
         </div>
     </div>
 </div>
-{% endif %}
 {% endblock %}
