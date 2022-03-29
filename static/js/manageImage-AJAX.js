@@ -3,7 +3,7 @@ $(document).ready(function() {
         console.log("LIKE CLICKED");
         pictureIdVar = $(this).attr('data-pictureID');
 
-        $.get('/like_picture/',
+        $.get('/images/like_picture/',
             {'picture_id': pictureIdVar},
             function(data) {
                 console.log(data);
@@ -17,7 +17,7 @@ $(document).ready(function() {
         console.log("DISLIKE CLICKED");
         pictureIdVar = $(this).attr('data-pictureID');
 
-        $.get('/dislike_picture/',
+        $.get('/images/dislike_picture/',
             {'picture_id': pictureIdVar},
             function(data) {
                 console.log(data);
