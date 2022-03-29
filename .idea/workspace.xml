@@ -1,18 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5d6f2cf7-7719-45fc-bbfb-34ac580da5ed" name="Changes" comment="Fixed Like">
+    <list default="true" id="5d6f2cf7-7719-45fc-bbfb-34ac580da5ed" name="Changes" comment="Recommendation in progress">
+      <change afterPath="$PROJECT_DIR$/static/styles.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/about.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/about.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/addImage.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/addImage.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/addUser.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/addUser.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/3Length.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/loading.gif" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/basePage.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/basePage.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/editUser.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/editUser.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/home.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/imageCloseup.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/imageCloseup.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/myFeed.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/myFeed.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/profile.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/profile.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,10 +19,10 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="CSS File" />
         <option value="JavaScript File" />
         <option value="Python Script" />
         <option value="HTML File" />
+        <option value="CSS File" />
       </list>
     </option>
   </component>
@@ -81,11 +75,11 @@
       <recent name="C:\Users\joewr\komorebi\komorebi" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\joewr\komorebi\static" />
       <recent name="C:\Users\joewr\komorebi\templates\manageImages" />
       <recent name="C:\Users\joewr\komorebi\templates" />
       <recent name="C:\Users\joewr\komorebi\templates\auth" />
       <recent name="C:\Users\joewr\komorebi\media\userImages" />
-      <recent name="C:\Users\joewr\komorebi\media" />
     </key>
   </component>
   <component name="RunManager" selected="Django Server.Komorebi">
