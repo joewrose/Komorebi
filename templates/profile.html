@@ -2,6 +2,12 @@
 {% extends 'basePage.html' %}
 {% load static %}
 
+
+{% block title_block %}
+    {{ profileUser.get_username }}
+{% endblock %}
+
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -25,12 +31,6 @@
         {% endblock %}
 
     </style>
-    <title>
-        komorebi -
-        {% block title_block %}
-            Picture Sharing!
-        {% endblock %}
-    </title>
 
 </head>
 

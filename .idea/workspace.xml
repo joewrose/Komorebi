@@ -1,12 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5d6f2cf7-7719-45fc-bbfb-34ac580da5ed" name="Changes" comment="bug fixes">
-      <change afterPath="$PROJECT_DIR$/media/CACHE/images/userImages/1-HaCaT_cells_5ViL8Vm/dd054aac934c3b9dfe00a8b95d9af748.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/CACHE/images/userImages/1-HaCaT_cells_o8FUQ5r/484925ab2c010f133a47ff909068f3e5.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/CACHE/images/userImages/1-HaCaT_cells_shFArc1/73d498129915951ab65329c6e62b953b.jpg" afterDir="false" />
+    <list default="true" id="5d6f2cf7-7719-45fc-bbfb-34ac580da5ed" name="Changes" comment="Fixed Like">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/js/manageImage-AJAX.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/manageImage-AJAX.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/about.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/about.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/addImage.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/addImage.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/addUser.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/addUser.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/basePage.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/basePage.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/editUser.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/editUser.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/home.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/imageCloseup.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/imageCloseup.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/myFeed.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/myFeed.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/profile.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/profile.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -180,7 +186,7 @@
       <workItem from="1648314182835" duration="12702000" />
       <workItem from="1648410256764" duration="6992000" />
       <workItem from="1648504046428" duration="3333000" />
-      <workItem from="1648556516237" duration="372000" />
+      <workItem from="1648556516237" duration="2374000" />
     </task>
     <task id="LOCAL-00001" summary="Added manageImages app">
       <created>1646339740358</created>
@@ -504,7 +510,14 @@
       <option name="project" value="LOCAL" />
       <updated>1648513598274</updated>
     </task>
-    <option name="localTasksCounter" value="47" />
+    <task id="LOCAL-00047" summary="Fixed Like">
+      <created>1648556918439</created>
+      <option name="number" value="00047" />
+      <option name="presentableId" value="LOCAL-00047" />
+      <option name="project" value="LOCAL" />
+      <updated>1648556918440</updated>
+    </task>
+    <option name="localTasksCounter" value="48" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -540,7 +553,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="More styling in closeup page" />
     <MESSAGE value="populate.py working for adding images" />
     <MESSAGE value="Populate.py for images and users" />
     <MESSAGE value="Pictures from database on homepage" />
@@ -565,14 +577,15 @@
     <MESSAGE value="Edit Profile Functionality implemented" />
     <MESSAGE value="Delete Account implemented" />
     <MESSAGE value="bug fixes" />
-    <option name="LAST_COMMIT_MESSAGE" value="bug fixes" />
+    <MESSAGE value="Fixed Like" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed Like" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="django-line">
           <url>file://$PROJECT_DIR$/templates/editUser.html</url>
-          <line>174</line>
+          <line>65</line>
           <option name="timeStamp" value="1" />
         </line-breakpoint>
       </breakpoints>
