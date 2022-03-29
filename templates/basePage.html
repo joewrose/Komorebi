@@ -1,229 +1,21 @@
 <!DOCTYPE html>
 {% load static %}
+{% load staticfiles %}
 
 <html lang="en">
 
 <head>
-    <link rel="icon" type="image/x-icon" href="{% static 'icons/favicon.png' %}">
-    <link href="default.css" rel="stylesheet" type="text/css">
     <meta charset="UTF-8">
-    <style>
-        #formDiv {
-            background-color: #a024ff;
-            border-radius: 20px;
-            color: white;
-            font-size: 20px;
-        }
-
-        .submitButton {
-            margin-left: 30px;
-            margin-bottom: 30px;
-            width:150px;
-            display:block
-        }
-
-        #title {
-            font-size: 50px;
-            color: #a024ff;
-            font-family: 'hk_groteskmedium';
-            line-height: 40px;
-        }
-
-        #subtitle {
-            font-size: 24px;
-            color: light-grey;
-            font-family: 'hk_grotesklight';
-        }
-
-        .header {
-            position: fixed;
-            background: white;
-        }
-
-        .lightText-Gray {
-            font-family: 'hk_grotesklight';
-        }
-
-        .mediumText-Gray {
-            font-family: 'hk_groteskmedium';
-        }
-
-        .lightText-Purple {
-            font-family: 'hk_grotesklight';
-            color: #a024ff;
-        }
-
-        .mediumText-Purple {
-            font-family: 'hk_groteskmedium';
-            color: #a024ff;
-        }
-
-        .card {
-            border-radius: 20%;
-            cursor: pointer;
-        }
-
-        .navigation {
-            font-size: 25px;
-        }
-
-        .card-body {
-            background-color: #a024ff;
-            font-family: 'hk_grotesklight';
-            color: white;
-        }
-
-        #quote {
-            text-align: center;
-        }
-
-        .card-body {
-            background-color: #a024ff;
-            font-family: 'hk_grotesklight';
-            color: white;
-        }
-
-        .card .btn {
-            z-index: 2;
-            position: relative;
-        }
-
-        .lightText-Purple {
-            font-family: 'hk_grotesklight';
-            color: #a024ff;
-        }
-
-        .lightText-Gray {
-            font-family: 'hk_grotesklight';
-        }
-
-        #formDiv {
-            background-color: #a024ff;
-            border-radius: 20px;
-            color: white;
-            font-size: 20px;
-        }
-
-        .submitButton {
-            margin-left: 30px;
-            margin-bottom: 30px;
-            width:150px;
-            display:block
-        }
-
-        #title {
-            font-size: 50px;
-            color: #a024ff;
-            font-family: 'hk_groteskmedium';
-            line-height: 40px;
-        }
-
-        #subtitle {
-            font-size: 24px;
-            colour: light-grey;
-            font-family: 'hk_grotesklight';
-        }
-
-        .header {
-            position: fixed;
-            background: white;
-        }
-
-        .lightText-Gray {
-            font-family: 'hk_grotesklight';
-        }
-
-        .lightText-White {
-            font-family: 'hk_grotesklight';
-            colour: white;
-        }
-
-        .mediumText-Gray {
-            font-family: 'hk_groteskmedium';
-        }
-
-        .lightText-Purple {
-            font-family: 'hk_grotesklight';
-            color: #a024ff;
-        }
-
-        .mediumText-Purple {
-            font-family: 'hk_groteskmedium';
-            color: #a024ff;
-        }
-
-        .card {
-            border-radius: 20%;
-            cursor: pointer;
-        }
-
-        .navigation {
-            font-size: 25px;
-        }
-
-        .card-body {
-            background-color: #a024ff;
-            font-family: 'hk_grotesklight';
-            color: white;
-        }
-
-        #quote {
-            text-align: center;
-        }
-
-        .card .btn {
-            z-index: 2;
-            position: relative;
-        }
-
-        #userGreeting{
-            font-size: 18px;
-            font-family: 'hk_grotesklight';
-            colour: grey;
-            display:inline;
-        }
-
-
-        #title {
-            font-size: 50px;
-            color: #a024ff;
-            font-family: 'hk_groteskmedium';
-            line-height: 40px;
-        }
-
-
-        @font-face {
-            font-family: 'hk_grotesklight';
-            src: url("{% static 'fonts/hkgrotesk-light-webfont.woff2' %}") format('woff2'),
-            url("{% static 'fonts/hkgrotesk-light-webfont.woff' %}") format('woff');
-            font-weight: normal;
-            font-style: normal;
-
-        }
-
-        @font-face {
-            font-family: 'hk_groteskmedium';
-            src: url("{% static 'fonts/hkgrotesk-medium-webfont.woff2' %}") format('woff2'),
-            url("{% static 'fonts/hkgrotesk-medium-webfont.woff' %}") format('woff');
-            font-weight: normal;
-            font-style: normal;
-
-        }
-
-        {% block styleblock %}
-        {% endblock %}
-
-    </style>
-
-
+    <link href="default.css" rel="stylesheet" type="text/css">
     <title>
         komorebi -
         {% block title_block %}
+        Picture Sharing!
         {% endblock %}
     </title>
     <!-- Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
-          integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
             integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
             crossorigin="anonymous"></script>
@@ -231,45 +23,103 @@
             integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <script type="text/javascript" src="{% static "js/manageImage-AJAX.js" %}"></script>
 
+    <!-- LazyLoading -->
+    <script type="text/javascript" src="//cdn.jsdelivr.net/jquery.lazy/1.7.9/jquery.lazy.min.js">
+        $('.lazy').Lazy({
+            scrollDirection: 'vertical',
+            effect: 'fadeIn',
+            visibleOnly: true,
+            onLoad: function (element) {
+                console.log('element loaded');
+            },
+            onError: function (element) {
+                console.log('error loading ' + element.data('src'));
+            }
+        });
+    </script>
+
+    <script type="text/javascript" src="//cdn.jsdelivr.net/jquery.lazy/1.7.9/jquery.lazy.plugins.min.js"></script>
+    <script type="text/javascript" src="{% static " js/manageImage-AJAX.js" %}" crossorigin="anonymous"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
 </head>
 
 <body>
 
-<div class="container">
-    <div class="row justify-content-between pt-3">
-        <div title class="col-xs-12 col-md-4 p-3 ">
-            <div id="title" class="row">komorebi</div>
-            <div id="subtitle" class="row">{{ title }}</div>
-            {% if user.is_authenticated %}
-                <div id="userGreeting" class="row">Hello {{ user.get_username }}! <a href="/login/logout/" style="padding-left: 0px">Logout</a></div>
-            {% else %}
-                <div id="userGreeting" class="row"><a href="{% url 'login' %}" style="padding-left: 0px;padding-right: 0px;text-decoration: inherit;">Login</a> or <a href="{% url 'manageUsers:create' %}" style="padding-left: 0px;text-decoration: inherit;">Create Account</a></div>
-            {% endif %}
-
-
-        </div>
-        <div ng-view class="col-lg-3 p-3 col-xs-5">
-            <div class="row justify-content-center" style="font-size: 30px; color: #a024ff;">Quote of the Day</div>
-            <div class="row justify-content-center">
-                <div class="col-6">
-                    <hr style="color: #a024ff; height:2px; margin-top:2px; margin-bottom:2px;">
+    <div class="container">
+        <div class="row justify-content-between pt-3">
+            <div title class="col-xs-12 col-md-4 p-3 ">
+                <div id="title" class="row">komorebi</div>
+                <div id="subtitle" class="row">
+                    {% block subtitle_block %}
+                    {% endblock %}
                 </div>
             </div>
-            <div id="quote" class="row text justify-content-center">Serenity is not freedom from the storm, but calm
-                within the storm
+            {% if user.is_authenticated %}
+            <div id="userGreeting" class="row">Hello {{ user.get_username }}! <a href="{% url 'manageUsers:logout' %}"
+                    style="padding-left: 0px">Log Out</a></div>
+            {% else %}
+            <div id="userGreeting" class="row"><a href="{% url 'manageUsers:login' %}"
+                    style="padding-left: 0px">Log In</a></div>
+            {% endif %}
+            <div ng-view class="col-lg-3 p-3 col-xs-5">
+                <div class="row justify-content-center" style="font-size: 30px; color: #a024ff;">Quote of the Day</div>
+                <div class="row justify-content-center">
+                    <div class="col-6">
+                        <hr style="color: #a024ff; height:2px; margin-top:2px; margin-bottom:2px;">
+                    </div>
+                </div>
+                <div id="quote" class="row text justify-content-center">Serenity is not freedom from the storm, but calm
+                    within the storm</div>
             </div>
         </div>
+        <hr style="color: #a024ff; height:3px;">
+        <div class="row justify-content-center">
+            {% if request.get_full_path != "/home/" %}
+            <div class="col-4 col-lg-2" style="border-right: 2px solid #a024ff;">
+                <div class="navigation row lightText-Gray justify-content-center"><a style="text-align: center; text-decoration: none;
+            color: inherit;" href="{% url 'manageUsers:home' %}" onMouseOver="this.style.color='#a024ff'"
+                        onMouseOut="this.style.color='black'">Home</a></div>
+            </div>
+            {% endif %}
+            {% if request.get_full_path != "/about/" %}
+            <div class="col-4 col-lg-2" style="border-right: 2px solid #a024ff;">
+                <div class="navigation row lightText-Gray justify-content-center"><a style="text-align: center; text-decoration: none;
+            color: inherit;" href="{% url 'manageUsers:about' %}" onMouseOver="this.style.color='#a024ff'"
+                        onMouseOut="this.style.color='black'">About</a></div>
+            </div>
+            {% endif %}
+            {% if user.is_authenticated %}
+                {% if request.get_full_path != "/myfeed/" %}
+                <div class="col-4 col-lg-2" style="border-right: 2px solid #a024ff;">
+                    <div class="navigation row lightText-Gray justify-content-center"><a style="text-align: center; text-decoration: none;
+                color: inherit;" href="{% url 'manageUsers:myfeed' %}" onMouseOver="this.style.color='#a024ff'"
+                            onMouseOut="this.style.color='black'">My Feed</a></div>
+                </div>
+                {% endif %}
+                {% if request.get_full_path != "/profile/{{ request.user.username }}/" %}
+                <div class="col-4 col-lg-2" style="border-right: 2px solid #a024ff;">
+                    <div class="navigation row lightText-Gray justify-content-center"><a style="text-align: center; text-decoration: none;
+                color: inherit;" href="{% url 'manageUsers:profile' user.get_username %}"
+                            onMouseOver="this.style.color='#a024ff'" onMouseOut="this.style.color='black'">My Profile</a>
+                    </div>
+                </div>
+                {% endif %}
+            {% else %}
+                {% if request.get_full_path != "/create/" %}
+                <div class="col-4 col-lg-2" style="border-right: 2px solid #a024ff;">
+                    <div class="navigation row lightText-Gray justify-content-center"><a style="text-align: center; text-decoration: none;
+                color: inherit;" href="{% url 'manageUsers:create' %}" onMouseOver="this.style.color='#a024ff'"
+                            onMouseOut="this.style.color='black'">Create Account</a></div>
+                </div>
+                {% endif %}
+            {% endif %}
+        </div>
+        {% block body_block %}
+        {% endblock %}
     </div>
-<hr style="color: #a024ff; height:3px;">
-{% block body_block %}
-{% endblock %}
-</div>
-
-</div>
-
-
-</div>
-
 
 </body>
 

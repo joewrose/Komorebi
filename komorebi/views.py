@@ -21,7 +21,11 @@ def index(request):
 def home(request):
     context_dict = {}
 
-    pictures = Picture.objects.annotate(num_likes=Count('likes')).order_by('-num_likes')[:9]
+    if request.user.is_authenticated:
+        current_user = request.user
+        pictures = Picture.objects.filter(uploaded_by != current_user).annotate(num_likes=Count('likes')).order_by('-num_likes')[:9]
+    else:
+        pictures = Picture.objects.annotate(num_likes=Count('likes')).order_by('-num_likes')[:9]
 
     for image in pictures:
         print(image)
