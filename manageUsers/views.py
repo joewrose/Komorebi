@@ -19,25 +19,76 @@ from manageImages.models import Picture
 def index(request):
     return HttpResponse("Welcome to the manageUsers Index page!")
 
-def myfeed(request):
-    context_dict = {}
+def myfeed(request): 
+    if not request.user.is_authenticated:
+        redirect('/home')
+        
+    else:
+        current_user = request.user
+        current_user_liked = Likes.objects.values('picture_ID').filter(user_ID = current_user)
+        current_user_disliked = Dislikes.objects.values('picture_ID').filter(user_ID = current_user)
+        
+        # if the current user has liked less than 5 pictures, return None value
+        if len(current_user_liked) < 5:
+            context_dict = {'myfeed_pictures': None}
 
-    pictures = Picture.objects.annotate(num_likes=Count('likes')).order_by('-num_likes')[:9]
+        else:
+            # create list for the recommended pictures
+            to_recommend = list()
+            # get list of users
+            users = CustomUser.objects.all()
+            users_checked = 0
 
-    context_dict["pictures"] = pictures
-    return render(request, "myfeed.html", context_dict)
+            for us in users:
+                # stop after pictures from 30 users has been added
+                if users_checked <= 30:
+                    if us != current_user:
+                        user_likes = Likes.object.values('picture_ID').filter(user_ID = us)
+                        if len(user_likes) > 5:
+                            similar = 0
+                            # get the amount of pictures that have been liked by both
+                            for pic in user_likes:
+                                if pic is in current_user_liked:
+                                    similar += 1
+                            # if the amount of pictures liked by both is a least a third of the current user's liked pictures
+                            # add to 'to_recommend' list as long as the picture is not: 
+                            # already in 'to_recommend', already been liked by the current user, already been disliked by the current user
+                            if similar > (len(current_user_liked)/3):
+                                for pict in current_user_liked:
+                                    if pict not in to_recommend && pict not in current_user_liked && pict not in current_user_disliked:
+                                        to_recommend.append(pict)
+                                        users_checked += 1
+                    else:
+                        continue
+                else:
+                    break
+
+            # check if list contains pictures
+            if to_recommend == []:
+                context_dict = {'myfeed_pictures': "empty"}
+            else:
+                context_dict = {'myfeed_pictures': to_recommend}
+
+        return render(request, 'myfeed.html', context=context_dict)
 
 def dashboard(request):
     return HttpResponse("Welcome to the manageUsers Dashboard page!")
 
 def home(request):
-    pictures = Picture.objects.orderby('time')
-    current_user = request.user.id
-    login_pictures = Picture.objects.filter(picture.uploaded_by != current_user).orderby('time')
+    current_user = request.user
+    context_dict = {}
 
-    context = {'pictures': pictures, 'login_pictures': login_pictures}
+    if request.user.is_authenticated:
+        pictures = Picture.objects.filter(uploaded_by != current_user).annotate(num_likes=Count('likes')).order_by('-num_likes')[:9]
+    else:
+        pictures = Picture.objects.annotate(num_likes=Count('likes')).order_by('-num_likes')[:9]
     
-    return render(request, 'home.html', context)
+    for image in pictures:
+        print(image)
+
+    context_dict["pictures"] = pictures
+    
+    return render(request, "home.html", context_dict)
 
 def login(request):
     if request.method == "POST":
