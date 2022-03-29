@@ -1,97 +1,47 @@
 {% extends 'basePage.html' %}
 {% load static %}
+{% load staticfiles %}
 
 {% block title_block %}
-    About
+About
 {% endblock %}
 
 {% block subtitle_block %}
-    <h3 style="color: #a024ff">About</h3>
+About
 {% endblock %}
 
 {% block body_block %}
-    <style>
-        #backing {
-            width: 70%;
-            border-radius: 15px;
-            background: #a024ff;
-            padding: 20px;
-            margin: 0 auto;
-        }
-
-        .text {
-            color: white;
-        }
-
-        .buttons {
-            top: 1px;
-            bottom: 25px;
-            text-align: center;
-            font-size: larger;
-            color: #a024ff;
-        }
-
-        .image_grid {
-            width: 90%;
-            display: inline-grid;
-            gap: 20px;
-            grid-template-columns: auto auto auto;
-            margin: 0 auto;
-        }
-
-        .grid_item {
-            position: relative;
-            display: flex;
-            grid-column-start: auto;
-            grid-row-start: auto;
-        }
-    </style>
-
-    <div class="buttons">
-        <p>
-            <a href="{% url 'manageUsers:home' %}">Home</a> |
-            {% if user.is_authenticated %}
-                <a href="{% url 'manageUsers:myfeed' %}">My Feed</a> |
-                <a href="{% url 'manageUsers:profile' request.user.get_username %}">Dashboard</a>
-            {% else %}
-                <a href="{% url 'manageUsers:login' %}">Login</a> |
-                <a href="{% url 'manageUsers:create' %}">Create Account</a>
-            {% endif %}
-        </p>
-    </div>
-
-    <div id="backing">
-        <h1 class="text">About Us</h1>
-        <p class="text" align="justify">
-            The world internet, and thus the world, is becoming a crowded and ever more connected place. At Komorebi, we
-            want to make it easier to stay quiet in a world that can't stop talking.
-        </p>
-        <h2 class="text">Meet the Team</h2>
-        <div class="image_grid">
-            <div class="grid_item">
-                <img src="https://www.google.co.uk/imgres?imgurl=https%3A%2F%2Fcdn-icons-png.flaticon.com%2F512%2F1250%2F1250689.png&imgrefurl=https%3A%2F%2Fwww.flaticon.com%2Ffree-icon%2Fprofile_1250689&tbnid=yQsofsSjVhVywM&vet=12ahUKEwiCqJTbtrf2AhWah1wKHR0bAjEQMygAegUIARDeAQ..i&docid=Xr_tYUSzgat3xM&w=512&h=512&q=profile%20icon&ved=2ahUKEwiCqJTbtrf2AhWah1wKHR0bAjEQMygAegUIARDeAQ"/>
-                <h3 class="text">Ben O'Hara</h3>
-            </div>
-            <div class="grid_item">
-                <img src="https://www.google.co.uk/imgres?imgurl=https%3A%2F%2Fcdn-icons-png.flaticon.com%2F512%2F1250%2F1250689.png&imgrefurl=https%3A%2F%2Fwww.flaticon.com%2Ffree-icon%2Fprofile_1250689&tbnid=yQsofsSjVhVywM&vet=12ahUKEwiCqJTbtrf2AhWah1wKHR0bAjEQMygAegUIARDeAQ..i&docid=Xr_tYUSzgat3xM&w=512&h=512&q=profile%20icon&ved=2ahUKEwiCqJTbtrf2AhWah1wKHR0bAjEQMygAegUIARDeAQ"/>
-                <h3 class="text">Calum Hillis</h3>
-            </div>
-            <div class="grid_item">
-                <img src="https://www.google.co.uk/imgres?imgurl=https%3A%2F%2Fcdn-icons-png.flaticon.com%2F512%2F1250%2F1250689.png&imgrefurl=https%3A%2F%2Fwww.flaticon.com%2Ffree-icon%2Fprofile_1250689&tbnid=yQsofsSjVhVywM&vet=12ahUKEwiCqJTbtrf2AhWah1wKHR0bAjEQMygAegUIARDeAQ..i&docid=Xr_tYUSzgat3xM&w=512&h=512&q=profile%20icon&ved=2ahUKEwiCqJTbtrf2AhWah1wKHR0bAjEQMygAegUIARDeAQ"/>
-                <h3 class="text">Joe Rose</h3>
-            </div>
-            <div class="grid_item">
-                <img src="https://www.google.co.uk/imgres?imgurl=https%3A%2F%2Fcdn-icons-png.flaticon.com%2F512%2F1250%2F1250689.png&imgrefurl=https%3A%2F%2Fwww.flaticon.com%2Ffree-icon%2Fprofile_1250689&tbnid=yQsofsSjVhVywM&vet=12ahUKEwiCqJTbtrf2AhWah1wKHR0bAjEQMygAegUIARDeAQ..i&docid=Xr_tYUSzgat3xM&w=512&h=512&q=profile%20icon&ved=2ahUKEwiCqJTbtrf2AhWah1wKHR0bAjEQMygAegUIARDeAQ"/>
-                <h3 class="text">Pujie Guo</h3>
-            </div>
-            <div class="grid_item">
-                <img src="https://www.google.co.uk/imgres?imgurl=https%3A%2F%2Fcdn-icons-png.flaticon.com%2F512%2F1250%2F1250689.png&imgrefurl=https%3A%2F%2Fwww.flaticon.com%2Ffree-icon%2Fprofile_1250689&tbnid=yQsofsSjVhVywM&vet=12ahUKEwiCqJTbtrf2AhWah1wKHR0bAjEQMygAegUIARDeAQ..i&docid=Xr_tYUSzgat3xM&w=512&h=512&q=profile%20icon&ved=2ahUKEwiCqJTbtrf2AhWah1wKHR0bAjEQMygAegUIARDeAQ"/>
-                <h3 class="text">Tak Ko</h3>
-            </div>
-            <div class="grid_item">
-                <img src="https://www.google.co.uk/imgres?imgurl=https%3A%2F%2Fcdn-icons-png.flaticon.com%2F512%2F1250%2F1250689.png&imgrefurl=https%3A%2F%2Fwww.flaticon.com%2Ffree-icon%2Fprofile_1250689&tbnid=yQsofsSjVhVywM&vet=12ahUKEwiCqJTbtrf2AhWah1wKHR0bAjEQMygAegUIARDeAQ..i&docid=Xr_tYUSzgat3xM&w=512&h=512&q=profile%20icon&ved=2ahUKEwiCqJTbtrf2AhWah1wKHR0bAjEQMygAegUIARDeAQ"/>
-                <h3 class="text">Yifan Wan</h3>
-            </div>
+<div id="backing">
+    <h1 class="text">About Us</h1>
+    <p class="text" align="justify">
+        The world internet, and thus the world, is becoming a crowded and ever more connected place. At Komorebi, we
+        want to make it easier to stay quiet in a world that can't stop talking.
+    </p>
+    <h2 class="text">Meet the Team</h2>
+    <div class="image_grid">
+        <div class="grid_item">
+            <img src="https://www.google.co.uk/imgres?imgurl=https%3A%2F%2Fcdn-icons-png.flaticon.com%2F512%2F1250%2F1250689.png&imgrefurl=https%3A%2F%2Fwww.flaticon.com%2Ffree-icon%2Fprofile_1250689&tbnid=yQsofsSjVhVywM&vet=12ahUKEwiCqJTbtrf2AhWah1wKHR0bAjEQMygAegUIARDeAQ..i&docid=Xr_tYUSzgat3xM&w=512&h=512&q=profile%20icon&ved=2ahUKEwiCqJTbtrf2AhWah1wKHR0bAjEQMygAegUIARDeAQ"/>
+            <h3 class="text">Ben O'Hara</h3>
+        </div>
+        <div class="grid_item">
+            <img src="https://www.google.co.uk/imgres?imgurl=https%3A%2F%2Fcdn-icons-png.flaticon.com%2F512%2F1250%2F1250689.png&imgrefurl=https%3A%2F%2Fwww.flaticon.com%2Ffree-icon%2Fprofile_1250689&tbnid=yQsofsSjVhVywM&vet=12ahUKEwiCqJTbtrf2AhWah1wKHR0bAjEQMygAegUIARDeAQ..i&docid=Xr_tYUSzgat3xM&w=512&h=512&q=profile%20icon&ved=2ahUKEwiCqJTbtrf2AhWah1wKHR0bAjEQMygAegUIARDeAQ"/>
+            <h3 class="text">Calum Hillis</h3>
+        </div>
+        <div class="grid_item">
+            <img src="https://www.google.co.uk/imgres?imgurl=https%3A%2F%2Fcdn-icons-png.flaticon.com%2F512%2F1250%2F1250689.png&imgrefurl=https%3A%2F%2Fwww.flaticon.com%2Ffree-icon%2Fprofile_1250689&tbnid=yQsofsSjVhVywM&vet=12ahUKEwiCqJTbtrf2AhWah1wKHR0bAjEQMygAegUIARDeAQ..i&docid=Xr_tYUSzgat3xM&w=512&h=512&q=profile%20icon&ved=2ahUKEwiCqJTbtrf2AhWah1wKHR0bAjEQMygAegUIARDeAQ"/>
+            <h3 class="text">Joe Rose</h3>
+        </div>
+        <div class="grid_item">
+            <img src="https://www.google.co.uk/imgres?imgurl=https%3A%2F%2Fcdn-icons-png.flaticon.com%2F512%2F1250%2F1250689.png&imgrefurl=https%3A%2F%2Fwww.flaticon.com%2Ffree-icon%2Fprofile_1250689&tbnid=yQsofsSjVhVywM&vet=12ahUKEwiCqJTbtrf2AhWah1wKHR0bAjEQMygAegUIARDeAQ..i&docid=Xr_tYUSzgat3xM&w=512&h=512&q=profile%20icon&ved=2ahUKEwiCqJTbtrf2AhWah1wKHR0bAjEQMygAegUIARDeAQ"/>
+            <h3 class="text">Pujie Guo</h3>
+        </div>
+        <div class="grid_item">
+            <img src="https://www.google.co.uk/imgres?imgurl=https%3A%2F%2Fcdn-icons-png.flaticon.com%2F512%2F1250%2F1250689.png&imgrefurl=https%3A%2F%2Fwww.flaticon.com%2Ffree-icon%2Fprofile_1250689&tbnid=yQsofsSjVhVywM&vet=12ahUKEwiCqJTbtrf2AhWah1wKHR0bAjEQMygAegUIARDeAQ..i&docid=Xr_tYUSzgat3xM&w=512&h=512&q=profile%20icon&ved=2ahUKEwiCqJTbtrf2AhWah1wKHR0bAjEQMygAegUIARDeAQ"/>
+            <h3 class="text">Tak Ko</h3>
+        </div>
+        <div class="grid_item">
+            <img src="https://www.google.co.uk/imgres?imgurl=https%3A%2F%2Fcdn-icons-png.flaticon.com%2F512%2F1250%2F1250689.png&imgrefurl=https%3A%2F%2Fwww.flaticon.com%2Ffree-icon%2Fprofile_1250689&tbnid=yQsofsSjVhVywM&vet=12ahUKEwiCqJTbtrf2AhWah1wKHR0bAjEQMygAegUIARDeAQ..i&docid=Xr_tYUSzgat3xM&w=512&h=512&q=profile%20icon&ved=2ahUKEwiCqJTbtrf2AhWah1wKHR0bAjEQMygAegUIARDeAQ"/>
+            <h3 class="text">Yifan Wan</h3>
         </div>
     </div>
-{% endblock %} 
+{% endblock %}

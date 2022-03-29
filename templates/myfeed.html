@@ -1,0 +1,66 @@
+{% extends 'basePage.html' %}
+{% load static %}
+{% load staticfiles %}
+
+{% block title_block %}
+My Feed
+{% endblock %}
+
+{% block subtitle_block %}
+My Feed
+{% endblock %}
+
+{% block body_block %}
+<div>
+    <h2 style="font-size: 40px; color: #a024ff;">Recommended Pictures for You</h2>
+</div>
+{% if myfeed_pictures == None %}
+<div>
+    <p style="font-size: 25px; color: #a024ff;">You need to like at least 5 pictures to be recommended pictures here!</h2>
+</div>
+{% elif myfeed_pictures == "empty" %}
+<div>
+    <p style="font-size: 25px; color: #a024ff;">There are currently no pictures for us to recommend. Sorry...</h2>
+</div>
+{% else %}
+<div class="row justify-content-center pt-lg-1 g-0">
+    <div class="col-sm-12 col-md-10">
+        <div class="row g-0">
+            {% for picture in myfeed_pictures %}
+                <div class="col-xs-12 col-lg-4 pt-1 pt-lg-0 ">
+                    <div class="card mx-lg-1 mx-xs-auto mt-2">
+                        <a href="{% url 'manageImages:closeup' picture.ID %}" class="stretched-link">
+                            <img src={{ picture.thumbnail.url }} class="card-img-top" alt="..."
+                                 style="width: 100%; height:330px; object-fit: cover;">
+                        </a>
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-5">
+                                    <h5 class="card-title p-2">{{ picture.name }}</h5>
+                                </div>
+                                <div class="col-7">
+                                    <button type="button"
+                                            data-pictureID="{{ picture.ID }}"
+                                            class="btn btn-default btn-sm likeButton">
+                                        <img src="/static/icons/whiteLike.png" width="35">
+                                        <div style="display:inline;color: white;font-size: 18px;" class="p-1"
+                                             id="like-count{{ picture.ID }}">{{ picture.likes.count }}</div>
+                                    </button>
+                                    <button type="button"
+                                            data-pictureID="{{ picture.ID }}"
+                                            class="btn btn-default btn-sm dislikeButton">
+                                        <img src="/static/icons/whiteDislike.png" width="35">
+                                        <div style="display:inline;color: white;font-size: 18px;" class="p-1"
+                                             id="dislike-count{{ picture.ID }}">{{ picture.dislikes.count }}</div>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+{% endif %}
+{% endblock %}
