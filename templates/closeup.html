@@ -10,6 +10,17 @@ Image Close Up
 Image Close Up
 {% endblock %}
 
+{% block styleblock %}
+.card-body{
+    background-color: white;
+}
+#author{
+    colour: black;
+    text-decoration: inherit;
+    font-size: 25px;
+}
+{% endblock %}
+
 {% block body_block %}
 <div class="row justify-content-center">
     <div style="width : 60%;" class="card mt-3 px-0">
@@ -46,9 +57,12 @@ Image Close Up
                     </button>
 
                 </div>
-                <a href="{% url 'manageUsers:profile' picture.uploadedBy.username %}" class="d-inline-flex lightText-Gray" style="font-size: 25px; color: Gainsboro;text-decoration: inherit;">
+                <a href="{% url 'manageUsers:profile' picture.uploadedBy.username %}" class="d-inline-flex lightText-Gray" id="author">
                     Posted By: {{ picture.uploadedBy.username }}
                 </a>
+                {% if picture.uploadedBy.username == user.get_username %}
+                    <a href="{% url 'manageImages:picturedelete' picture.ID %}" class="btn btn-primary btn-lg mt-3 delete-button" role="button" aria-disabled="true">DELETE PICTURE</a>
+                {% endif %}
             </div>
         </div>
     </div>

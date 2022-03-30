@@ -23,10 +23,6 @@ from manageImages.forms import ImageForm
 from manageImages.models import Picture
 
 
-def index(request):
-    return HttpResponse("Welcome to the manageUsers Index page!")
-
-
 def myfeed(request):
     if not request.user.is_authenticated:
         redirect('/home/')
@@ -70,7 +66,7 @@ def login(request):
             return redirect("login")
 
     context_dict = {}
-    context_dict["title"] = "My Feed"
+    context_dict["title"] = "Login"
     return render(request, "login.html", context=context_dict)
 
 

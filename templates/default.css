@@ -42,24 +42,6 @@
     font-size: 20px;
 }
 
-@font-face {
-    font-family: 'hk_grotesklight';
-    src: url("{% static 'fonts/hkgrotesk-light-webfont.woff2' %}") format('woff2'),
-    url("{% static 'fonts/hkgrotesk-light-webfont.woff' %}") format('woff');
-    font-weight: normal;
-    font-style: normal;
-
-}
-
-@font-face {
-    font-family: 'hk_groteskmedium';
-    src: url("{% static 'fonts/hkgrotesk-medium-webfont.woff2' %}") format('woff2'),
-    url("{% static 'fonts/hkgrotesk-medium-webfont.woff' %}") format('woff');
-    font-weight: normal;
-    font-style: normal;
-
-}
-
 #formDiv {
     background-color: #a024ff;
     border-radius: 20px;
@@ -89,7 +71,6 @@
 
 .lightText-Gray {
     font-family: 'hk_grotesklight';
-    color: Gainsboro;
 }
 
 .lightText-Purple {
@@ -99,7 +80,6 @@
 
 .mediumText-Gray {
     font-family: 'hk_groteskmedium';
-    color: Gainsboro;
 }
 
 .mediumText-Purple {
@@ -107,9 +87,6 @@
     color: #a024ff;
 }
 
-.navigation {
-    font-size: 25px;
-}
 
 #profileImage {
     object-fit: cover;
@@ -131,7 +108,7 @@
 
 #subtitle {
     font-size: 24px;
-    color: light-grey;
+    color: grey;
     font-family: 'hk_grotesklight';
 }
 

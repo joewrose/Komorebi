@@ -8,6 +8,8 @@ from django.utils.decorators import method_decorator
 from django.contrib import messages
 from django.contrib.auth import login
 from django.shortcuts import render, redirect
+
+from komorebi.views import addimage
 from manageImages.models import Picture
 from django.views import View
 from django.http import HttpResponse, Http404
@@ -20,6 +22,7 @@ def closeup(request, ID):
     content = open("static/quote.txt", 'r').read()
     context_dict["quote"] = content
 
+
     if not request.is_ajax:
         return Http404
 
@@ -27,6 +30,7 @@ def closeup(request, ID):
         picture = Picture.objects.get(ID=uuid.UUID(ID))
 
         context_dict["picture"] = picture
+        context_dict['title'] = picture.name
         context_dict["message"] = "success"
 
     except Picture.DoesNotExist:
@@ -34,7 +38,7 @@ def closeup(request, ID):
         context_dict["Picture"] = None
         context_dict["message"] = "failure"
 
-    return render(request, 'imageCloseup.html', context=context_dict)
+    return render(request, 'closeup.html', context=context_dict)
 
 
 def dashboard(request):
@@ -124,3 +128,11 @@ class DislikePictureView(View):
         votes = str(picture.dislikes.count()) + ":" + str(picture.likes.count())
 
         return HttpResponse(votes)
+
+@login_required
+def imagedelete(request, imageID):
+    p = Picture.objects.get(ID=imageID)
+    if p.uploadedBy == request.user:
+        p.delete()
+    messages.success(request, "The picture is deleted")
+    return redirect('/home/')

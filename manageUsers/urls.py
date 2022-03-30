@@ -6,7 +6,6 @@ from django.contrib import admin
 app_name = "manageUsers"
 
 urlpatterns = [
-    path('home/', views.index, name='home'),
     path('myfeed/', views.myfeed, name='myfeed'),
     path("logout/", LogoutView.as_view(), name="logout"),
     path('', views.login, name='login'),

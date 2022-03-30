@@ -28,6 +28,10 @@
             color: #a024ff;
         }
 
+        .inlist {
+            border-right: 2px solid #a024ff;
+        }
+
     </style>
 
 
@@ -83,7 +87,7 @@
     <hr id="navigation-rule">
     <div class="row justify-content-center">
         {% if request.get_full_path != "/home/" %}
-            <div class="col-4 col-lg-2" style="border-right: 2px solid #a024ff;">
+            <div class="col-4 col-lg-2 inlist">
                 <div class="navigation row lightText-Gray justify-content-center"><a style="text-align: center; text-decoration: none;
             color: inherit;" href="{% url 'home' %}" onMouseOver="this.style.color='#a024ff'"
                                                                                      onMouseOut="this.style.color='black'">Home</a>
@@ -91,7 +95,7 @@
             </div>
         {% endif %}
         {% if request.get_full_path != "/about/" %}
-            <div class="col-4 col-lg-2" style="border-right: 2px solid #a024ff;">
+            <div class="col-4 col-lg-2 inlist">
                 <div class="navigation row lightText-Gray justify-content-center"><a style="text-align: center; text-decoration: none;
             color: inherit;" href="{% url 'about' %}" onMouseOver="this.style.color='#a024ff'"
                                                                                      onMouseOut="this.style.color='black'">About</a>
@@ -100,17 +104,17 @@
         {% endif %}
         {% if user.is_authenticated %}
             {% if request.get_full_path != "/myfeed/" %}
-                <div class="col-4 col-lg-2" style="border-right: 2px solid #a024ff;">
+                <div class="col-4 col-lg-2">
                     <div class="navigation row lightText-Gray justify-content-center"><a style="text-align: center; text-decoration: none;
-                color: inherit;" href="{% url 'manageUsers:myfeed' %}" onMouseOver="this.style.color='#a024ff'"
+                color: inherit;" href="{% url 'manageUsers:myfeed'%}" onMouseOver="this.style.color='#a024ff'"
                                                                                          onMouseOut="this.style.color='black'">My
                         Feed</a></div>
                 </div>
             {% endif %}
-            {% if request.get_full_path != "/profile/{{ request.user.username }}/" %}
-                <div class="col-4 col-lg-2" style="border-right: 2px solid #a024ff;">
+            {% if request.get_full_path != "/login/profile/{{ request.user.username }}/" %}
+                <div class="col-4 col-lg-2" style="border-left: 2px solid #a024ff;">
                     <div class="navigation row lightText-Gray justify-content-center"><a style="text-align: center; text-decoration: none;
-                color: inherit;" href="{% url 'manageUsers:profile' user.get_username %}"
+                color: inherit;" href="{% url 'manageUsers:profile' user.get_username%}"
                                                                                          onMouseOver="this.style.color='#a024ff'"
                                                                                          onMouseOut="this.style.color='black'">My
                         Profile</a>
@@ -119,7 +123,7 @@
             {% endif %}
         {% else %}
             {% if request.get_full_path != "/create/" %}
-                <div class="col-4 col-lg-2" style="border-right: 2px solid #a024ff;">
+                <div class="col-4 col-lg-2" >
                     <div class="navigation row lightText-Gray justify-content-center"><a style="text-align: center; text-decoration: none;
                 color: inherit;" href="{% url 'manageUsers:create' %}" onMouseOver="this.style.color='#a024ff'"
                                                                                          onMouseOut="this.style.color='black'">Create
