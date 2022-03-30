@@ -17,6 +17,7 @@ class PostForm(forms.ModelForm):
 
     profileImage = forms.ImageField(
         label="Image",
+        required=False,
         widget=forms.ClearableFileInput(attrs={'class': 'form-group mt-3 mb-4','type':'file'}),
     )
 

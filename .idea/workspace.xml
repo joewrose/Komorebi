@@ -1,37 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5d6f2cf7-7719-45fc-bbfb-34ac580da5ed" name="Changes" comment="Fixed external CSS file">
-      <change afterPath="$PROJECT_DIR$/manageImages/migrations/0002_auto_20220330_1336.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/CACHE/images/userImages/happy/b79eec835dca104928fa8a3d183e3353.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/3Length.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/icons/favicon.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/loading.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/closeup.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/create.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/edit.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/Komorebi.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Komorebi.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="5d6f2cf7-7719-45fc-bbfb-34ac580da5ed" name="Changes" comment="Added error checking to editform">
+      <change afterPath="$PROJECT_DIR$/media/CACHE/images/userImages/25370124839_5db96c06df_k/1d398fdcc705e4b59f8943a63b5817a5.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/manageImages/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/manageImages/forms.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/manageImages/migrations/0001_initial.py" beforeDir="false" afterPath="$PROJECT_DIR$/manageImages/migrations/0001_initial.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/manageUsers/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/manageUsers/forms.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/manageUsers/migrations/0001_initial.py" beforeDir="false" afterPath="$PROJECT_DIR$/manageUsers/migrations/0001_initial.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/manageUsers/tests.py" beforeDir="false" afterPath="$PROJECT_DIR$/manageUsers/tests.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/manageUsers/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/manageUsers/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/styles.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/about.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/about.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/addImage.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/addImage.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/addUser.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/addUser.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/basePage.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/basePage.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/default.css" beforeDir="false" afterPath="$PROJECT_DIR$/templates/default.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/editUser.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/editUser.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/home.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/imageCloseup.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/imageCloseup.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/myFeed.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/myFeed.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/profile.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/profile.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -107,7 +82,27 @@
       <recent name="C:\Users\joewr\komorebi\media\userImages" />
     </key>
   </component>
-  <component name="RunManager" selected="Django Server.Komorebi">
+  <component name="RunManager" selected="Django tests.Test: manageUsers.tests">
+    <configuration name="Test: manageUsers.tests" type="DjangoTestsConfigurationType" temporary="true">
+      <module name="Komorebi" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="TARGET" value="manageUsers.tests" />
+      <option name="SETTINGS_FILE" value="" />
+      <option name="CUSTOM_SETTINGS" value="false" />
+      <option name="USE_OPTIONS" value="false" />
+      <option name="OPTIONS" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="Populate" type="PythonConfigurationType" factoryName="Python">
       <module name="Komorebi" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -157,7 +152,13 @@
     <list>
       <item itemvalue="Django Server.Komorebi" />
       <item itemvalue="Python.Populate" />
+      <item itemvalue="Django tests.Test: manageUsers.tests" />
     </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Django tests.Test: manageUsers.tests" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -206,7 +207,7 @@
       <workItem from="1648410256764" duration="6992000" />
       <workItem from="1648504046428" duration="3333000" />
       <workItem from="1648556516237" duration="2374000" />
-      <workItem from="1648643521327" duration="2741000" />
+      <workItem from="1648643521327" duration="7073000" />
     </task>
     <task id="LOCAL-00001" summary="Added manageImages app">
       <created>1646339740358</created>
@@ -544,7 +545,14 @@
       <option name="project" value="LOCAL" />
       <updated>1648598221899</updated>
     </task>
-    <option name="localTasksCounter" value="49" />
+    <task id="LOCAL-00049" summary="Added error checking to editform">
+      <created>1648646747334</created>
+      <option name="number" value="00049" />
+      <option name="presentableId" value="LOCAL-00049" />
+      <option name="project" value="LOCAL" />
+      <updated>1648646747334</updated>
+    </task>
+    <option name="localTasksCounter" value="50" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -580,7 +588,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Populate.py for images and users" />
     <MESSAGE value="Pictures from database on homepage" />
     <MESSAGE value="Fixed styling on homepage and added stretched link" />
     <MESSAGE value="Images on homepage now linking to closeups" />
@@ -605,9 +612,11 @@
     <MESSAGE value="bug fixes" />
     <MESSAGE value="Fixed Like" />
     <MESSAGE value="Fixed external CSS file" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed external CSS file" />
+    <MESSAGE value="Added error checking to editform" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added error checking to editform" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/komorebi$Populate.coverage" NAME="Populate Coverage Results" MODIFIED="1648163468333" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/komorebi$Test__manageUsers_tests.coverage" NAME="Test: manageUsers.tests Coverage Results" MODIFIED="1648652333630" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
   </component>
 </project>
