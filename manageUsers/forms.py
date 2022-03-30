@@ -10,7 +10,7 @@ class PostForm(forms.ModelForm):
         widget=forms.TextInput(attrs={'class': 'form-group mt-3 mb-4', 'placeholder':'enter your username...'}),
     )
 
-    email = forms.CharField(
+    email = forms.EmailField(
         label="Email",
         widget=forms.TextInput(attrs={'class': 'form-group mt-3 mb-4','type':'email', 'placeholder':'enter your email...'}),
     )
@@ -35,7 +35,6 @@ class PostForm(forms.ModelForm):
         widget=forms.PasswordInput(attrs={'class': 'form-group mt-3 mb-4', 'type':'password','placeholder':'enter your password...'}),
     )
 
-
     def __init__(self, *args, **kwargs):
         super(PostForm, self).__init__(*args, **kwargs)
         self.helper = FormHelper()
@@ -51,31 +50,41 @@ class EditForm(forms.ModelForm):
     username = forms.CharField(
         label="Username",
         required=False,
+        empty_value=None,
         widget=forms.HiddenInput(attrs={'class': 'form-group mt-3 mb-4', 'placeholder':'enter your username...'}),
     )
 
     email = forms.CharField(
         label="Email",
+        required=False,
+        empty_value=None,
         widget=forms.TextInput(attrs={'class': 'form-group mt-3 mb-4','type':'email', 'placeholder':'enter your email...'}),
     )
 
     profileImage = forms.ImageField(
         label="Image",
+        required=False,
         widget=forms.ClearableFileInput(attrs={'class': 'form-group mt-3 mb-4','type':'file'}),
     )
 
     city = forms.CharField(
         label="City",
+        required=False,
+        empty_value=None,
         widget=forms.TextInput(attrs={'class': 'form-group mt-3 mb-4', 'placeholder':'enter your username...'}),
     )
 
     description = forms.CharField(
         label="Description",
+        required=False,
+        empty_value=None,
         widget=forms.TextInput(attrs={'class': 'form-group mt-3 mb-4', 'placeholder':'enter your username...'}),
     )
 
     password = forms.CharField(
         label="Password",
+        required=False,
+        empty_value=None,
         widget=forms.PasswordInput(attrs={'class': 'form-group mt-3 mb-4', 'type':'password','placeholder':'enter your password...'}),
     )
 

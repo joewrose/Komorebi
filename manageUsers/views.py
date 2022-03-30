@@ -17,7 +17,7 @@ from django.contrib.auth.decorators import login_required
 from django.core.exceptions import ObjectDoesNotExist
 # Create your views here.
 
-from django.http import HttpResponse
+from django.http import HttpResponse, Http404
 
 from manageImages.forms import ImageForm
 from manageImages.models import Picture
@@ -82,11 +82,16 @@ class edit(CreateView):
     def form_valid(self, form):
         formUser = form.save(commit=False)
         user = CustomUser.objects.get(username=self.request.user.username)
-        user.email = formUser.email
-        user.profileImage = formUser.profileImage
-        user.city = formUser.city
-        user.description = formUser.description
-        form.instance.set_password(form.cleaned_data['password'])
+        if formUser.email is not None:
+            user.email = formUser.email
+        if formUser.profileImage != "userImages/profileImages/default.jpg":
+            user.profileImage = formUser.profileImage
+        if formUser.city is not None:
+            user.city = formUser.city
+        if formUser.description is not None:
+            user.description = formUser.description
+        if formUser.password is not None:
+            form.instance.set_password(form.cleaned_data['password'])
         user.save()
         return redirect(self.get_success_url())
 

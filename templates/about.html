@@ -5,62 +5,45 @@
     About
 {% endblock %}
 
-{% block subtitle_block %}
-    <h3 style="color: #a024ff">About</h3>
+{% block styleblock %}
+    #backing {
+        width: 70%;
+        border-radius: 15px;
+        background: #a024ff;
+        padding: 20px;
+        margin: 0 auto;
+    }
+
+    .text {
+        color: white;
+    }
+
+    .buttons {
+        top: 1px;
+        bottom: 25px;
+        text-align: center;
+        font-size: larger;
+        color: #a024ff;
+    }
+
+    .image_grid {
+        width: 90%;
+        display: inline-grid;
+        gap: 20px;
+        grid-template-columns: auto auto auto;
+        margin: 0 auto;
+    }
+
+    .grid_item {
+        position: relative;
+        display: flex;
+        grid-column-start: auto;
+        grid-row-start: auto;
+    }
 {% endblock %}
 
 {% block body_block %}
-    <style>
-        #backing {
-            width: 70%;
-            border-radius: 15px;
-            background: #a024ff;
-            padding: 20px;
-            margin: 0 auto;
-        }
-
-        .text {
-            color: white;
-        }
-
-        .buttons {
-            top: 1px;
-            bottom: 25px;
-            text-align: center;
-            font-size: larger;
-            color: #a024ff;
-        }
-
-        .image_grid {
-            width: 90%;
-            display: inline-grid;
-            gap: 20px;
-            grid-template-columns: auto auto auto;
-            margin: 0 auto;
-        }
-
-        .grid_item {
-            position: relative;
-            display: flex;
-            grid-column-start: auto;
-            grid-row-start: auto;
-        }
-    </style>
-
-    <div class="buttons">
-        <p>
-            <a href="{% url 'manageUsers:home' %}">Home</a> |
-            {% if user.is_authenticated %}
-                <a href="{% url 'manageUsers:myfeed' %}">My Feed</a> |
-                <a href="{% url 'manageUsers:profile' request.user.get_username %}">Dashboard</a>
-            {% else %}
-                <a href="{% url 'manageUsers:login' %}">Login</a> |
-                <a href="{% url 'manageUsers:create' %}">Create Account</a>
-            {% endif %}
-        </p>
-    </div>
-
-    <div id="backing">
+    <div id="backing" class="mt-5">
         <h1 class="text">About Us</h1>
         <p class="text" align="justify">
             The world internet, and thus the world, is becoming a crowded and ever more connected place. At Komorebi, we

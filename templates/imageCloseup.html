@@ -17,6 +17,31 @@
             color: #a024ff;
         }
 
+            .image-button {
+                display:inline;
+                color: #a024ff;
+                font-size: 20px;
+            }
+
+            .card-title {
+                font-size: 35px !important;
+            }
+
+            #card-top {
+                width: 100%;
+                height: 45vw;
+                object-fit: cover;"
+            }
+
+            #image-link{
+                font-size: 25px;
+                colour: Gainsboro;
+                text-decoration: inherit;
+            }
+
+            #card-width{
+                width : 60%;
+            }
 
         {% endblock %}
     </style>
@@ -25,70 +50,43 @@
 <meta charset="UTF-8">
 <title>CloseUp</title>
 {% block body_block %}
-    <div class="row justify-content-center">
-        <div class="col-4 col-lg-2" style="border-right: 2px solid #a024ff;">
-            <div class="navigation row lightText-Gray justify-content-center"><a style="text-align: center; text-decoration: none;
-                color: inherit;" href="../login/myfeed/" onMouseOver="this.style.color='#a024ff'"
-                                                                                 onMouseOut="this.style.color='black'">My
-                Feed</a></div>
-        </div>
-        <div class="col-4 col-lg-2" style="border-right: 2px solid #a024ff;">
-            <div class="navigation row lightText-Gray justify-content-center"><a style="text-align: center; text-decoration: none;
-                color: inherit;" href="../login/dashboard/" onMouseOver="this.style.color='#a024ff'"
-                                                                                 onMouseOut="this.style.color='black'">Dashboard</a>
-            </div>
-        </div>
-        <div class="col-4 col-lg-2">
-            <div class="navigation row lightText-Gray justify-content-center"><a style="text-align: center; text-decoration: none;
-                color: inherit;" href="../about/" onMouseOver="this.style.color='#a024ff'"
-                                                                                 onMouseOut="this.style.color='black'">About</a>
-            </div>
-        </div>
-    </div>
-    <div class="container">
         <div class="row justify-content-center">
-            <div style="width : 60%;" class="card mt-3 px-0">
-                <img src="{{ picture.image.url }}" class="card-img-top " style="width: 100%;
-            height: 45vw;
-            object-fit: cover;" alt="...">
+            <div id="card-width"class="card mt-3 px-0">
+                <img src="{{ picture.image.url }}" class="card-img-top " id="card-top">
                 <div class="card-body">
                     <div class="row">
                         <div class="col-6">
-                            <h5 class="card-title lightText-Purple" style="font-size: 35px">{{ picture.name }}</h5>
+                            <h5 class="card-title lightText-Purple">{{ picture.name }}</h5>
                         </div>
                         <div class="col-6">
                             <button type="button"
                                     data-pictureID="{{ picture.ID }}"
-                                    class="btn btn-default btn-sm likeButton">
+                                    class="btn btn-default btn-sm likeButton image-button">
                                 <img src="{% static 'icons/purpleLike.png' %}" width="35">
-                                <div style="display:inline;color: #a024ff;font-size: 20px;" class="p-1"
-                                     id="like-count{{ picture.ID }}">{{ picture.likes.count }}</div>
+                                <div class="p-1" id="like-count{{ picture.ID }}">{{ picture.likes.count }}</div>
                             </button>
                             <button type="button"
                                     data-pictureID="{{ picture.ID }}"
-                                    class="btn btn-default btn-sm dislikeButton">
+                                    class="btn btn-default btn-sm dislikeButton image-button">
                                 <img src="{% static 'icons/purpleDislike.png' %}" width="35">
-                                <div style="display:inline;color: #a024ff;font-size: 20px;" class="p-1"
-                                     id="dislike-count{{ picture.ID }}">{{ picture.dislikes.count }}</div>
+                                <div class="p-1" id="dislike-count{{ picture.ID }}">{{ picture.dislikes.count }}</div>
                             </button>
                             <button type="button"
                                     data-pictureID="{{ picture.ID }}"
-                                    class="btn btn-default btn-sm shareButton">
+                                    class="btn btn-default btn-sm shareButton image-button">
                                 <img src="{% static 'icons/share.png' %}" width="35">
-                                <div style="display:inline;color: #a024ff;font-size: 20px;" class="p-1"
-                                     id="shareButton">Share
+                                <div class="p-1" id="shareButton">Share
                                 </div>
                             </button>
 
                         </div>
-                        <a href="{% url 'manageUsers:profile' picture.uploadedBy.username %}" class="d-inline-flex lightText-Gray" style="font-size: 25px;colour: Gainsboro;text-decoration: inherit;">
+                        <a id="image-link" href="{% url 'manageUsers:profile' picture.uploadedBy.username %}" class="d-inline-flex lightText-Gray">
                             Posted By: {{ picture.uploadedBy.username }}
                         </a>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
 {% endblock %}
 </body>
 </html>

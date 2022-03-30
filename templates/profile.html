@@ -27,6 +27,22 @@
                 font-size: 20px;
             }
 
+            #profile-title{
+                font-size: 45px;
+                display:inline;
+                line-height: 70px;
+            }
+
+            #spanner-icon{
+                display: inline;
+            }
+
+            #add-post{
+                font-size: 40px;
+                text-decoration: inherit;
+            }
+
+
 
         {% endblock %}
 
@@ -36,29 +52,7 @@
 
 
 <body>
-<div class="container">
     {% block body_block %}
-        <div class="row justify-content-center pb-3">
-            <div class="col-4 col-lg-2" style="border-right: 2px solid #a024ff;">
-                <div class="navigation row lightText-Gray justify-content-center"><a style="text-align: center; text-decoration: none;
-                color: inherit;" href="{% url 'manageUsers:myfeed' %}" onMouseOver="this.style.color='#a024ff'"
-                                                                                     onMouseOut="this.style.color='black'">My
-                    Feed</a></div>
-            </div>
-            <div class="col-4 col-lg-2" style="border-right: 2px solid #a024ff;">
-                <div class="navigation row lightText-Gray justify-content-center"><a style="text-align: center; text-decoration: none;
-                color: inherit;" href="{% url 'manageUsers:profile' user.get_username %}" onMouseOver="this.style.color='#a024ff'"
-                                                                                     onMouseOut="this.style.color='black'">Dashboard</a>
-                </div>
-            </div>
-            <div class="col-4 col-lg-2">
-                <div class="navigation row lightText-Gray justify-content-center"><a style="text-align: center; text-decoration: none;
-                color: inherit;" href="{% url 'about' %}" onMouseOver="this.style.color='#a024ff'"
-                                                                                     onMouseOut="this.style.color='black'">About</a>
-                </div>
-            </div>
-        </div>
-
         <div class="row justify-content-center pt-lg-1 g-0">
             <div class="col-sm-12 col-md-10">
                 <div class="row justify-content-center">
@@ -68,12 +62,11 @@
                                 <img id=profileImage src="/media/{{ profileUser.profileImage }}" class="rounded-circle">
                             </div>
                             <div class="col-xl-8 p-3 bg-white text-#a024ff">
-                                <div class="mediumText-Purple"
-                                     style="font-size: 45px;display:inline;line-height: 70px;">
+                                <div id="profile-title"class="mediumText-Purple">
                                     {{ profileUser.get_username }}
                                 </div>
                                 {% if profileUser.get_username == user.get_username %}
-                                    <div style="display: inline">
+                                    <div id="spanner-icon">
                                         <a href="{% url 'manageUsers:edit' %}">
                                             <img class="pb-3 ml-1" src="{% static 'icons/spanner.png' %}" width="40">
                                         </a>
@@ -82,7 +75,7 @@
                                     <button type="button" data-user="{{ profileUser.id }}" class="btn btn-primary followButton"><div id="buttontext">
                                         {{ buttontext }}</div></button>
                                 {% endif %}
-                                <div style="display: inline">
+                                <div id="spanner-icon">
                                 </div>
                                 <div class="MediumText-Gray">
                                     {{ profileUser.city }}
@@ -94,7 +87,7 @@
                                 {% if profileUser.get_username == user.get_username %}
                                     <a href="{% url 'manageImages:addimage' %}">
                                         <div class="file-drop-area mt-5 p-4">
-                                            <div class="lightText-White" style="font-size: 40px;text-decoration: inherit;">Add a new post</div>
+                                            <div class="lightText-White" id="add-post">Add a new post</div>
                                         </div>
                                     </a>
                                 {% endif %}
@@ -116,8 +109,7 @@
                                     <div class="card mx-lg-1 mx-xs-auto mt-2">
                                         <a href="{% url 'manageImages:closeup' picture.ID %}"
                                            class="stretched-link">
-                                            <img src={{ picture.thumbnail.url }} class="card-img-top" alt="..."
-                                                 style="width: 100%; height:330px; object-fit: cover;">
+                                            <img id="post-image" src={{ picture.thumbnail.url }} class="card-img-top" alt="...">
                                         </a>
                                         <div class="card-body">
                                             <div class="row">
@@ -129,8 +121,7 @@
                                                             data-pictureID="{{ picture.ID }}"
                                                             class="btn btn-default btn-sm likeButton">
                                                         <img src="/static/icons/whiteLike.png" width="35">
-                                                        <div style="display:inline;color: white;font-size: 18px;"
-                                                             class="p-1"
+                                                        <div class="p-1 button-text"
                                                              id="like-count{{ picture.ID }}">{{ picture.likes.count }}</div>
                                                     </button>
                                                     <button type="button"
@@ -138,7 +129,7 @@
                                                             class="btn btn-default btn-sm dislikeButton">
                                                         <img src="/static/icons/whiteDislike.png" width="35">
                                                         <div style="display:inline;color: white;font-size: 18px;"
-                                                             class="p-1"
+                                                             class="p-1 button-text"
                                                              id="dislike-count{{ picture.ID }}">{{ picture.dislikes.count }}</div>
                                                     </button>
                                                 </div>
