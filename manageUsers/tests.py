@@ -3,6 +3,7 @@ from manageUsers.forms import PostForm, EditForm
 import os
 import uuid
 
+from manageUsers.models import CustomUser
 from populate import usernames
 
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'komorebi.settings')
@@ -115,10 +116,10 @@ def populate():
 
 
 def addUser(username):
-    u = User.objects.get_or_create(username=username,email="testEmail@test.com",password=uuid.uuid4())
+    u = CustomUser.objects.get_or_create(username=username,email="testEmail@test.com",password=uuid.uuid4())
 
 def addPicture(name, image):
-    user = User.objects.get(username=usernames[randint(0,len(usernames))-1])
+    user = CustomUser.objects.get(username="TestUser")
     picture_ID = uuid.uuid4()
     p = Picture.objects.get_or_create(ID=picture_ID,image=image,name=name,uploadedBy=user,time=datetime.datetime.now())[0]
     amountLikes = randint(0,30)

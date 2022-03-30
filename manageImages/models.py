@@ -15,9 +15,9 @@ class Picture(models.Model):
     ID = models.UUIDField(primary_key=True, default=uuid.uuid4())
     image = models.ImageField(upload_to='userImages/', null=False, blank=False)
     thumbnail = ImageSpecField(source='image',
-                               processors=[ResizeToFill(500,500)],
+                               processors=[ResizeToFill(500, 500)],
                                format='JPEG',
-                               options={'quality':60})
+                               options={'quality': 60})
     name = models.CharField(max_length=100)
     time = models.DateTimeField(auto_now_add=True)
     uploadedBy = models.ForeignKey(CustomUser, default=None, on_delete=models.CASCADE)
@@ -36,6 +36,7 @@ class Like(models.Model):
     def __str__(self):
         return "User with ID " + str(self.user_ID) + " liked photo with ID " + str(self.picture_ID)
 
+
 class Dislike(models.Model):
     user_ID = models.ForeignKey(CustomUser, on_delete=models.CASCADE, related_name='dislikes')
     picture_ID = models.ForeignKey(Picture, on_delete=models.CASCADE, related_name='dislikes')
@@ -43,5 +44,3 @@ class Dislike(models.Model):
 
     def __str__(self):
         return "User with ID " + str(self.user_ID) + " liked photo with ID " + str(self.picture_ID)
-
-

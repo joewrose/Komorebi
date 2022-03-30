@@ -23,28 +23,21 @@ for file in os.listdir(directory):
     filename = os.fsdecode(file)
     paths.append(filename)
 
-namesFile = open('populateFirstNames.txt','r')
 usernamesFile = open('populateUsernames.txt','r')
 
 usernames = []
-firstnames = []
-lastnames = []
 
 for line in usernamesFile:
     usernames.append(line)
 
-for line in namesFile:
-    firstnames.append(line.split()[0])
-    lastnames.append(line.split()[1])
-
 def populate():
     for i in range(199):
-        addUser(usernames[i],firstnames[i],lastnames[i])
+        addUser(usernames[i])
     for i in range(len(paths)):
         addPicture('Image' + str(i), 'userImages/' + paths[i])
 
 
-def addUser(username, firstname, lastname):
+def addUser(username):
     u = User.objects.get_or_create(username=username,email="testEmail@test.com",password=uuid.uuid4())
 
 def addPicture(name, image):

@@ -4,6 +4,7 @@ from crispy_forms.layout import Submit
 from django import forms
 from django.contrib.auth.forms import UserCreationForm
 
+from django.core.validators import validate_image_file_extension
 from manageImages.models import Picture
 from django.contrib.auth.models import User
 
@@ -16,6 +17,7 @@ class ImageForm(forms.ModelForm):
 
     image = forms.ImageField(
         label="Image",
+        validators=[validate_image_file_extension],
         widget=forms.ClearableFileInput(attrs={'class': 'form-group mt-3 mb-4','type':'file'}),
     )
 
