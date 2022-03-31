@@ -295,14 +295,7 @@
       <workItem from="1648504046428" duration="3333000" />
       <workItem from="1648556516237" duration="2374000" />
       <workItem from="1648643521327" duration="24289000" />
-      <workItem from="1648724943407" duration="18265000" />
-    </task>
-    <task id="LOCAL-00009" summary="Added Follow entity and created composite key in Vote entity">
-      <created>1646846891356</created>
-      <option name="number" value="00009" />
-      <option name="presentableId" value="LOCAL-00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1646846891356</updated>
+      <workItem from="1648724943407" duration="21624000" />
     </task>
     <task id="LOCAL-00010" summary="Added manageUsers app and fixed earlier mistake with composite key">
       <created>1646856522464</created>
@@ -640,7 +633,14 @@
       <option name="project" value="LOCAL" />
       <updated>1648745670783</updated>
     </task>
-    <option name="localTasksCounter" value="58" />
+    <task id="LOCAL-00058" summary="More Google OAuth">
+      <created>1648749441794</created>
+      <option name="number" value="00058" />
+      <option name="presentableId" value="LOCAL-00058" />
+      <option name="project" value="LOCAL" />
+      <updated>1648749441794</updated>
+    </task>
+    <option name="localTasksCounter" value="59" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

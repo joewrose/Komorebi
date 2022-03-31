@@ -15,6 +15,7 @@ from django.views import View
 from django.utils.decorators import method_decorator
 from django.contrib.auth.decorators import login_required
 from django.core.exceptions import ObjectDoesNotExist
+from django.contrib.auth.hashers import make_password
 # Create your views here.
 
 from django.http import HttpResponse, Http404
@@ -208,11 +209,11 @@ def profile(request, username):
     return render(request, "profile.html", context=context_dict)
 
 
-def googlecreate(request):
-    if request.is_ajax():
-        request_data = request.POST
-        CustomUser.objects.get_or_create(username=request_data.username, email=request_data.email, profileImage=request_data.profileImage, password='password')
+class googlecreate(View):
+    def get(self, request):
+        CustomUser.objects.get_or_create(username=request.GET['username'], email=request.GET['email'], profileImage=request.GET['profileImage'], password=make_password("password"))
         return HttpResponse("OK")
+
 
 class create(CreateView):
     model = CustomUser
