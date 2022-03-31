@@ -33,6 +33,7 @@ Image Close Up
                     <h5 class="card-title lightText-Purple" style="font-size: 35px">{{ picture.name }}</h5>
                 </div>
                 <div class="col-6">
+                    {% if user.is_authenticated %}
                     <button type="button"
                             data-pictureID="{{ picture.ID }}"
                             class="btn btn-default btn-sm likeButton">
@@ -47,6 +48,22 @@ Image Close Up
                         <div style="display:inline;color: #a024ff;font-size: 20px;" class="p-1"
                              id="dislike-count{{ picture.ID }}">{{ picture.dislikes.count }}</div>
                     </button>
+                    {% else %}
+                        <button type="button"
+                            data-pictureID="{{ picture.ID }}"
+                            class="btn btn-default btn-sm dummyButton">
+                        <img src="{% static 'icons/purpleLike.png' %}" width="35">
+                        <div style="display:inline;color: #a024ff;font-size: 20px;" class="p-1"
+                             id="like-count{{ picture.ID }}">{{ picture.likes.count }}</div>
+                    </button>
+                    <button type="button"
+                            data-pictureID="{{ picture.ID }}"
+                            class="btn btn-default btn-sm dummyButton">
+                        <img src="{% static 'icons/purpleDislike.png' %}" width="35">
+                        <div style="display:inline;color: #a024ff;font-size: 20px;" class="p-1"
+                             id="dislike-count{{ picture.ID }}">{{ picture.dislikes.count }}</div>
+                    </button>
+                    {% endif %}
                     <button type="button"
                             data-pictureID="{{ picture.ID }}"
                             class="btn btn-default btn-sm shareButton">

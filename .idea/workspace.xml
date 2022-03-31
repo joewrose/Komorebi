@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5d6f2cf7-7719-45fc-bbfb-34ac580da5ed" name="Changes" comment="Google OAuth working locally">
-      <change beforePath="$PROJECT_DIR$/manageUsers/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/manageUsers/forms.py" afterDir="false" />
+    <list default="true" id="5d6f2cf7-7719-45fc-bbfb-34ac580da5ed" name="Changes" comment="Fixed form placeholders">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/closeup.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/closeup.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -292,14 +293,7 @@
       <workItem from="1648504046428" duration="3333000" />
       <workItem from="1648556516237" duration="2374000" />
       <workItem from="1648643521327" duration="24289000" />
-      <workItem from="1648724943407" duration="22100000" />
-    </task>
-    <task id="LOCAL-00011" summary="fixed earlier mistake with composite key">
-      <created>1646863523507</created>
-      <option name="number" value="00011" />
-      <option name="presentableId" value="LOCAL-00011" />
-      <option name="project" value="LOCAL" />
-      <updated>1646863523507</updated>
+      <workItem from="1648724943407" duration="22878000" />
     </task>
     <task id="LOCAL-00012" summary="Finished off URLs">
       <created>1646869743146</created>
@@ -637,7 +631,14 @@
       <option name="project" value="LOCAL" />
       <updated>1648755987789</updated>
     </task>
-    <option name="localTasksCounter" value="60" />
+    <task id="LOCAL-00060" summary="Fixed form placeholders">
+      <created>1648756465104</created>
+      <option name="number" value="00060" />
+      <option name="presentableId" value="LOCAL-00060" />
+      <option name="project" value="LOCAL" />
+      <updated>1648756465105</updated>
+    </task>
+    <option name="localTasksCounter" value="61" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -673,7 +674,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="AJAX with likes and dislikes." />
     <MESSAGE value="Added Icons to Home + CloseUp pages" />
     <MESSAGE value="Added share button (Use CTRL-F5 to refresh page caching)" />
     <MESSAGE value="Worked on createuser form" />
@@ -698,7 +698,8 @@
     <MESSAGE value="Added more unit tests (MADE BY YIFAN)" />
     <MESSAGE value="More Google OAuth" />
     <MESSAGE value="Google OAuth working locally" />
-    <option name="LAST_COMMIT_MESSAGE" value="Google OAuth working locally" />
+    <MESSAGE value="Fixed form placeholders" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed form placeholders" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/komorebi$Populate.coverage" NAME="Populate Coverage Results" MODIFIED="1648163468333" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
