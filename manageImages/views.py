@@ -48,7 +48,7 @@ def dashboard(request):
 class addImage(CreateView, LoginRequiredMixin):
     model = Picture
     form_class = ImageForm
-    template_name = 'addImage.html'
+    template_name = 'add-image.html'
 
     def form_valid(self, form):
         print("VALID FORM")

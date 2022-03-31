@@ -112,7 +112,7 @@ def myfeed(request):
                 context_dict['pictures'] = unique_to_recommend
                 context_dict['list_state'] = 2
 
-        return render(request, 'myfeed.html', context=context_dict)
+        return render(request, 'my-feed.html', context=context_dict)
 
 
 def dashboard(request):
@@ -152,7 +152,7 @@ def login(request):
 class edit(CreateView):
     model = CustomUser
     form_class = EditForm
-    template_name = 'editUser.html'
+    template_name = 'edit-user.html'
 
     def form_valid(self, form):
         formUser = form.save(commit=False)
@@ -202,7 +202,7 @@ def profile(request, username):
 class create(CreateView):
     model = CustomUser
     form_class = PostForm
-    template_name = 'addUser.html'
+    template_name = 'add-user.html'
 
     def form_valid(self, form):
         user = form.save(commit=False)
