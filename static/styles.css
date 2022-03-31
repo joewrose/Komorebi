@@ -1,50 +1,28 @@
-#formDiv {
-    background-color: #a024ff;
-    border-radius: 20px;
-    color: white;
+/* Standard */
+p {
     font-size: 20px;
-}
-
-.submitButton {
-    margin-left: 30px;
-    margin-bottom: 30px;
-    width:150px;
-    display:block
-}
-
-#title {
-    font-size: 50px;
-    color: #a024ff;
-    font-family: 'hk_groteskmedium';
-    line-height: 40px;
-}
-
-#subtitle {
-    font-size: 24px;
+    color: white;
     font-family: 'hk_grotesklight';
 }
 
-.header {
-    position: fixed;
-    background: white;
-}
-
-.lightText-Gray {
+h1 {
+    color: white;
     font-family: 'hk_grotesklight';
 }
 
-.mediumText-Gray {
-    font-family: 'hk_groteskmedium';
-}
-
-.lightText-Purple {
-    font-family: 'hk_grotesklight';
+/* Classes */
+.buttons {
+    top: 1px;
+    bottom: 25px;
+    text-align: center;
+    font-size: larger;
     color: #a024ff;
 }
 
-.mediumText-Purple {
-    font-family: 'hk_groteskmedium';
-    color: #a024ff;
+.button-text{
+    display:inline;
+    color: white;
+    font-size: 18px;
 }
 
 .card {
@@ -52,83 +30,42 @@
     cursor: pointer;
 }
 
-.navigation {
-    font-size: 25px;
-}
-
-.card-body {
-    background-color: #a024ff;
-    font-family: 'hk_grotesklight';
-    color: white;
-}
-
-#quote {
-    text-align: center;
-}
-
-.card-body {
-    background-color: #a024ff;
-    font-family: 'hk_grotesklight';
-    color: white;
-}
-
-.submitButton{
-    background-color: white;
-    colour: #a024ff;
-}
-
 .card .btn {
     z-index: 2;
     position: relative;
 }
 
-#post-image{
-        width: 100%;
-        height:330px;
-        object-fit: cover;
-}
-
-.button-text{
-        display:inline;
-        color: white;
-        font-size: 18px;
-}
-
-
-.lightText-Purple {
+.card-body {
+    background-color: #a024ff;
     font-family: 'hk_grotesklight';
-    color: #a024ff;
+    color: white;
 }
 
-.lightText-Gray {
-    font-family: 'hk_grotesklight';
+.card:hover {
+    transition: transform 250ms;
+    transform: scale(1.03);
 }
 
-#formDiv {
+.closeup-card-body{
+    background-color: white;
+}
+
+.closeup-card-title {
+    font-size: 35px !important;
+}
+
+.file-drop-area {
     background-color: #a024ff;
     border-radius: 20px;
     color: white;
     font-size: 20px;
 }
 
-.submitButton {
-    margin-left: 30px;
-    margin-bottom: 30px;
-    width:150px;
-    display:block
-}
-
-#title {
-    font-size: 50px;
-    color: #a024ff;
-    font-family: 'hk_groteskmedium';
-    line-height: 40px;
-}
-
-#subtitle {
-    font-size: 24px;
-    colour: light-grey;
-    font-family: 'hk_grotesklight';
+.grid_item {
+    position: relative;
+    display: flex;
+    grid-column-start: auto;
+    grid-row-start: auto;
 }
 
 .header {
@@ -136,22 +73,42 @@
     background: white;
 }
 
+.image-button {
+    display:inline;
+    color: #a024ff;
+    font-size: 20px;
+}
+
+.image_grid {
+    width: 90%;
+    display: inline-grid;
+    gap: 20px;
+    grid-template-columns: auto auto auto;
+    margin: 0 auto;
+}
+
+.inlist {
+    border-right: 2px solid #a024ff;
+}
+
 .lightText-Gray {
     font-family: 'hk_grotesklight';
+    color: Gainsboro;
+}
+
+.lightText-Purple {
+    font-family: 'hk_grotesklight';
+    color: #a024ff;
 }
 
 .lightText-White {
     font-family: 'hk_grotesklight';
-    colour: white;
+    color: white;
 }
 
 .mediumText-Gray {
     font-family: 'hk_groteskmedium';
-}
-
-.lightText-Purple {
-    font-family: 'hk_grotesklight';
-    color: #a024ff;
+    color: Gainsboro;
 }
 
 .mediumText-Purple {
@@ -159,53 +116,173 @@
     color: #a024ff;
 }
 
-.card {
-    border-radius: 20%;
-    cursor: pointer;
+.name {
+    text-align: center;
+    font-size: 25px;
+    color: white;
+    font-family: 'hk_grotesklight';
 }
 
 .navigation {
     font-size: 25px;
 }
 
-.card-body {
-    background-color: #a024ff;
-    font-family: 'hk_grotesklight';
+.navigation-container{
+    border-right: 2px solid #a024ff;
+}
+
+.navigation-link{
+    text-align: center !important;
+    text-decoration: none !important;
+    color: inherit !important;
+}
+
+.profileImage {
+    border-radius: 50%;
+    object-fit: cover;
+    outline: white solid 5px;
+    width: 50%;
+    height: 50%;
+    width: "100px";
+}
+
+.submitButton {
+    margin-left: 30px;
+    margin-bottom: 30px;
+    width:150px;
+    display:block !important;
+    background-color: white !important;
+    color: #a024ff !important;
+}
+
+.text {
     color: white;
+}
+
+/* IDs */
+#add-post{
+    font-size: 40px;
+    text-decoration: inherit;
+}
+
+#author{
+    color: black;
+    text-decoration: inherit;
+    font-size: 25px;
+}
+
+#backing {
+    width: 70%;
+    border-radius: 15px;
+    background: #a024ff;
+    padding: 20px;
+    margin: 0 auto;
+}
+
+#card-top {
+    width: 100%;
+    height: 45vw;
+    object-fit: cover;
+}
+
+#card-width{
+    width : 60%;
+}
+
+#delete-button{
+    background-color: red;
+}
+
+#formDiv {
+    background-color: #a024ff;
+    border-radius: 20px;
+    color: white;
+    font-size: 20px;
+}
+
+#image-link{
+    font-size: 25px;
+    color: Gainsboro;
+    text-decoration: inherit;
+}
+
+#navigation{
+    text-align: center !important;
+    text-decoration: none !important;
+    color: inherit !important;
+}
+
+#navigation-rule {
+    color: #a024ff;
+    height: 3px;
+}
+
+#post-image{
+    width: 100%;
+    height:330px;
+    object-fit: cover;
+}
+
+#profileImage {
+    object-fit: cover;
+    width: 230px;
+    height: 230px;
+    outline: #a024ff solid 10px;
+}
+
+#profile-title{
+    font-size: 45px;
+    display:inline;
+    line-height: 70px;
 }
 
 #quote {
     text-align: center;
 }
 
-.card .btn {
-    z-index: 2;
-    position: relative;
+#quote-rule {
+    color: #a024ff;
+    height: 2px;
+    margin-top: 2px;
+    margin-bottom: 2px;
+}
+
+#quote-title {
+    font-size: 30px;
+    color: #a024ff;
+}
+
+#spanner-icon{
+    display: inline;
+}
+
+#subtitle {
+    font-size: 24px;
+    color: light-grey;
+    font-family: 'hk_grotesklight';
+}
+
+#title {
+    font-size: 50px;
+    color: #a024ff;
+    font-family: 'hk_groteskmedium';
+    line-height: 40px;
 }
 
 #userGreeting{
     font-size: 18px;
     font-family: 'hk_grotesklight';
-    colour: grey;
+    color: grey;
     display:inline;
 }
 
-
-#title {
-    font-size: 50px;
-    color: #a024ff;
-    font-family: 'hk_groteskmedium';
-    line-height: 40px;
-}
-
-
+/* At-Rules */
 @font-face {
     font-family: 'hk_grotesklight';
     src: url('fonts/hkgrotesk-light-webfont.woff2') format('woff2'),
     url('fonts/hkgrotesk-light-webfont.woff') format('woff');
     font-weight: normal;
     font-style: normal;
-
 }
 
 @font-face {
@@ -214,6 +291,4 @@
     url('fonts/hkgrotesk-medium-webfont.woff') format('woff');
     font-weight: normal;
     font-style: normal;
-
 }
-
