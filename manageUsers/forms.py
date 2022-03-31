@@ -24,13 +24,13 @@ class PostForm(forms.ModelForm):
     city = forms.CharField(
         label="City",
         required=False,
-        widget=forms.TextInput(attrs={'class': 'form-group mt-3 mb-4', 'placeholder':'enter your username...'}),
+        widget=forms.TextInput(attrs={'class': 'form-group mt-3 mb-4', 'placeholder':'enter your city...'}),
     )
 
     description = forms.CharField(
         label="Description",
         required=False,
-        widget=forms.TextInput(attrs={'class': 'form-group mt-3 mb-4', 'placeholder':'enter your username...'}),
+        widget=forms.TextInput(attrs={'class': 'form-group mt-3 mb-4', 'placeholder':'enter your description...'}),
     )
 
     password = forms.CharField(
@@ -74,14 +74,14 @@ class EditForm(forms.ModelForm):
         label="City",
         required=False,
         empty_value=None,
-        widget=forms.TextInput(attrs={'class': 'form-group mt-3 mb-4', 'placeholder':'enter your username...'}),
+        widget=forms.TextInput(attrs={'class': 'form-group mt-3 mb-4', 'placeholder':'enter your city...'}),
     )
 
     description = forms.CharField(
         label="Description",
         required=False,
         empty_value=None,
-        widget=forms.TextInput(attrs={'class': 'form-group mt-3 mb-4', 'placeholder':'enter your username...'}),
+        widget=forms.TextInput(attrs={'class': 'form-group mt-3 mb-4', 'placeholder':'enter your description...'}),
     )
 
     password = forms.CharField(
