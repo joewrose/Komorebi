@@ -208,6 +208,12 @@ def profile(request, username):
     return render(request, "profile.html", context=context_dict)
 
 
+def googlecreate(request):
+    if request.is_ajax():
+        request_data = request.POST
+        CustomUser.objects.get_or_create(username=request_data.username, email=request_data.email, profileImage=request_data.profileImage, password='password')
+        return HttpResponse("OK")
+
 class create(CreateView):
     model = CustomUser
     form_class = PostForm

@@ -14,14 +14,20 @@
     <script src="https://apis.google.com/js/platform.js" async defer></script>
     <meta name="google-signin-client_id" content="915973472299-6t7fsebovo330ct0o39qkkbcgar4qu51.apps.googleusercontent.com">
     <script>
-    function onSignIn(googleUser) {
-        var profile = googleUser.getBasicProfile();
-
-        document.getElementById('div_id_username').value=profile.getName()
-        document.getElementById('div_id_profileImage').value=profile.getImageUrl()
-        document.getElementById('div_id_email').value=profile.getEmail()
-        
-        document.forms[0].submit()
+        function onSignIn(googleUser) {
+            var profile = googleUser.getBasicProfile();
+            $.ajax({
+                method: 'POST',
+                url: '{{ url 'manageUsers.googlecreate' }}',
+                data: {'username': profile.getName(),'profileImage': profile.getImageUrl(),'email': profile.getEmail()},
+                success: function (data) {
+                     //this gets called when server returns an OK response
+                     alert("it worked!");
+                },
+                error: function (data) {
+                     alert("it didnt work");
+                }
+            });
         }
     </script>
 

@@ -3,7 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="5d6f2cf7-7719-45fc-bbfb-34ac580da5ed" name="Changes" comment="More Google OAuth">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/manageUsers/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/manageUsers/forms.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/manageUsers/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/manageUsers/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/manageUsers/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/manageUsers/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/add-user.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/add-user.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -294,7 +295,7 @@
       <workItem from="1648504046428" duration="3333000" />
       <workItem from="1648556516237" duration="2374000" />
       <workItem from="1648643521327" duration="24289000" />
-      <workItem from="1648724943407" duration="16798000" />
+      <workItem from="1648724943407" duration="18265000" />
     </task>
     <task id="LOCAL-00009" summary="Added Follow entity and created composite key in Vote entity">
       <created>1646846891356</created>
