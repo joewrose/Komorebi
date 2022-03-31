@@ -2,22 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5d6f2cf7-7719-45fc-bbfb-34ac580da5ed" name="Changes" comment="Unit Testing Complete">
-      <change afterPath="$PROJECT_DIR$/media/CACHE/images/userImages/25370124839_5db96c06df_k_QAe1c5W/8dd33531fd3a43909b487e4739710bc9.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/authors/ben.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/authors/joe.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/authors/tak.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/authors/yifan.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/manageImages/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/manageImages/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/manageImages/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/manageImages/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/manageUsers/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/manageUsers/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/manageUsers/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/manageUsers/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/loading.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/authors/ben.png" beforeDir="false" afterPath="$PROJECT_DIR$/static/authors/ben.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/authors/tak.png" beforeDir="false" afterPath="$PROJECT_DIR$/static/authors/tak.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/authors/yifan.png" beforeDir="false" afterPath="$PROJECT_DIR$/static/authors/yifan.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/about.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/about.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/basePage.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/basePage.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/closeup.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/closeup.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/default.css" beforeDir="false" afterPath="$PROJECT_DIR$/templates/default.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/imageCloseup.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/myFeed.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/myFeed.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,7 +31,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="Working_Branch" />
+        <entry key="$PROJECT_DIR$" value="Working_Branch_2" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -182,9 +173,9 @@
     </configuration>
     <list>
       <item itemvalue="Django Server.Komorebi" />
-      <item itemvalue="Python.Populate" />
       <item itemvalue="Django tests.Test: manageUsers.tests" />
       <item itemvalue="Django tests.Test: manageImages.tests" />
+      <item itemvalue="Python.Populate" />
     </list>
     <recent_temporary>
       <list>
@@ -240,14 +231,8 @@
       <workItem from="1648410256764" duration="6992000" />
       <workItem from="1648504046428" duration="3333000" />
       <workItem from="1648556516237" duration="2374000" />
-      <workItem from="1648643521327" duration="24100000" />
-    </task>
-    <task id="LOCAL-00003" summary="Created image model">
-      <created>1646342684611</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1646342684611</updated>
+      <workItem from="1648643521327" duration="24289000" />
+      <workItem from="1648724943407" duration="4785000" />
     </task>
     <task id="LOCAL-00004" summary="Added URL mapping">
       <created>1646344249709</created>
@@ -585,7 +570,14 @@
       <option name="project" value="LOCAL" />
       <updated>1648657846184</updated>
     </task>
-    <option name="localTasksCounter" value="52" />
+    <task id="LOCAL-00052" summary="Unit Testing Complete">
+      <created>1648683902098</created>
+      <option name="number" value="00052" />
+      <option name="presentableId" value="LOCAL-00052" />
+      <option name="project" value="LOCAL" />
+      <updated>1648683902123</updated>
+    </task>
+    <option name="localTasksCounter" value="53" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

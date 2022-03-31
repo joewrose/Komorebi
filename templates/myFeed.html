@@ -19,66 +19,16 @@
                 transform: scale(1.03);
             }
 
-        #title {
-            font-size: 50px;
-            color: #a024ff;
-            font-family: 'hk_groteskmedium';
-            line-height: 40px;
-        }
-
-        #subtitle {
-            font-size: 24px;
-            colour: light-grey;
-            font-family: 'hk_grotesklight';
-        }
-
-        .header {
-            position: fixed;
-            background: white;
-        }
-
-        .lightText-Gray {
-            font-family: 'hk_grotesklight';
-            colour: Gainsboro;
-        }
-
-        .lightText-White {
-            font-family: 'hk_grotesklight';
-            colour: white;
-        }
-
-        .mediumText-Gray {
-            font-family: 'hk_groteskmedium';
-            colour: Gainsboro;
-        }
-
-        .lightText-Purple {
-            font-family: 'hk_grotesklight';
-            color: #a024ff;
-        }
-
-        .mediumText-Purple {
-            font-family: 'hk_groteskmedium';
-            color: #a024ff;
-        }
 
         .card {
             border-radius: 20%;
             cursor: pointer;
         }
 
-        .navigation {
-            font-size: 25px;
-        }
-
         .card-body {
             background-color: #a024ff;
             font-family: 'hk_grotesklight';
             color: white;
-        }
-
-        #quote {
-            text-align: center;
         }
 
         .card .btn {
@@ -98,6 +48,13 @@
             font-size: 18px;
         }
 
+        #no-likes{
+            text-align: center;
+            color: #a024ff;
+            font-family: 'hk_grotesklight';
+            font-size: 25px;
+        }
+
         {% endblock %}
 
     </style>
@@ -109,8 +66,13 @@
 <div class="container">
 {% block body_block %}
     <div class="row justify-content-center pt-lg-1 g-0">
-        <div class="col-sm-12 col-md-10">
+        <div class="col-sm-12 col-md-10 pt-3">
             <div class="row g-0">
+
+                {% if not pictures %}
+                    <div id="no-likes" class="pt-5">You need to like at least 5 images before we can curate your feed!</div>
+                {% else %}
+
                 {% for picture in pictures %}
 
                     <div class="col-xs-12 col-lg-4 pt-1 pt-lg-0 ">
@@ -146,6 +108,7 @@
                         </div>
                     </div>
                 {% endfor %}
+            {% endif %}
             </div>
         </div>
     </div>
