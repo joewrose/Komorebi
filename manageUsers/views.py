@@ -150,9 +150,15 @@ def login(request):
 
 
 class edit(CreateView):
+
     model = CustomUser
     form_class = EditForm
     template_name = 'edit-user.html'
+
+    def get(self, form):
+        if not self.request.user.is_authenticated:
+            return redirect('/home/')
+        return super(edit, self).get(form)
 
     def form_valid(self, form):
         formUser = form.save(commit=False)
