@@ -21,19 +21,99 @@ from django.http import HttpResponse, Http404
 
 from manageImages.forms import ImageForm
 from manageImages.models import Picture
+from manageImages.models import Like, Dislike
 
 
-def myfeed(request):
+def myfeed(request): 
+    # if the current user is not logged in, redirect them to the home page
     if not request.user.is_authenticated:
-        redirect('/home/')
+        return redirect('/home/')
+        
+    else:
+        # create context dictionary
+        context_dict = {}
 
-    context_dict = {}
+        # get the current logged in user
+        current_user = request.user
 
-    pictures = Picture.objects.annotate(num_likes=Count('likes')).order_by('-num_likes')[:9]
+        # get the ids of the photos liked and disliked by the current user, then make them lists (values_list itself doesn't return a list object)
+        current_user_liked = Like.objects.filter(user_ID = current_user.id).values_list('picture_ID', flat=True)
+        current_user_liked = list(current_user_liked)
 
-    context_dict["pictures"] = pictures
-    context_dict["title"] = "My Feed"
-    return render(request, "myfeed.html", context_dict)
+        current_user_disliked = Dislike.objects.filter(user_ID = current_user.id).values_list('picture_ID', flat=True)
+        current_user_disliked = list(current_user_disliked)
+
+        #get the users followed by the current user, make it into a list as well
+        current_user_follows = Follow.objects.filter(follower_ID = current_user.id).values_list('followed_ID', flat=True)
+        current_user_follows = list(current_user_follows)
+        
+        # if the current user has liked less than 5 pictures, set pictures as None value, and list_state as 0
+        if len(current_user_liked) < 5:
+            context_dict['pictures'] = None
+            context_dict['list_state'] = 0
+
+        else:
+            # create lists for the recommended pictures
+            to_recommend = []
+            unique_to_recommend = []
+
+            # get list of users
+            users = CustomUser.objects.all()
+
+            # count for how many users that pictures have been added from
+            users_added_from = 0
+
+            for us in users:
+                # stop after pictures from 30 users has been added 
+                if users_added_from <= 30:
+                    if us != current_user:
+                        # get user's liked pictures
+                        user_likes = Like.objects.filter(user_ID = us.id).values_list('picture_ID', flat=True)
+                        user_likes = list(user_likes)
+
+                        if us.id in current_user_follows:
+                            follow_boost = 0.075
+                        else:
+                            follow_boost = 0
+
+                        # count of how many pictures have been liked by both the current user and user in loop
+                        similar = 0
+                        for pic in user_likes:
+                            if pic in current_user_liked:
+                                similar += 1
+
+                        # if the amount of pictures liked by both is at least 15% of the current user's liked pictures
+                        # add to 'to_recommend' list as long as the picture is not: 
+                        # already been liked by the current user, already been disliked by the current user
+                        if ( ((similar/len(current_user_liked)) + follow_boost) > 0.15):
+                            for pict in user_likes:
+                                if (pict not in current_user_liked) and (pict not in current_user_disliked):
+                                    # get the picture object and add it to the list
+                                    pic_object = Picture.objects.get(ID=pict)
+                                    to_recommend.append(pic_object)
+                                    users_added_from += 1
+
+                    # skip to next user if current user in loop is the logged in user                
+                    else:
+                        continue
+
+                # once pictures from 30 users has been added (if it reaches that), stop the loop
+                else:
+                    break
+            
+            # check if list contains pictures
+            if to_recommend == []:
+                # if 'to_recommend' is empty, pictures is set as None, and list_state as 1
+                context_dict['pictures'] = None
+                context_dict['list_state'] = 1
+            else:
+                # remove duplicates
+                [unique_to_recommend.append(pic_obj) for pic_obj in to_recommend if pic_obj not in unique_to_recommend]
+                # pictures is set as the 'unique_to_recommend' list, and list_state as 2
+                context_dict['pictures'] = unique_to_recommend
+                context_dict['list_state'] = 2
+
+        return render(request, 'myfeed.html', context=context_dict)
 
 
 def dashboard(request):
