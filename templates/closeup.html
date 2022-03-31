@@ -1,24 +1,12 @@
 {% extends 'basePage.html' %}
 {% load static %}
-{% load staticfiles %}
 
 {% block title_block %}
-Image Close Up
+    {{ picture.name }}
 {% endblock %}
 
 {% block subtitle_block %}
-Image Close Up
-{% endblock %}
-
-{% block styleblock %}
-.card-body{
-    background-color: white;
-}
-#author{
-    colour: black;
-    text-decoration: inherit;
-    font-size: 25px;
-}
+    Close Up - {{ picture.name }}
 {% endblock %}
 
 {% block body_block %}
@@ -27,7 +15,7 @@ Image Close Up
         <img src="{{ picture.image.url }}" class="card-img-top " style="width: 100%;
     height: 45vw;
     object-fit: cover;" alt="...">
-        <div class="card-body">
+        <div class="closeup-card-body">
             <div class="row">
                 <div class="col-6">
                     <h5 class="card-title lightText-Purple" style="font-size: 35px">{{ picture.name }}</h5>

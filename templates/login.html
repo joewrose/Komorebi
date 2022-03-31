@@ -1,35 +1,14 @@
-<!DOCTYPE html>
-{% extends 'basepage.html' %}
+{% extends 'basePage.html' %}
 {% load static %}
-
 
 {% block title_block %}
     Login
 {% endblock %}
 
+{% block subtitle_block %}
+    Login
+{% endblock %}
 
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <style>
-        {% block styleblock %}
-            #formDiv {
-                background-color: #a024ff;
-                border-radius: 20px;
-                color: white;
-                font-size: 20px;
-            }
-
-            #submit-button {
-                margin-left: 25px;
-            }
-
-        {% endblock %}
-
-    </style>
-
-</head>
-<body>
 {% block body_block %}
         <div class="row justify-content-center lightText-White pt-3">
             <div class="col-lg-6" id="formDiv">
@@ -55,5 +34,3 @@
         </div>
     </div>
 {% endblock %}
-</body>
-</html>

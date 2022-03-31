@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 {% extends 'basePage.html' %}
 {% load static %}
 
@@ -6,53 +5,10 @@
     Home
 {% endblock %}
 
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <style>
-        {% block styleblock %}
-            .card:hover {
-                transition: transform 250ms;
-                transform: scale(1.03);
-            }
+{% block subtitle_block %}
+    Home
+{% endblock %}
 
-            .navigation-container{
-                border-right: 2px solid #a024ff;
-            }
-
-            .navigation-link{
-                text-align: center !important;
-                text-decoration: none !important;
-                color: inherit !important;
-            }
-
-            #navigation{
-                text-align: center !important;
-                text-decoration: none !important;
-                color: inherit !important;
-            }
-
-            #post-image{
-                width: 100%;
-                height:330px;
-                object-fit: cover;
-            }
-
-            .button-text{
-                display:inline;
-                color: white;
-                font-size: 18px;
-            }
-
-        {% endblock %}
-
-    </style>
-
-</head>
-
-
-<body>
-<div class="container">
 {% block body_block %}
     <div class="row justify-content-center pt-lg-1 g-0">
         <div class="col-sm-12 col-md-10 pt-3">
@@ -96,7 +52,4 @@
         </div>
     </div>
 </div>
-
-</body>
 {% endblock %}
-</html>

@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 {% extends 'basepage.html' %}
 {% load static %}
 {% load crispy_forms_tags %}
@@ -7,28 +6,10 @@
     Add Image
 {% endblock %}
 
-{% block styleblock %}
-            #formDiv {
-                background-color: #a024ff;
-                border-radius: 20px;
-                color: white;
-                font-size: 20px;
-            }
+{% block subtitle_block %}
+    Add Image
+{% endblock %}
 
-            .submitButton {
-                margin-left: 30px;
-                margin-bottom: 30px;
-                width:150px;
-                display:block
-            }
-
-        {% endblock %}
-
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-</head>
-<body>
 {% block body_block %}
         <div class="row justify-content-center lightText-White pt-3 ">
             <div class="col-lg-6" id="formDiv">
@@ -45,5 +26,3 @@
         </div>
     </div>
 {% endblock %}
-</body>
-</html>

@@ -1,5 +1,4 @@
-<!DOCTYPE html>
-{% extends 'basepage.html' %}
+{% extends 'basePage.html' %}
 {% load static %}
 {% load crispy_forms_tags %}
 
@@ -7,42 +6,15 @@
     Edit Account
 {% endblock %}
 
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <style>
-        {% block styleblock %}
-            #formDiv {
-                background-color: #a024ff;
-                border-radius: 20px;
-                color: white;
-                font-size: 20px;
-            }
+{% block subtitle_block %}
+    Edit Account
+{% endblock %}
 
-            .submitButton {
-                margin-left: 30px;
-                margin-bottom: 30px;
-                width:150px;
-                display:block !important;
-                background-color: white !important;
-                color: #a024ff !important;
-            }
-
-            #delete-button{
-                background-color: red;
-            }
-
-        {% endblock %}
-
-    </style>
-
-</head>
-<body>
 {% block body_block %}
         <div class="row justify-content-center lightText-White pt-3">
             <div class="col-lg-6" id="formDiv">
                 <div class="row-lg-10 mx-3">
-                    <h1 class="lightText-White pt-4" align="center">Create Account</h1>
+                    <h1 class="lightText-White pt-4" align="center">Edit Account</h1>
 
                    <form method="post" enctype="multipart/form-data">
                       {% csrf_token %}
