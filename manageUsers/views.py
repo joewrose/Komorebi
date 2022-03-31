@@ -185,10 +185,13 @@ def profile(request, username):
 
     user = CustomUser.objects.get(username=username)
 
-    try:
-        follow = Follow.objects.get(followed_ID=user, follower_ID=request.user)
-        buttonText = "Following"
-    except ObjectDoesNotExist:
+    if request.user.is_authenticated:
+        try:
+            follow = Follow.objects.get(followed_ID=user, follower_ID=request.user)
+            buttonText = "Following"
+        except ObjectDoesNotExist:
+            buttonText = "Follow"
+    else:
         buttonText = "Follow"
 
     pictures = Picture.objects.filter(uploadedBy=user)
