@@ -1,19 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5d6f2cf7-7719-45fc-bbfb-34ac580da5ed" name="Changes" comment="Fixes on about page">
-      <change beforePath="$PROJECT_DIR$/manageImages/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/manageImages/views.py" afterDir="false" />
+    <list default="true" id="5d6f2cf7-7719-45fc-bbfb-34ac580da5ed" name="Changes" comment="Refactored HTML naming">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/manageUsers/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/manageUsers/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/about.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/about.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/addImage.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/add-image.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/addUser.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/add-user.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/basePage.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base-page.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/closeup.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/closeup.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/create.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/create.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/editUser.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/edit-user.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/home.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/myFeed.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/my-feed.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/profile.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/profile.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -238,14 +229,7 @@
       <workItem from="1648504046428" duration="3333000" />
       <workItem from="1648556516237" duration="2374000" />
       <workItem from="1648643521327" duration="24289000" />
-      <workItem from="1648724943407" duration="5093000" />
-    </task>
-    <task id="LOCAL-00005" summary="TODO - Get media files working">
-      <created>1646407082964</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1646407082964</updated>
+      <workItem from="1648724943407" duration="8057000" />
     </task>
     <task id="LOCAL-00006" summary="TODO - Fix UUID">
       <created>1646438234953</created>
@@ -583,7 +567,14 @@
       <option name="project" value="LOCAL" />
       <updated>1648731890006</updated>
     </task>
-    <option name="localTasksCounter" value="54" />
+    <task id="LOCAL-00054" summary="Refactored HTML naming">
+      <created>1648732207630</created>
+      <option name="number" value="00054" />
+      <option name="presentableId" value="LOCAL-00054" />
+      <option name="project" value="LOCAL" />
+      <updated>1648732207630</updated>
+    </task>
+    <option name="localTasksCounter" value="55" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -619,7 +610,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Fixed stretched links" />
     <MESSAGE value="Fixed responsive image sizing" />
     <MESSAGE value="Updated models.py to have separate likes and dislikes objects. Added like and dislike count to home page" />
     <MESSAGE value="population script includes adding likes and dislikes, it can be considered finished now" />
@@ -644,7 +634,8 @@
     <MESSAGE value="ManageUsers tests complete" />
     <MESSAGE value="Unit Testing Complete" />
     <MESSAGE value="Fixes on about page" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixes on about page" />
+    <MESSAGE value="Refactored HTML naming" />
+    <option name="LAST_COMMIT_MESSAGE" value="Refactored HTML naming" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/komorebi$Populate.coverage" NAME="Populate Coverage Results" MODIFIED="1648163468333" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />

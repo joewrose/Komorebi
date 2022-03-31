@@ -184,11 +184,14 @@ def profile(request, username):
 
     user = CustomUser.objects.get(username=username)
 
-    try:
-        follow = Follow.objects.get(followed_ID=user, follower_ID=request.user)
-        buttonText = "Following"
-    except ObjectDoesNotExist:
-        buttonText = "Follow"
+    buttonText = "Follow"
+
+    if request.user.is_authenticated:
+        try:
+            follow = Follow.objects.get(followed_ID=user, follower_ID=request.user)
+            buttonText = "Following"
+        except ObjectDoesNotExist:
+            pass
 
     pictures = Picture.objects.filter(uploadedBy=user)
 

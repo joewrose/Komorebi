@@ -59,7 +59,7 @@
                     <div class="col-md-10">
                         <div class="row pt-5 pb-5">
                             <div class="col-xl-4 p-3 bg-white text-white">
-                                <img id=profileImage src="/media/{{ profileUser.profileImage }}" class="rounded-circle">
+                                <img id=profileImage src="{% get_media_prefix %}{{ profileUser.profileImage }}" class="rounded-circle">
                             </div>
                             <div class="col-xl-8 p-3 bg-white text-#a024ff">
                                 <div id="profile-title"class="mediumText-Purple">
@@ -72,8 +72,13 @@
                                         </a>
                                     </div>
                                 {% else %}
-                                    <button type="button" data-user="{{ profileUser.id }}" class="btn btn-primary followButton"><div id="buttontext">
+                                    {% if user.is_authenticated %}
+                                        <button type="button" data-user="{{ profileUser.id }}" class="btn btn-primary followButton"><div id="buttontext">
                                         {{ buttontext }}</div></button>
+                                    {% else %}
+                                        <button type="button" data-user="{{ profileUser.id }}" class="btn btn-primary dummyButton"><div id="buttontext">
+                                        {{ buttontext }}</div></button>
+                                    {% endif %}
                                 {% endif %}
                                 <div id="spanner-icon">
                                 </div>
