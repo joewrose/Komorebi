@@ -13,7 +13,9 @@ from manageImages.models import Picture
 
 
 def about(request):
-    return render(request, 'about.html')
+    context_dict = {}
+    context_dict['title'] = 'About'
+    return render(request, 'about.html', context_dict)
 
 def index(request):
     return redirect("/home/")
@@ -27,6 +29,7 @@ def home(request):
         print(image)
 
     context_dict["pictures"] = pictures
+    context_dict['title'] = 'Home'
     return render(request, "home.html", context_dict)
 
 def addimage(request):
@@ -47,7 +50,8 @@ def addimage(request):
             print(form.errors)
 
     context = {
-        'form': form
+        'form': form,
+        'title' : 'Add Image'
     }
 
-    return render(request, 'manageImages/addImage.html', context)
+    return render(request, 'manageImages/add-image.html', context)

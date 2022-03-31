@@ -1,13 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5d6f2cf7-7719-45fc-bbfb-34ac580da5ed" name="Changes" comment="Bug fixing with non-logged in users">
-      <change afterPath="$PROJECT_DIR$/media/CACHE/images/userImages/25370124839_5db96c06df_k_ApFEzIq/6cc095cf313156fb951851edb2278252.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/CACHE/images/userImages/25370124839_5db96c06df_k_aHCXutC/d5fb842d83b28fc37fc00a6398afdea1.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/manageImages/tests.py" beforeDir="false" afterPath="$PROJECT_DIR$/manageImages/tests.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/manageUsers/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/manageUsers/views.py" afterDir="false" />
-    </list>
+    <list default="true" id="5d6f2cf7-7719-45fc-bbfb-34ac580da5ed" name="Changes" comment="Added more unit tests (MADE BY YIFAN)" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -296,14 +290,7 @@
       <workItem from="1648504046428" duration="3333000" />
       <workItem from="1648556516237" duration="2374000" />
       <workItem from="1648643521327" duration="24289000" />
-      <workItem from="1648724943407" duration="11067000" />
-    </task>
-    <task id="LOCAL-00007" summary="Added adduser functionality (courtesy of ordinarycoders.com)">
-      <created>1646501698336</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1646501698336</updated>
+      <workItem from="1648724943407" duration="11149000" />
     </task>
     <task id="LOCAL-00008" summary="Added Login functionality via Auth package TODO-fix uploaded file naming">
       <created>1646525241407</created>
@@ -641,7 +628,14 @@
       <option name="project" value="LOCAL" />
       <updated>1648737923930</updated>
     </task>
-    <option name="localTasksCounter" value="56" />
+    <task id="LOCAL-00056" summary="Added more unit tests (MADE BY YIFAN)">
+      <created>1648741326013</created>
+      <option name="number" value="00056" />
+      <option name="presentableId" value="LOCAL-00056" />
+      <option name="project" value="LOCAL" />
+      <updated>1648741326013</updated>
+    </task>
+    <option name="localTasksCounter" value="57" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -677,7 +671,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Updated models.py to have separate likes and dislikes objects. Added like and dislike count to home page" />
     <MESSAGE value="population script includes adding likes and dislikes, it can be considered finished now" />
     <MESSAGE value="AJAX With Like count now working" />
     <MESSAGE value="AJAX with likes and dislikes." />
@@ -702,7 +695,8 @@
     <MESSAGE value="Fixes on about page" />
     <MESSAGE value="Refactored HTML naming" />
     <MESSAGE value="Bug fixing with non-logged in users" />
-    <option name="LAST_COMMIT_MESSAGE" value="Bug fixing with non-logged in users" />
+    <MESSAGE value="Added more unit tests (MADE BY YIFAN)" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added more unit tests (MADE BY YIFAN)" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/komorebi$Populate.coverage" NAME="Populate Coverage Results" MODIFIED="1648163468333" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
