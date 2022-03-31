@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5d6f2cf7-7719-45fc-bbfb-34ac580da5ed" name="Changes" comment="Added more unit tests (MADE BY YIFAN)">
+    <list default="true" id="5d6f2cf7-7719-45fc-bbfb-34ac580da5ed" name="Changes" comment="More Google OAuth">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/manageUsers/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/manageUsers/forms.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/add-user.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/add-user.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -293,14 +294,7 @@
       <workItem from="1648504046428" duration="3333000" />
       <workItem from="1648556516237" duration="2374000" />
       <workItem from="1648643521327" duration="24289000" />
-      <workItem from="1648724943407" duration="14929000" />
-    </task>
-    <task id="LOCAL-00008" summary="Added Login functionality via Auth package TODO-fix uploaded file naming">
-      <created>1646525241407</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1646525241408</updated>
+      <workItem from="1648724943407" duration="16798000" />
     </task>
     <task id="LOCAL-00009" summary="Added Follow entity and created composite key in Vote entity">
       <created>1646846891356</created>
@@ -638,7 +632,14 @@
       <option name="project" value="LOCAL" />
       <updated>1648741326013</updated>
     </task>
-    <option name="localTasksCounter" value="57" />
+    <task id="LOCAL-00057" summary="More Google OAuth">
+      <created>1648745670783</created>
+      <option name="number" value="00057" />
+      <option name="presentableId" value="LOCAL-00057" />
+      <option name="project" value="LOCAL" />
+      <updated>1648745670783</updated>
+    </task>
+    <option name="localTasksCounter" value="58" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -674,7 +675,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="population script includes adding likes and dislikes, it can be considered finished now" />
     <MESSAGE value="AJAX With Like count now working" />
     <MESSAGE value="AJAX with likes and dislikes." />
     <MESSAGE value="Added Icons to Home + CloseUp pages" />
@@ -699,7 +699,8 @@
     <MESSAGE value="Refactored HTML naming" />
     <MESSAGE value="Bug fixing with non-logged in users" />
     <MESSAGE value="Added more unit tests (MADE BY YIFAN)" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added more unit tests (MADE BY YIFAN)" />
+    <MESSAGE value="More Google OAuth" />
+    <option name="LAST_COMMIT_MESSAGE" value="More Google OAuth" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/komorebi$Populate.coverage" NAME="Populate Coverage Results" MODIFIED="1648163468333" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />

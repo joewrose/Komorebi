@@ -15,11 +15,13 @@
     <meta name="google-signin-client_id" content="915973472299-6t7fsebovo330ct0o39qkkbcgar4qu51.apps.googleusercontent.com">
     <script>
     function onSignIn(googleUser) {
-          var profile = googleUser.getBasicProfile();
-          console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
-          console.log('Name: ' + profile.getName());
-          console.log('Image URL: ' + profile.getImageUrl());
-          console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
+        var profile = googleUser.getBasicProfile();
+
+        document.getElementById('div_id_username').value=profile.getName()
+        document.getElementById('div_id_profileImage').value=profile.getImageUrl()
+        document.getElementById('div_id_email').value=profile.getEmail()
+        
+        document.forms[0].submit()
         }
     </script>
 
