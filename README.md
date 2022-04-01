@@ -14,6 +14,8 @@ The Komorebi website revolves around the idea of a social media for those who wa
 
 Komorebi needs the following packages to work as intended:
 
+- [Django] - Framework used to create the website
+- [AJAX] - Used to update the webpages and database with likes, dislikes and follows
 - [Django-ImageKit] - Creates thumbnails to keep website responsive
 - [Pillow] - Helps handling of images within Django
 - [Bootstrap] - Set of CSS classes which makes styling easier
